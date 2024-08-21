@@ -7,10 +7,8 @@ function Button({ data }) {
     return (
         <div className='flex gap-3'>
 
+            <img src={data} alt=""  />
 
-
-
-            <img src={data} alt="" width={500} />
             {/* <button
                 type="button"
                 className="bg-black hover:bg-black/80 shadow-sm px-3 py-2 rounded-full font-semibold text-sm text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
@@ -32,6 +30,10 @@ function Button({ data }) {
             >
                 {name}
             </button> */}
+
+            {/* <div>
+                {data}
+            </div> */}
 
 
         </div>
