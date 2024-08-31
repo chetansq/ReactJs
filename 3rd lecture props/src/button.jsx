@@ -7,7 +7,7 @@ function Button({ data }) {
     return (
         <div className='flex gap-3'>
 
-            <img src={data} alt=""  />
+            <img src={data} alt="" />
 
             {/* <button
                 type="button"

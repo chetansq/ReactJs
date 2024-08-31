@@ -76,14 +76,15 @@ import image1 from './assets/react.svg';
 
 const initial = 'https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?cs=srgb&dl=pexels-anjana-c-169994-674010.jpg&fm=jpg';
 
-function Card({ name }) {
+function Card() {
     const [data, setdata] = useState(initial);
 
     const img = 'https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp';
 
     const setValue = () => {
-        setdata(img, name = 'cat');
-        console.log(name);
+
+        setdata(img);
+
 
     }
     return (
@@ -99,7 +100,7 @@ function Card({ name }) {
 
                 <div className="p-4">
                     <h1 className="inline-flex items-center text-lg font-semibold">
-                        {name} &nbsp;
+                        peacock feather &nbsp;
                     </h1>
                     <p className="mt-3 text-sm text-gray-600">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, debitis?
