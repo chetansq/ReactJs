@@ -1,7 +1,7 @@
 import React from 'react'
-import Index from './pages/Index'
 // import './App.css'
 import "./index.css"
+import Layout from './layout/Layout'
 
 function App() {
 
@@ -9,8 +9,7 @@ function App() {
   return (
     <>
       <div>
-
-        <Index />
+        <Layout />
       </div>
     </>
   )
