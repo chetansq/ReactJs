@@ -1,10 +1,12 @@
 import React from 'react'
 
 const Index = () => {
+    console.log("index page");
     return (
         <div>
-            <h1 className='bg-black text-white'>home page</h1>
+home
         </div>
+
     )
 }
 
