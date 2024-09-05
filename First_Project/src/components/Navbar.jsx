@@ -8,21 +8,31 @@ import { IoIosArrowDown } from "react-icons/io";
 import { RiMenu2Fill } from "react-icons/ri";
 import { Link, NavLink, Outlet } from 'react-router-dom';
 
-
+const offCanvas = () => {
+    console.log("offcanvas");
+    return (
+        <>
+            <div className='bg-black h-1/2 w-1/2'>
+                <h1>hello</h1>
+            </div>
+        </>
+    )
+}
 
 const Navbar = () => {
     return (
         <div>
-            <header className=' bg-slate-100'>
+            <header className=' bg-slate-100 '>
                 <nav className='flex justify-between lg:mx-[5%] mx-3 py-5 items-center'>
 
-                    <RiMenu2Fill className='lg:hidden relative left-0 text-xl font-semibold hover:duration-300 hover:text-red-600' />
+                    <div onClick={offCanvas}>
+                        <RiMenu2Fill className='lg:hidden relative left-0 text-xl font-semibold hover:duration-300 hover:text-red-600' />
+                    </div>
                     <div className='text-center'>
-                        <a href="">
-                            <img src={Logo} alt=""  />
+                        <NavLink to='/'>
+                            <img src={Logo} alt="" />
+                        </NavLink>
 
-
-                        </a>
                     </div>
 
                     <ul className='flex gap-4 font-semibold text-lg max-lg:hidden'>
@@ -37,11 +47,11 @@ const Navbar = () => {
 
                     </ul>
 
-                    <div className='flex gap-3 text-lg '>
-                        <Link><IoSearch className='nav-icon-hover' /></Link>
-                        <Link><FiUser className='nav-icon-hover max-md:hidden' /></Link>
-                        <Link><FaRegHeart className='nav-icon-hover max-md:hidden' /></Link>
-                        <Link><RiShoppingBag2Line className='nav-icon-hover' /></Link>
+                    <div className='flex gap-1 md:gap-3 text-lg *:*:duration-300 '>
+                        <Link><IoSearch className='hover:text-red-600' /></Link>
+                        <Link><FiUser className=' max-md:hidden hover:text-red-600' /></Link>
+                        <Link><FaRegHeart className=' max-md:hidden hover:text-red-600' /></Link>
+                        <Link><RiShoppingBag2Line className='hover:text-red-600' /></Link>
                     </div>
                 </nav>
             </header>

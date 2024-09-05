@@ -2,7 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-.nav-icon-hover:hover {
-    color: red;
-    transition-duration: 300ms;
-}
