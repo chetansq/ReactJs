@@ -33,6 +33,8 @@ const Navbar = () => {
                         <li> <NavLink to='blog'>Blog</NavLink></li>
                         <li> <NavLink to='buynow'>Buy now</NavLink></li>
 
+
+
                     </ul>
 
                     <div className='flex gap-3 text-lg '>
