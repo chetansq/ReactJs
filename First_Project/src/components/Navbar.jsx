@@ -25,7 +25,7 @@ const Navbar = () => {
             <header className=' bg-slate-100 '>
                 <nav className='flex justify-between lg:mx-[5%] mx-3 py-5 items-center'>
 
-                    <div onClick={offCanvas}>
+                    <div onClick={offCanvas} className='lg:hidden'>
                         <RiMenu2Fill className='lg:hidden relative left-0 text-xl font-semibold hover:duration-300 hover:text-red-600' />
                     </div>
                     <div className='text-center'>
