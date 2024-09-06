@@ -12,23 +12,18 @@ const offCanvas = () => {
     console.log("offcanvas");
     return (
         <>
-            <h1>hello</h1>
+            <h1 className='bg-black' >hello</h1>
         </>
     )
 }
-
-
-
-
-
 
 const Navbar = () => {
     return (
         <div>
             {/* Header Section Start */}
 
-            <header className=' bg-slate-100 '>
-                <nav className='flex justify-between lg:mx-[5%] mx-3 py-5 items-center'>
+            <header className='relative w-[100%]'>
+                <nav className=' absolute w-full z-10 flex justify-between mx-3 lg:mx-0 py-5 items-center bg-transparent bg-contain'>
 
                     <div className='relative lg:hidden flex items-center'>
 
@@ -52,7 +47,7 @@ const Navbar = () => {
 
                     </ul>
 
-                    <div className='flex gap-1 md:gap-3 text-lg *:*:duration-300 '>
+                    <div className='flex gap-1 md:gap-3 mr-5 md:mr-8 text-lg *:*:duration-300 '>
                         <Link><IoSearch className='hover:text-red-600' /></Link>
                         <Link><FiUser className=' max-md:hidden hover:text-red-600' /></Link>
                         <Link><FaRegHeart className=' max-md:hidden hover:text-red-600' /></Link>
@@ -64,7 +59,7 @@ const Navbar = () => {
             {/* Header Section End */}
 
             {/* Main Section Start */}
-           
+
             {/* Main Section End */}
             <Outlet />
         </div>
