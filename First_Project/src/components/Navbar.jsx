@@ -43,8 +43,6 @@ const Navbar = () => {
                         <li> <NavLink to='blog'>Blog</NavLink></li>
                         <li> <NavLink to='buynow'>Buy now</NavLink></li>
 
-
-
                     </ul>
 
                     <div className='flex gap-1 md:gap-3 text-lg *:*:duration-300 '>
