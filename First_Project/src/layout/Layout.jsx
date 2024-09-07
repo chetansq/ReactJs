@@ -44,7 +44,7 @@ const navList = createBrowserRouter([
 const Layout = () => {
     return (
 
-        <div>
+        <div className=''>
             <RouterProvider router={navList}></RouterProvider>
 
         </div>

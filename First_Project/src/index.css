@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-  }
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 
 /* @layer base {
   :root {
@@ -76,28 +76,29 @@
 
 @layer components {
 
-  .marqueeDiv{
+  .marqueeDiv {
 
-     animation: marquees 30s linear infinite;
+    animation: marquees 30s linear infinite;
   }
 
   @keyframes marquees {
-    
+
     0% {
-        transform: translateX(0%);
-      }
-      100%{
-        
-        transform: translateX(-100%);
+      transform: translateX(0%);
+    }
+
+    100% {
+
+      transform: translateX(-100%);
     }
   }
 
 
-  .marqueeContainer:hover> div{
+  .marqueeContainer:hover>div {
     animation-play-state: paused;
   }
 
-  .HeroSlider .slick-dots{
+  .HeroSlider .slick-dots {
     position: absolute;
     bottom: 30px;
 
@@ -105,17 +106,26 @@
 
 
 
-  .HeroSlider .slick-dots li button:before{
-    font-size: large;
+  .HeroSlider .slick-dots li button:before {
+    font-size: small;
   }
+
+  .BgGradient {
+
+    background-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  }
+
+  .BgGradientMove {
+
+    background-image: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0), transparent);
+  }
+
+
 }
 
 
 @layer base {
   :root {
-        --radius: 0.5rem;
-    }
+    --radius: 0.5rem;
+  }
 }
-
-
-

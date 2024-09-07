@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import slider_img1 from '../assets/asset28.jpeg'
 import slider_img2 from '../assets/asset_27.jpeg'
 import slider_img3 from '../assets/asset29.jpeg'
+import CategorySlide from '../components/CategorySlide';
 
 // icon section
 
@@ -59,9 +60,7 @@ export const Sliders = () => {
                             {HeroSlideDetails.map((current, index) => {
                                 return (
                                     <>
-                                        <HeroSlide
-                                            key={current}
-                                            details={current} />
+                                        <HeroSlide details={current} />
                                     </>
                                 );
                             })}
@@ -110,6 +109,7 @@ const Index = () => {
         <div>
             <main>
                 <Sliders />
+                <CategorySlide />
             </main>
         </div>
 
@@ -129,7 +129,7 @@ function HeroSlide({ details }) {
                         <p className='text-4xl md:text-5xl lg:text-[80px]'>{details.tittle[0]} <br /> {details.tittle[1]}</p>
                         <p className='md:text-xl my-4 mb-6 max-md:hidden'>{details.description}</p>
 
-                        <a href="" className='bg-black w-fit text-white text-md font-semibold rounded md:px-7 px-4 py-2 md:py-3 mt-4 flex items-center gap-1'>
+                        <a href="" className="bg-black w-fit text-white text-md font-semibold rounded md:px-7 px-4 py-2 md:py-3 mt-4 flex items-center gap-1 relative before:absolute before:content-[''] before:BgGradientMove before:h-full before:w-full before:translate-x-[100%]   hover:before:-translate-x-[100%] before:duration-1000 overflow-hidden z-0 before:-skew-x-12 hover:before:BgGradient">
                             <span>Shop Collection</span>
                             <IoIosArrowForward className='text-white font-bold text-lg' />
                         </a>
@@ -139,3 +139,8 @@ function HeroSlide({ details }) {
         </>
     )
 }
+
+
+
+
+// background-image: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.25), transparent);
