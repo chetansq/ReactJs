@@ -7,6 +7,17 @@ import { FaRegHeart } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
 import { RiMenu2Fill } from "react-icons/ri";
 import { Link, NavLink, Outlet } from 'react-router-dom';
+import {
+    Sheet,
+    SheetContent,
+    SheetDescription,
+    SheetHeader,
+    SheetTitle,
+    SheetTrigger,
+} from "@/components/ui/sheet"
+
+
+
 
 const offCanvas = () => {
     console.log("offcanvas");
@@ -25,11 +36,26 @@ const Navbar = () => {
             <header className='relative w-[100%]'>
                 <nav className=' absolute w-full z-10 flex justify-between mx-3 lg:mx-0 py-5 items-center bg-transparent bg-contain'>
 
+                    {/* nav icon */}
                     <div className='relative lg:hidden flex items-center'>
+                        <Sheet>
+                            <SheetTrigger><RiMenu2Fill className='text-xl font-semibold hover:duration-300 hover:text-red-600'/></SheetTrigger>
+                            <SheetContent side={"left"}>
+                                <SheetHeader>
+                                    <SheetTitle>Are you absolutely sure?</SheetTitle>
+                                    <SheetDescription>
+                                        This action cannot be undone. This will permanently delete your account
+                                        and remove your data from our servers.
+                                    </SheetDescription>
+                                </SheetHeader>
+                            </SheetContent>
+                        </Sheet>
 
-                        <RiMenu2Fill className='text-xl font-semibold hover:duration-300 hover:text-red-600' onClick={offCanvas} />
+
+                        
                     </div>
 
+                    {/* ecomus logo */}
                     <div className='text-center pl-4 max-md:p-0 '>
                         <NavLink to='/'>
                             <img src={Logo} alt="" className='h-4 sm:h-auto' />
@@ -37,6 +63,7 @@ const Navbar = () => {
 
                     </div>
 
+                    {/* Nav list */}
                     <ul className='flex gap-4 font-semibold text-lg max-lg:hidden'>
                         <li> <NavLink to='/'>Home</NavLink></li>
                         <li> <NavLink to='/shop'>Shop</NavLink></li>
@@ -47,7 +74,8 @@ const Navbar = () => {
 
                     </ul>
 
-                    <div className='flex gap-1 md:gap-3 mr-5 md:mr-8 text-lg *:*:duration-300 '>
+                    {/* icon */}
+                    <div className='flex gap-1 md:gap-3 mr-10 md:mr-12 lg:mr-14 xl:mr-16 text-lg *:*:duration-300 '>
                         <Link><IoSearch className='hover:text-red-600' /></Link>
                         <Link><FiUser className=' max-md:hidden hover:text-red-600' /></Link>
                         <Link><FaRegHeart className=' max-md:hidden hover:text-red-600' /></Link>
