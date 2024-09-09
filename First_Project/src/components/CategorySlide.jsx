@@ -37,7 +37,7 @@ const CategorySlide = () => {
 
         <div className='flex-col overflow-x-hidden px-8 mt-10'>
             <div>
-                    
+
             </div>
 
             <div className='flex overflow-x-hidden px-8'>
@@ -78,9 +78,9 @@ function CategoryDetails({ details }) {
                 <div className="absolute inset-0 bg-gradient-to-t to-transparent"></div>
                 <div className="absolute bottom-4 left-4 text-left">
 
-                    <button className="mt-2 inline-flex cursor-pointer items-center text-sm font-semibold text-black bg-white p-2 gap-2 hover:bg-black hover:text-white">
+                    <button className="mt-2 inline-flex cursor-pointer items-center text-sm hover:text-smfont-semibold text-black bg-white p-2 gap-2 hover:bg-black hover:text-white">
                         {details.btnDescription}
-                        <MdArrowOutward className='' />
+                        <MdArrowOutward className='text-[0px] ' />
                     </button>
                 </div>
             </div>

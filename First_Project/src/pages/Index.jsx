@@ -72,7 +72,7 @@ export const Sliders = () => {
                 {/* Slider Section End */}
 
                 {/* Marquee Section Start */}
-                <div className='bg-yellow-200 flex text-nowrap overflow-x-hidden marqueeContainer lg:py-3'>
+                <div className='bg-yellow-100 flex text-nowrap overflow-x-hidden marqueeContainer lg:py-3'>
                     <div className='py-2 flex marqueeDiv max-md:py-3 max-md:text-lg'>
                         <p className='flex gap-2 items-center text-xl px-4'> <HiBolt /> <span> Spring Clearance Event: Save Up to 70% </span></p>
                         <p className='flex gap-2 items-center text-xl px-4'> <HiBolt /> <span> Spring Clearance Event: Save Up to 70% </span></p>
