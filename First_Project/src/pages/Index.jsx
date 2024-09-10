@@ -6,7 +6,7 @@ import slider_img1 from '../assets/asset28.jpeg'
 import slider_img2 from '../assets/asset_27.jpeg'
 import slider_img3 from '../assets/asset29.jpeg'
 import CategorySlide from '../components/CategorySlide';
-
+import Bestseller from '../components/Bestseller';
 // icon section
 
 import { IoIosArrowForward } from "react-icons/io";
@@ -110,6 +110,7 @@ const Index = () => {
             <main>
                 <Sliders />
                 <CategorySlide />
+                <Bestseller />
             </main>
         </div>
 
