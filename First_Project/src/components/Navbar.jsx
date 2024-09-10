@@ -19,14 +19,6 @@ import {
 
 
 
-const offCanvas = () => {
-    console.log("offcanvas");
-    return (
-        <>
-            <h1 className='bg-black' >hello</h1>
-        </>
-    )
-}
 
 const Navbar = () => {
     return (

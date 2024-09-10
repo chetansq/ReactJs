@@ -26,7 +26,7 @@ let HeroSlideDetails = [
         image: slider_img2
     },
     {
-        tittle: ["Simply", "Style"],
+        tittle: ["Glsmorous", "Glam"],
         description: "From casual to formal, we've got you covered",
         image: slider_img3
     }
