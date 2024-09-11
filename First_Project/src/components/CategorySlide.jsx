@@ -63,7 +63,7 @@ const CategorySlide = () => {
                             <>
                                 <div>
 
-                                    <CategoryDetails details={current} />
+                                    <CategoryDetails key={current} details={current} />
                                 </div>
                             </>
                         )
