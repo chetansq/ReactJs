@@ -31,7 +31,7 @@ const App = ({ children }) => {
           {children}
           <h1 className='text-white bg-red-700'>this is layout page</h1>
         </Layout>
-      </data.Provider>
+      </data.Provider> 
     </div>
   )
 }
