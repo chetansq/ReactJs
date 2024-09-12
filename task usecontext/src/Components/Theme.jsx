@@ -1,37 +1,44 @@
 import React from 'react'
-// import { useState } from 'react'
-import { createContext } from 'react'
+import { useState } from 'react'
 import Card1 from './Card1';
+import Button from './Button';
+import { createContext } from 'react';
 
-export const BgChange1 = createContext();
-export const BgChange2 = createContext();
+
+export const ChangeTheme = createContext();
+export const ThemeChangeBtn = createContext();
 
 const Theme = () => {
 
-    // const [theme, settheme] = useState('bg-black');
+  const [themes, setTheme] = useState("bg-white");
+  const [count, setcount] = useState(true);
+  console.log('themes', themes);
 
-    // const setBgTheme = () => {
+  const setNewTheme = () => {
+    if (count === true) {
+      setTheme('bg-black');
+      setcount(false);
+    }
+    else {
+      setTheme('bg-white');
+      setcount(true);
+    }
+  }
 
-    //     settheme('bg-white')
+  return (
+    <div>
 
-    // }
-    let colors1 = 'bg-black'
-    let colors2 = 'bg-white'
-    return (
-        <div >
+      <ChangeTheme.Provider value={themes}>
+        <ThemeChangeBtn.Provider value={setNewTheme}>
 
-            <bgChange1.Provider value={colors1} >
-                <bgChange2.Provider value={colors2}>
+          <Card1 />
+        </ThemeChangeBtn.Provider>
+      </ChangeTheme.Provider>
 
-                    <Card1 />
-                </bgChange2.Provider>
-            </bgChange1.Provider>
 
-            {/* `<button onClick={setBgTheme}>
-                <Button name={theme} />
-            </button>` */}
-        </div>
-    )
+
+    </div>
+  )
 }
 
 export default Theme
