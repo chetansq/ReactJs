@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
 import Card1 from './Card1';
-import Button from './Button';
 import { createContext } from 'react';
 
 
@@ -10,35 +9,36 @@ export const ThemeChangeBtn = createContext();
 
 const Theme = () => {
 
-  const [themes, setTheme] = useState("bg-white");
-  const [count, setcount] = useState(true);
-  console.log('themes', themes);
+    const [themes, setTheme] = useState("bg-white");
+    const [textthemes, setTextTheme] = useState("text-black");
 
-  const setNewTheme = () => {
-    if (count === true) {
-      setTheme('bg-black');
-      setcount(false);
+    const [count, setcount] = useState(true);
+    // console.log('themes', themes);
+
+    const setNewTheme = () => {
+        if (count === true) {
+            setTheme('bg-black');
+            setTextTheme('text-white')
+            setcount(false);
+        }
+        else {
+            setTheme('bg-white');
+            setTextTheme('text-black')
+            setcount(true);
+        }
     }
-    else {
-      setTheme('bg-white');
-      setcount(true);
-    }
-  }
 
-  return (
-    <div>
+    return (
+        <div>
 
-      <ChangeTheme.Provider value={themes}>
-        <ThemeChangeBtn.Provider value={setNewTheme}>
+            <ChangeTheme.Provider value={[themes, textthemes]}>
+                <ThemeChangeBtn.Provider value={setNewTheme}>
+                    <Card1 />
+                </ThemeChangeBtn.Provider>
+            </ChangeTheme.Provider>
 
-          <Card1 />
-        </ThemeChangeBtn.Provider>
-      </ChangeTheme.Provider>
-
-
-
-    </div>
-  )
+        </div>
+    )
 }
 
 export default Theme
