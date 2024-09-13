@@ -33,61 +33,73 @@ import { BiDollar } from "react-icons/bi";
 
 const seller = [
     {
+        id: 1,
         seller_img: seller_img_1,
         description: "Ribbed Tank Top",
         price: 16.95
     },
     {
+        id: 2,
         seller_img: seller_img_2,
         description: "Ribbed modal T-shirt",
         price: 18.95
     },
     {
+        id: 3,
         seller_img: seller_img_3,
         description: "Oversized Printed T-shirt",
         price: "10.00"
     },
     {
+        id: 4,
         seller_img: seller_img_4,
         description: "Oversized Printed T-shirt",
         price: 16.95
     },
     {
+        id: 5,
         seller_img: seller_img_5,
         description: "V-neck linen T-shirt",
         price: 114.95
     },
     {
+        id: 6,
         seller_img: seller_img_6,
         description: "Loose Fit Sweatshirt",
         price: "10.00"
     },
     {
+        id: 7,
         seller_img: seller_img_7,
         description: "Regular Fit Oxford Shirt",
         price: "10.00"
     },
     {
+        id: 8,
         seller_img: seller_img_8,
         description: "Loose Fit Hoodie",
         price: 9.95
     },
     {
+        id: 9,
         seller_img: seller_img_9,
         description: "Patterned scarf",
         price: 14.95
     },
     {
+        id: 10,
         seller_img: seller_img_10,
         description: "Slim Fit Fine-knit Turtleneck Sweater",
         price: 18.95
     },
     {
+        id: 11,
         seller_img: seller_img_11,
         description: "Slim Fit Fine-knit Turtleneck Sweater",
         price: 18.95
     },
     {
+        id: 12,
         seller_img: seller_img_12,
         description: "Slim Fit Fine-knit Turtleneck Sweater",
         price: 18.95
@@ -109,11 +121,11 @@ const Bestseller = () => {
                         seller.map((current) => {
 
                             return (
-                               
-                                   
-                                        <SellerDetails key={current} details={current} />
-                                   
-                               
+
+
+                                <SellerDetails key={current.id} details={current} />
+
+
                             )
                         }
                         )

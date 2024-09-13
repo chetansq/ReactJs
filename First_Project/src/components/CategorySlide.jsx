@@ -14,7 +14,8 @@ import { IoIosArrowBack } from "react-icons/io";
 import { MdArrowOutward } from "react-icons/md";
 
 let Category = [
-    { id: 1,
+    {
+        id: 1,
         categoryImage: categoryImg1,
         btnDescription: 'Clothing'
     },
@@ -28,11 +29,13 @@ let Category = [
         categoryImage: categoryImg3,
         btnDescription: 'Bags'
     },
-    { id: 4,
+    {
+        id: 4,
         categoryImage: categoryImg4,
         btnDescription: 'Fashion'
     },
-    { id: 5,
+    {
+        id: 5,
         categoryImage: categoryImg5,
         btnDescription: 'Accessories'
     }
@@ -58,26 +61,16 @@ const CategorySlide = () => {
 
             <div className='relative'>
 
-
-
                 <div className='absolute z-10 right-0 flex  flex-col justify-end gap-4  bg-white  rounded-md h-[100%] w-1/6 border-2 p-3'>
                     <p className=' text-2xl '>Discover all new items</p>
                     <a href="#" className='text-2xl border-2 p-1 rounded-full hover:bg-black hover:text-white duration-300 hover:duration-300 w-fit '>  <MdArrowOutward className=' ' /></a>
-
                 </div>
 
-
                 <div className='flex overflow-x-hidden  gap-8 '>
-
                     {
                         Category.map((current) => {
-
                             return (
-                               
-                                   
-                                        <CategoryDetails key={current.id} details={current} />
-                                   
-                               
+                                <CategoryDetails key={current.id} details={current} />
                             )
                         }
                         )
@@ -89,7 +82,6 @@ const CategorySlide = () => {
 }
 
 export default CategorySlide
-
 
 
 function CategoryDetails({ details }) {

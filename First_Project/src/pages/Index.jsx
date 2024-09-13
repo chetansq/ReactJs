@@ -4,6 +4,7 @@ import React from 'react'
 import CategorySlide from '../components/CategorySlide';
 import Bestseller from '../components/Bestseller';
 import { Sliders } from '../components/Slider';
+import ShopTheLook from '../components/ShopTheLook';
 
 const Index = () => {
     console.log("index page");
@@ -13,6 +14,7 @@ const Index = () => {
                 <Sliders />
                 <CategorySlide />
                 <Bestseller />
+                <ShopTheLook />
             </main>
         </div>
 

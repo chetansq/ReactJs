@@ -58,13 +58,14 @@ export const Sliders = () => {
 
                         <Slider {...settings} className='HeroSlider'>
 
-                            {HeroSlideDetails.map((current, index) => {
-                                return (
+                            {
+                                HeroSlideDetails.map((current, index) => {
+                                    return (
 
-                                    <HeroSlide key={current.id} details={current} />
+                                        <HeroSlide key={current.id} details={current} />
 
-                                );
-                            })}
+                                    );
+                                })}
 
                         </Slider>
                     </div>
