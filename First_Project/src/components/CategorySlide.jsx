@@ -14,23 +14,25 @@ import { IoIosArrowBack } from "react-icons/io";
 import { MdArrowOutward } from "react-icons/md";
 
 let Category = [
-    {
+    { id: 1,
         categoryImage: categoryImg1,
         btnDescription: 'Clothing'
     },
     {
+        id: 2,
         categoryImage: categoryImg2,
         btnDescription: 'Sunglasses'
     },
     {
+        id: 3,
         categoryImage: categoryImg3,
         btnDescription: 'Bags'
     },
-    {
+    { id: 4,
         categoryImage: categoryImg4,
         btnDescription: 'Fashion'
     },
-    {
+    { id: 5,
         categoryImage: categoryImg5,
         btnDescription: 'Accessories'
     }
@@ -71,11 +73,11 @@ const CategorySlide = () => {
                         Category.map((current) => {
 
                             return (
-                                <>
-                                    <div>
-                                        <CategoryDetails key={current} details={current} />
-                                    </div>
-                                </>
+                               
+                                   
+                                        <CategoryDetails key={current.id} details={current} />
+                                   
+                               
                             )
                         }
                         )

@@ -109,11 +109,11 @@ const Bestseller = () => {
                         seller.map((current) => {
 
                             return (
-                                <>
-                                    <div className=''>
+                               
+                                   
                                         <SellerDetails key={current} details={current} />
-                                    </div>
-                                </>
+                                   
+                               
                             )
                         }
                         )

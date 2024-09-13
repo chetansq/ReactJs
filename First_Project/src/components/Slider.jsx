@@ -60,9 +60,9 @@ export const Sliders = () => {
 
                             {HeroSlideDetails.map((current, index) => {
                                 return (
-                                    <>
-                                        <HeroSlide key={current.id} details={current} />
-                                    </>
+
+                                    <HeroSlide key={current.id} details={current} />
+
                                 );
                             })}
 
