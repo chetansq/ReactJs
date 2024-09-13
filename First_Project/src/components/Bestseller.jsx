@@ -97,22 +97,20 @@ const seller = [
 
 const Bestseller = () => {
     return (
-        <div>
-            <div className='flex flex-col justify-center items-center w-full my-8'>
+        <div className='my-16'>
+            <div className='flex flex-col justify-center items-center w-full my-10'>
                 <p className='text-4xl font-semibold mb-4'>Best Seller</p>
                 <p>Shop the Latest Styles: Stay ahead of the curve with our newest arrivals</p>
             </div>
 
             <div className='overflow-x-hidden'>
-                <div className='grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 py-5 px-10 '>
-
+                <div className='grid  grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 py-5 px-2 sm:px-4 md:px-6 lg:px-52  '>
                     {
                         seller.map((current) => {
 
                             return (
                                 <>
-                                    <div>
-
+                                    <div className=''>
                                         <SellerDetails key={current} details={current} />
                                     </div>
                                 </>
@@ -131,8 +129,8 @@ export default Bestseller
 function SellerDetails({ details }) {
 
     return (
-        <div className='relative h-[500px] w-[300px] rounded-md mt-5 m-auto '>
-            <div className="relative h-fit w-[300px] rounded-md overflow-hidden ">
+        <div className=' h-fit rounded-md mt-5 m-auto '>
+            <div className=" h-fit w-fit rounded-md overflow-hidden ">
                 <img
                     src={details.seller_img}
                     alt="AirMax Pro"
@@ -141,7 +139,7 @@ function SellerDetails({ details }) {
                 />
             </div>
 
-            <div className="absolute bottom-2 left-0 text-left">
+            <div className="  text-left">
 
                 <p className='hover:text-red-500 hover:duration-300 my-1' >{details.description}</p>
                 <p className='flex items-center' ><BiDollar />{details.price}</p>

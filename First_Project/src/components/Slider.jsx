@@ -13,16 +13,19 @@ import { HiBolt } from "react-icons/hi2";
 
 let HeroSlideDetails = [
     {
+        id: 1,
         tittle: ["Glamorous", "Glam"],
         description: "From casual to formal, we've got you covered",
         image: slider_img1
     },
     {
+        id: 2,
         tittle: ["Simply", "Style"],
         description: "From casual to formal, we've got you covered",
         image: slider_img2
     },
     {
+        id: 3,
         tittle: ["Glsmorous", "Glam"],
         description: "From casual to formal, we've got you covered",
         image: slider_img3
@@ -58,7 +61,7 @@ export const Sliders = () => {
                             {HeroSlideDetails.map((current, index) => {
                                 return (
                                     <>
-                                        <HeroSlide details={current} />
+                                        <HeroSlide key={current.id} details={current} />
                                     </>
                                 );
                             })}

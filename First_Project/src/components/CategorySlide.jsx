@@ -42,34 +42,45 @@ const CategorySlide = () => {
 
     return (
 
-        <div className='flex-col overflow-x-hidden px-8 my-10  '>
+        <div className='flex-col overflow-x-hidden px-8 my-10 '>
 
             <div className='flex items-center mb-4 gap-5' >
                 <div className='flex gap-2'>
 
-                    <a href="" className='border-2 p-1 rounded-full hover:bg-black hover:text-white duration-300 hover:duration-300' ><IoIosArrowBack /></a>
-                    <a href="" className='border-2 p-1 rounded-full hover:bg-black hover:text-white duration-300 hover:duration-300'> <IoIosArrowForward /></a>
+                    <a href="#" className='text-lg border-2 p-1 rounded-full hover:bg-black hover:text-white duration-300 hover:duration-300' ><IoIosArrowBack /></a>
+                    <a href="#" className='text-lg border-2 p-1 rounded-full hover:bg-black hover:text-white duration-300 hover:duration-300'> <IoIosArrowForward /></a>
 
                 </div>
                 <p className='font-semibold'>SHOP BY CATEGORIES</p>
             </div>
 
-            <div className='flex overflow-x-hidden  gap-8 '>
+            <div className='relative'>
 
-                {
-                    Category.map((current) => {
 
-                        return (
-                            <>
-                                <div>
 
-                                    <CategoryDetails key={current} details={current} />
-                                </div>
-                            </>
+                <div className='absolute z-10 right-0 flex  flex-col justify-end gap-4  bg-white  rounded-md h-[100%] w-1/6 border-2 p-3'>
+                    <p className=' text-2xl '>Discover all new items</p>
+                    <a href="#" className='text-2xl border-2 p-1 rounded-full hover:bg-black hover:text-white duration-300 hover:duration-300 w-fit '>  <MdArrowOutward className=' ' /></a>
+
+                </div>
+
+
+                <div className='flex overflow-x-hidden  gap-8 '>
+
+                    {
+                        Category.map((current) => {
+
+                            return (
+                                <>
+                                    <div>
+                                        <CategoryDetails key={current} details={current} />
+                                    </div>
+                                </>
+                            )
+                        }
                         )
                     }
-                    )
-                }
+                </div>
             </div>
         </div>
     )
@@ -83,7 +94,7 @@ function CategoryDetails({ details }) {
 
     return (
         <div>
-            <div className="relative h-[400px] w-[300px] rounded-md overflow-hidden ">
+            <div className="relative  rounded-md overflow-hidden ">
                 <img
                     src={details.categoryImage}
                     alt="AirMax Pro"
