@@ -17,9 +17,6 @@ import {
 } from "@/components/ui/sheet"
 
 
-
-
-
 const Navbar = () => {
     return (
         <div>
@@ -31,7 +28,7 @@ const Navbar = () => {
                     {/* nav icon */}
                     <div className='relative lg:hidden flex items-center'>
                         <Sheet>
-                            <SheetTrigger><RiMenu2Fill className='text-xl font-semibold hover:duration-300 hover:text-red-600'/></SheetTrigger>
+                            <SheetTrigger><RiMenu2Fill className='text-xl font-semibold hover:duration-300 hover:text-red-600' /></SheetTrigger>
                             <SheetContent side={"left"}>
                                 <SheetHeader>
                                     <SheetTitle>Are you absolutely sure?</SheetTitle>
@@ -42,9 +39,6 @@ const Navbar = () => {
                                 </SheetHeader>
                             </SheetContent>
                         </Sheet>
-
-
-                        
                     </div>
 
                     {/* ecomus logo */}
@@ -78,9 +72,7 @@ const Navbar = () => {
 
             {/* Header Section End */}
 
-            {/* Main Section Start */}
 
-            {/* Main Section End */}
             <Outlet />
         </div>
     )
