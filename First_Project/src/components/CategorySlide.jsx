@@ -54,14 +54,41 @@ let Category = [
 const CategorySlide = () => {
     const settings = {
         dots: false,
-        infinite: true,
+        infinite: false,
         slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: false,
         speed: 500,
         autoplaySpeed: 3000,
-        cssEase: "linear"
+        cssEase: "linear",
+        responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: false,
+          dots: false
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
     }
+    
 
     return (
 

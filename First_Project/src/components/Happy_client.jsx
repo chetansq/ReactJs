@@ -1,0 +1,194 @@
+import React from 'react'
+import Slider from 'react-slick'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+// images
+import small_img_1 from '../assets/asset_small_67.png'
+import small_img_2 from '../assets/asset_small_71.png'
+import small_img_3 from '../assets/asset_small_68.png'
+import small_img_4 from '../assets/asset_small_70.png'
+
+
+// icon 
+
+import { MdStar } from "react-icons/md";
+import { BiDollar } from "react-icons/bi";
+// import { MdArrowOutward } from "react-icons/md";
+import { FaArrowAltCircleRight } from "react-icons/fa";
+
+let Clients = [
+    {
+        id: 1,
+        tittle: 'Best Online Fashion Site',
+        description: 'I always find something stylish and affordable on this web fashion site',
+        name: 'Robert smith',
+        from: 'USA',
+        img: small_img_1,
+        img_desc: 'Jersey thong body',
+        price: 105.95
+
+    },
+    {
+        id: 2,
+        tittle: 'Greate Selection and Quality',
+        description: 'I love the variety of styles and the high-quality clothing on this web fashion site',
+        name: 'Allen Lyn',
+        from: 'France',
+        img: small_img_2,
+        img_desc: 'Cotton jersey top',
+        price: 7.95
+
+    },
+    {
+        id: 3,
+        tittle: 'Best Online Fashion Site',
+        description: 'I finally founsd a web fashion site with stylish and flattering options in my size.',
+        name: 'Peter Rope',
+        from: 'USA',
+        img: small_img_3,
+        img_desc: 'Ribbed modal T-shirt',
+        price: 18.95
+
+    },
+    {
+        id: 4,
+        tittle: 'Greate Selection and Quality',
+        description: 'I love the variety of styles and the high-quality clothing on this web fashion site',
+        name: 'Hellen Ase',
+        from: 'Japan',
+        img: small_img_4,
+        img_desc: 'Customer from Japan',
+        price: 16.95
+
+    },
+]
+
+const Happy_client = () => {
+
+    let settings = {
+        dots: false,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        initialSlide: 0,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    initialSlide: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    };
+    return (
+        <div>
+            <div className='mx-7 h-screen happy-slider'>
+                <div className='flex flex-col justify-center items-center w-full my-10'>
+                    <p className='text-4xl font-semibold mb-4'>Happy Clients</p>
+                    <p>Hear what they say about us</p>
+                </div>
+                <div className="slider-container mx-4 ">
+                    <Slider {...settings}>
+                        {
+                            Clients.map((current, index) => {
+                                return (
+
+                                    <Clients_slider key={current.id} details={current} />
+
+                                );
+                            })}
+
+                    </Slider>
+                </div>
+
+                <div>
+
+                </div>
+            </div>
+        </div>
+    );
+}
+
+
+export default Happy_client
+
+function Clients_slider({ details }) {
+    return (
+
+        <div className='mx-5'>
+
+
+            <div className='border flex flex-col gap-4 p-9  rounded-xl w-fit'>
+                {/* review star icon section */}
+
+                <div className='flex gap-3 text-xl'>
+                    <MdStar className=' text-orange-500 ' />
+                    <MdStar className=' text-orange-500 ' />
+                    <MdStar className=' text-orange-500 ' />
+                    <MdStar className=' text-orange-500 ' />
+                    <MdStar className=' text-orange-500 ' />
+                </div>
+
+
+                <p className='font-semibold'>{details.tittle}</p>
+                <p>"{details.description}"</p>
+
+                <div>
+                    <p className='font-semibold text-sm'>{details.name}</p>
+                    <p>Customer from {details.from}</p>
+                </div>
+                <hr />
+                <div className="flex max-w-2xl  items-center rounded-md   md:flex-row w-full">
+                    <div className='flex max-w-2xl flex-col items-center   md:flex-row w-full'>
+
+                        <div className="h-fit w-fit ">
+                            <a href="">
+                                <img
+                                    src={details.img}
+                                    alt="Laptop"
+                                    className="h-full w-full  object-cover"
+                                />
+                            </a>
+                        </div>
+
+                        <div className="p-4 w-full">
+                            <a href='' className="inline-flex items-center text-md hover:text-red-600 duration-300 hover:duration-300">
+                                {details.img_desc}
+                            </a>
+                            <p className="mt-3 text-sm text-gray-900 flex items-center font-bold">
+                                <BiDollar /> {details.price}
+                            </p>
+
+                        </div>
+                    </div>
+                    <div className={`relative z-0 h-[10px] w-[10px]  after:absolute  after:content-[${<FaArrowAltCircleRight />}] after:h-[20px] after:w-[20px] after:text-xl after:text-red-600  after:block `}>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    )
+}
+
