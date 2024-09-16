@@ -30,7 +30,7 @@ let Clients = [
     {
         id: 1,
         tittle: 'Best Online Fashion Site',
-        description: 'I always find something stylish and affordable on this web fashion site',
+        description: 'I always find something stylish and affordable on this web fashion site .',
         name: 'Robert smith',
         from: 'USA',
         img: small_img_1,
@@ -211,7 +211,7 @@ const Happy_client = () => {
         ]
     };
     return (
-        <div className='h-screen'>
+        <div className='h-fit'>
             <div className='mx-auto h-full happy-slider w-[80%] my-auto'>
                 <div className='flex flex-col justify-center items-center w-full my-10'>
                     <p className='text-4xl font-semibold mb-4'>Happy Clients</p>
@@ -250,7 +250,6 @@ function Clients_slider({ details }) {
 
         <div className='mx-4 '>
 
-
             <div className='border flex flex-col gap-4 p-9  rounded-xl '>
                 {/* review star icon section */}
 
@@ -271,8 +270,8 @@ function Clients_slider({ details }) {
                     <p>Customer from {details.from}</p>
                 </div>
                 <hr />
-                <div className="flex max-w-2xl  items-center rounded-md  text-nowrap  md:flex-row w-full">
-                    <div className='flex max-w-2xl flex-col items-center  text-nowrap md:flex-row w-full'>
+                <div className="flex max-w-2xl  items-center rounded-md text-nowrap  md:flex-row w-full">
+                    <div className='flex max-w-2xl flex-col items-center text-nowrap md:flex-row w-full'>
 
                         <div className="h-fit w-fit ">
                             <a href="">
@@ -295,7 +294,7 @@ function Clients_slider({ details }) {
                         </div>
                     </div>
                     <div className={`relative z-0 h-[10px] w-[10px]  after:absolute  after:content-[${<FaArrowAltCircleRight />}] after:h-[20px] after:w-[20px] after:text-xl after:text-red-600  after:block `}>
-
+                        f
                     </div>
                 </div>
 

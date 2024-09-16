@@ -7,7 +7,7 @@ import GirlImg_2 from '../assets/asset_69.jpeg'
 const ShopTheLook = () => {
     return (
         <div className=' h-fit pt-4 flex flex-col justify-between py-20'>
-            <div className='flex flex-col items-center gap-3 mb-8'>
+            <div className='flex flex-col items-center gap-3 mb-8 px-4'>
                 <p className='text-[43px] '>Shop the look</p>
                 <p>Inspire and let yourself be inspired, from one unique fashion to another.</p>
 

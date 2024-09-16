@@ -6,6 +6,7 @@ import Bestseller from '../components/Bestseller';
 import { Sliders } from '../components/Slider';
 import ShopTheLook from '../components/ShopTheLook';
 import Happy_client from '../components/Happy_client';
+import Shop_gram from '../components/Shop_gram';
 
 const Index = () => {
     console.log("index page");
@@ -17,6 +18,7 @@ const Index = () => {
                 <Bestseller />
                 <ShopTheLook />
                 <Happy_client />
+                <Shop_gram />
             </main>
         </div>
 
