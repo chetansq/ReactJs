@@ -62,43 +62,43 @@ const CategorySlide = () => {
         autoplaySpeed: 3000,
         cssEase: "linear",
         responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: false,
-          dots: false
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: false,
+                    dots: false
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    initialSlide: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
     }
-    
+
 
     return (
 
         <div className='flex flex-col overflow-x-hidden px-8 my-10 '>
 
             <div className='flex items-center mb-4 gap-5' >
-                <div className='flex gap-2'>
+                <div className='flex gap-2 categoryArrow'>
 
-                    <a href="#" className='text-lg border-2 p-1 rounded-full hover:bg-black hover:text-white duration-300 hover:duration-300' ><IoIosArrowBack /></a>
-                    <a href="#" className='text-lg border-2 p-1 rounded-full hover:bg-black hover:text-white duration-300 hover:duration-300'> <IoIosArrowForward /></a>
+                    <a href="#" className='text-lg border-2 p-1 rounded-full hover:bg-black hover:text-white duration-300 hover:duration-300 slick-prev' ><IoIosArrowBack /></a>
+                    <a href="#" className='text-lg border-2 p-1 rounded-full hover:bg-black hover:text-white duration-300 hover:duration-300 slick-next'> <IoIosArrowForward /></a>
 
                 </div>
                 <p className='font-semibold'>SHOP BY CATEGORIES</p>
@@ -160,9 +160,9 @@ function CategoryDetails({ details }) {
                 {/* <div className="absolute inset-0 bg-gradient-to-t to-transparent"></div> */}
                 <div className="absolute bottom-4 left-4 text-left">
 
-                    <button className="mt-2 inline-flex cursor-pointer items-center text-sm hover:text-smfont-semibold text-black bg-white p-2 gap-2 hover:bg-black hover:text-white">
+                    <button className="mt-2 inline-flex cursor-pointer items-center text-sm hover:text-smfont-semibold text-black bg-white p-2 gap-2 hover:bg-black hover:text-white group">
                         {details.btnDescription}
-                        <MdArrowOutward className=' ' />
+                        <MdArrowOutward className='hidden group-hover:block  ' />
                     </button>
                 </div>
             </div>

@@ -53,7 +53,7 @@ export const Sliders = () => {
 
                 {/* Slider Section Start */}
                 <div className="slider-container">
-                    <div className="slider-container  overflow-x-hidden h-[50%] ">
+                    <div className="slider-container  overflow-x-hidden h-[50%] main-slider-container ">
 
 
                         <Slider {...settings} className='HeroSlider'>

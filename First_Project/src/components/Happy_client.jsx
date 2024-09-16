@@ -9,6 +9,15 @@ import small_img_2 from '../assets/asset_small_71.png'
 import small_img_3 from '../assets/asset_small_68.png'
 import small_img_4 from '../assets/asset_small_70.png'
 
+// icon images
+
+import icon_img_1 from '../assets/asset_icon_72.png'
+import icon_img_2 from '../assets/asset_icon_73.png'
+import icon_img_3 from '../assets/asset_icon_74.png'
+import icon_img_4 from '../assets/asset_icon_75.png'
+import icon_img_5 from '../assets/asset_icon_76.png'
+import icon_img_6 from '../assets/asset_icon_77.png'
+
 
 // icon 
 
@@ -64,6 +73,107 @@ let Clients = [
     },
 ]
 
+
+let icons_images = [
+    {
+        id: 1,
+        icon_img: icon_img_1
+    },
+    {
+        id: 2,
+        icon_img: icon_img_2
+    },
+    {
+        id: 3,
+        icon_img: icon_img_3
+    },
+    {
+        id: 4,
+        icon_img: icon_img_4
+    },
+    {
+        id: 5,
+        icon_img: icon_img_5
+    },
+    {
+        id: 6,
+        icon_img: icon_img_6
+    }
+]
+
+const icon_img_slider = () => {
+
+    let settings = {
+        dots: false,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 6,
+        slidesToScroll: 3,
+        initialSlide: 0,
+        arrow: false,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    initialSlide: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    };
+
+    return (
+        <>
+            <div className="slider-container mx-4 ">
+                <Slider {...settings}>
+                    {
+                        icons_images.map((currents, index) => {
+                            return (
+
+                                <Image_sliders key={currents.id} detail={currents} />
+
+                            );
+                        })
+
+                    }
+
+                </Slider>
+            </div>
+        </>
+    )
+}
+
+function Image_sliders({ detail }) {
+
+    return (
+
+        <div className='border flex items-center justify-center p-4 '>
+
+            <img src={detail.icon_img} alt="" className='  ' />
+        </div>
+
+
+    )
+}
+
+
 const Happy_client = () => {
 
     let settings = {
@@ -101,8 +211,8 @@ const Happy_client = () => {
         ]
     };
     return (
-        <div>
-            <div className='mx-7 h-screen happy-slider'>
+        <div className='h-screen'>
+            <div className='mx-auto h-full happy-slider w-[80%] my-auto'>
                 <div className='flex flex-col justify-center items-center w-full my-10'>
                     <p className='text-4xl font-semibold mb-4'>Happy Clients</p>
                     <p>Hear what they say about us</p>
@@ -119,11 +229,14 @@ const Happy_client = () => {
                             })}
 
                     </Slider>
-                </div>
-
-                <div>
 
                 </div>
+                <div className='my-20 h-full '>
+                    {
+                        icon_img_slider()
+                    }
+                </div>
+
             </div>
         </div>
     );
@@ -135,10 +248,10 @@ export default Happy_client
 function Clients_slider({ details }) {
     return (
 
-        <div className='mx-5'>
+        <div className='mx-4 '>
 
 
-            <div className='border flex flex-col gap-4 p-9  rounded-xl w-fit'>
+            <div className='border flex flex-col gap-4 p-9  rounded-xl '>
                 {/* review star icon section */}
 
                 <div className='flex gap-3 text-xl'>
@@ -158,8 +271,8 @@ function Clients_slider({ details }) {
                     <p>Customer from {details.from}</p>
                 </div>
                 <hr />
-                <div className="flex max-w-2xl  items-center rounded-md   md:flex-row w-full">
-                    <div className='flex max-w-2xl flex-col items-center   md:flex-row w-full'>
+                <div className="flex max-w-2xl  items-center rounded-md  text-nowrap  md:flex-row w-full">
+                    <div className='flex max-w-2xl flex-col items-center  text-nowrap md:flex-row w-full'>
 
                         <div className="h-fit w-fit ">
                             <a href="">
