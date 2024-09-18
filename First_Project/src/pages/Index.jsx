@@ -7,6 +7,7 @@ import { Sliders } from '../components/Slider';
 import ShopTheLook from '../components/ShopTheLook';
 import Happy_client from '../components/Happy_client';
 import Shop_gram from '../components/Shop_gram';
+import FlatIconBox from '../components/FlatIconBox';
 
 const Index = () => {
     console.log("index page");
@@ -19,6 +20,7 @@ const Index = () => {
                 <ShopTheLook />
                 <Happy_client />
                 <Shop_gram />
+                <FlatIconBox />
             </main>
         </div>
 
