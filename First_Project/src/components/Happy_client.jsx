@@ -108,12 +108,12 @@ const icon_img_slider = () => {
         infinite: false,
         speed: 500,
         slidesToShow: 6,
-        slidesToScroll: 3,
+        slidesToScroll: 0,
         initialSlide: 0,
-        arrow: false,
+        arrows: false,
         responsive: [
             {
-                breakpoint: 1024,
+                breakpoint: 1149,
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 3,
@@ -140,8 +140,10 @@ const icon_img_slider = () => {
     };
 
     return (
-        <>
-            <div className="slider-container mx-4 ">
+        <>  <div className='imgSlider'>
+
+
+            <div className="slider-container mx-4 overflow-hidden ">
                 <Slider {...settings}>
                     {
                         icons_images.map((currents, index) => {
@@ -156,6 +158,7 @@ const icon_img_slider = () => {
 
                 </Slider>
             </div>
+        </div>
         </>
     )
 }
@@ -166,7 +169,7 @@ function Image_sliders({ detail }) {
 
         <div className='border flex items-center justify-center p-4 '>
 
-            <img src={detail.icon_img} alt="" className='  ' />
+            <img src={detail.icon_img} alt="" className='' />
         </div>
 
 
@@ -185,9 +188,9 @@ const Happy_client = () => {
         initialSlide: 0,
         responsive: [
             {
-                breakpoint: 1024,
+                breakpoint: 1149,
                 settings: {
-                    slidesToShow: 3,
+                    slidesToShow: 2,
                     slidesToScroll: 3,
                     infinite: true,
                     dots: true
@@ -211,9 +214,9 @@ const Happy_client = () => {
         ]
     };
     return (
-        <div className='h-fit'>
-            <div className='mx-auto h-full happy-slider w-[80%] my-auto'>
-                <div className='flex flex-col justify-center items-center w-full my-10'>
+        <div className='h-fit px-4'>
+            <div className=' h-full happy-slider  my-auto'>
+                <div className='flex flex-col justify-center items-center w-full mb-10'>
                     <p className='text-4xl font-semibold mb-4'>Happy Clients</p>
                     <p>Hear what they say about us</p>
                 </div>
@@ -248,7 +251,7 @@ export default Happy_client
 function Clients_slider({ details }) {
     return (
 
-        <div className='mx-4 '>
+        <div className='mx-4 group '>
 
             <div className='border flex flex-col gap-4 p-9  rounded-xl '>
                 {/* review star icon section */}
@@ -293,7 +296,7 @@ function Clients_slider({ details }) {
 
                         </div>
                     </div>
-                    <div className={`relative z-0 h-[10px] w-[10px]  after:absolute  after:content-[${<FaArrowAltCircleRight />}] after:h-[20px] after:w-[20px] after:text-xl after:text-red-600  after:block `}>
+                    <div className={`relative z-0 h-[10px] w-[10px]   after:absolute  after:content-[${<FaArrowAltCircleRight />}] after:h-[20px] after:w-[20px] after:text-xl after:text-red-600  after:block `}>
                         f
                     </div>
                 </div>

@@ -168,9 +168,9 @@
     color: black;
   }
 
-  .slick-next:before {
+  /* .slick-next:before {
     display: none;
-  }
+  } */
 
 }
 
