@@ -8,6 +8,7 @@ import ShopTheLook from '../components/ShopTheLook';
 import Happy_client from '../components/Happy_client';
 import Shop_gram from '../components/Shop_gram';
 import FlatIconBox from '../components/FlatIconBox';
+import  Footers  from '../components/Footer';
 
 const Index = () => {
     console.log("index page");
@@ -21,6 +22,7 @@ const Index = () => {
                 <Happy_client />
                 <Shop_gram />
                 <FlatIconBox />
+                <Footers />
             </main>
         </div>
 
