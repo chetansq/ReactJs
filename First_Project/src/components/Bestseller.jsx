@@ -109,14 +109,11 @@ const seller = [
 
 const Bestseller = () => {
     return (
-        <div className='my-16'>
-            <div className='flex flex-col justify-center items-center w-full my-10'>
-                <p className='text-4xl font-semibold mb-4'>Best Seller</p>
-                <p>Shop the Latest Styles: Stay ahead of the curve with our newest arrivals</p>
-            </div>
+        <div className='my-4'>
+
 
             <div className='overflow-x-hidden'>
-                <div className='grid  grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 py-5 px-2 sm:px-4 md:px-6 lg:px-52  '>
+                <div className='grid  grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 py-5 px-2 sm:px-4 md:px-6 lg:px-12   '>
                     {
                         seller.map((current) => {
 
@@ -134,7 +131,7 @@ const Bestseller = () => {
             <div className='flex justify-center my-4 '>
                 <button className='border border-black rounded py-3 px-7 hover:duration-300 font-semibold duration-300 hover:text-[red] hover:border-[red] text-sm'>Load More</button>
             </div>
-            
+
         </div>
     )
 }

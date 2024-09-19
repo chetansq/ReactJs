@@ -6,6 +6,8 @@ import Blog from '../pages/Blog'
 import Buynow from '../pages/Buynow'
 import Pages from '../pages/Pages'
 import Navbar from '../components/Navbar'
+import AboutUs from '../pages/AboutUs'
+
 import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom'
 
 const navList = createBrowserRouter([
@@ -26,8 +28,15 @@ const navList = createBrowserRouter([
                 element: <Products />
             },
             {
-                path: '/page',
-                element: <Pages />
+                path: '/about',
+                element: <AboutUs />,
+                // children: [
+
+                //     {
+                //         path: '/page/about',
+                //         element: <AboutUs />
+                //     }
+                // ]
             },
             {
                 path: '/blog',

@@ -23,7 +23,7 @@ const Navbar = () => {
             {/* Header Section Start */}
 
             <header className='relative w-[100%]'>
-                <nav className=' absolute w-full z-10 flex justify-between mx-3 lg:mx-0 py-5 items-center bg-transparent bg-contain'>
+                <nav className='  w-full  flex justify-between mx-3 lg:mx-0 py-5 items-center  '>
 
                     {/* nav icon */}
                     <div className='relative lg:hidden flex items-center'>
@@ -53,8 +53,11 @@ const Navbar = () => {
                     <ul className='flex gap-4 font-semibold text-lg max-lg:hidden'>
                         <li> <NavLink to='/'>Home</NavLink></li>
                         <li> <NavLink to='/shop'>Shop</NavLink></li>
-                        <li> <NavLink to='product'>Products</NavLink></li>
-                        <li > <NavLink to='page' className='flex place-items-center gap-1'>Pages <IoIosArrowDown className='relative top-0.5' /></NavLink> </li>
+                        <li> <NavLink to='/product'>Products</NavLink></li>
+                        {/* <li onClick={page_details()}> <NavLink to='/page' className='flex place-items-center gap-1' >Pages <IoIosArrowDown className='relative top-0.5' /></NavLink> */}
+                        <li className=''> <NavLink to='/about'>about</NavLink></li>
+
+                        {/* </li> */}
                         <li> <NavLink to='blog'>Blog</NavLink></li>
                         <li> <NavLink to='buynow'>Buy now</NavLink></li>
 
@@ -79,3 +82,16 @@ const Navbar = () => {
 }
 
 export default Navbar
+
+
+// function page_details() {
+//     return (
+        
+//             <div className='h-1/2 bg-black'>
+//                 <ul>
+                   
+//                 </ul>
+//             </div>
+        
+//     )
+// }

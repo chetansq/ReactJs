@@ -95,7 +95,7 @@ const CategorySlide = () => {
         <div className='flex flex-col overflow-x-hidden px-8 my-10 '>
 
             <div className='flex items-center mb-4 gap-5' >
-                <div className='flex gap-2 categoryArrow'>
+                <div className='flex gap-2 '>
 
                     <a href="#" className='text-lg border-2 p-1 rounded-full hover:bg-black hover:text-white duration-300 hover:duration-300 slick-prev' ><IoIosArrowBack /></a>
                     <a href="#" className='text-lg border-2 p-1 rounded-full hover:bg-black hover:text-white duration-300 hover:duration-300 slick-next'> <IoIosArrowForward /></a>

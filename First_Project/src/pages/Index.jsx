@@ -8,7 +8,7 @@ import ShopTheLook from '../components/ShopTheLook';
 import Happy_client from '../components/Happy_client';
 import Shop_gram from '../components/Shop_gram';
 import FlatIconBox from '../components/FlatIconBox';
-import  Footers  from '../components/Footer';
+import Footers from '../components/Footer';
 
 const Index = () => {
     console.log("index page");
@@ -17,7 +17,13 @@ const Index = () => {
             <main>
                 <Sliders />
                 <CategorySlide />
-                <Bestseller />
+                <div>
+                    <div className='flex flex-col justify-center items-center w-full my-10'>
+                        <p className='text-4xl font-semibold mb-4'>Best Seller</p>
+                        <p>Shop the Latest Styles: Stay ahead of the curve with our newest arrivals</p>
+                    </div>
+                    <Bestseller />
+                </div>
                 <ShopTheLook />
                 <Happy_client />
                 <Shop_gram />
