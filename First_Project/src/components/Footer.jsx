@@ -3,12 +3,12 @@ import { CiFacebook } from "react-icons/ci";
 import { FaInstagram, FaTiktok, FaPinterestSquare } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
-// import Eur from "../../assets/european-union.png";
-// import img1 from "../assets/asset_82.png";
-// import img2 from "../assets/asset_82.png";
-// import img3 from "../assets/asset_83.png";
-// import img4 from "../assets/asset_84.png";
-// import visa from "../assets/visa.png";
+
+import visa from '../assets/asset_83.png'
+import paypal from "../assets/asset_84.png";
+import masterCard from '../assets/asset_85.png'
+import amex from '../assets/asset_86.png'
+import dinnerclub from '../assets/asset_87.png'
 
 
 // import logo from "../../assets/logo-white.svg";
@@ -53,7 +53,7 @@ export default function Footers() {
                     </div>
                     <div className="mb-6 md:mb-0">
                         <h3 className="mb-3 text-[18px]">Help</h3>
-                        <ul className="list-none flex flex-col gap-1 text-[14px] duration-1000 text-[#a1a1a1]">
+                        <ul className="list-none flex flex-col gap-1 text-[14px] duration-1000 text-black">
                             <li>
                                 <a
                                     href="#"
@@ -117,7 +117,7 @@ export default function Footers() {
                 <div className=" flex flex-col lg:flex-row sm:gap-14 lg:gap-0 sm:w-[50%] justify-around ">
                     <div className="mb-6 md:mb-0">
                         <h3 className="text-[18px]">About us</h3>
-                        <ul className="list-none flex flex-col gap-3 text-[14px] mt-2 text-[#a1a1a1]">
+                        <ul className="list-none flex flex-col gap-3 text-[14px] mt-2 text-black">
                             <li>
                                 <a
                                     href="#"
@@ -154,7 +154,7 @@ export default function Footers() {
                     </div>
                     <div className="mb-6 md:mb-0 flex flex-col lg:w-[40%]  w-full gap-5">
                         <h3 className="font-semibold">Sign Up for Email</h3>
-                        <p className="text-[14px] w-[60%]  text-[#a1a1a1]">
+                        <p className="text-[14px] w-[60%]  text-black">
                             Sign up to get first dibs on new arrivals, sales, exclusive
                             content, events and more!
                         </p>
@@ -180,20 +180,21 @@ export default function Footers() {
                 </div>
             </div>
             <p className="h-[1px] bg-white w-[80%] mt-10"></p>
-            {/* devloper name */}
-
-            <div className="flex sm:flex-row flex-col items-center gap-3 sm:gap-0 sm:justify-between w-full py-6">
+            <div className="flex sm:flex-row flex-col items-center gap-3 sm:gap-0 sm:justify-between w-3/4 py-6">
                 <p className="text-[14px] text-[#545454] ">
                     © 2024 Ecomus Store. All Rights Reserved
                 </p>
-                {/* <div className="flex gap-2">
+                <div className="flex gap-2">
                     <img src={visa} alt="" />
-                    <img src={img1} alt="" />
-                    <img src={img2} alt="" />
-                    <img src={img3} alt="" />
-                    <img src={img4} alt="" />
-                </div> */}
+                    <img src={paypal} alt="" />
+                    <img src={masterCard} alt="" />
+                    <img src={amex} alt="" />
+                    <img src={dinnerclub} alt="" />
+                 
+                </div>
             </div>
+            {/* devloper name */}
+
         </footer>
     );
 }
