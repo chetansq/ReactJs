@@ -78,7 +78,7 @@ const social_detail = [
 
 export default function Footers() {
     return (
-        <footer className="bg-white text-black flex  h-auto   items-center flex-col p-8 w-screen border-t-2">
+        <footer className="bg-white text-black flex  h-auto   items-center flex-col p-8 w-screen border-t-2 mt-14">
             <div className="container  flex flex-col md:flex-row h-full w-screen justify-between">
                 <div className=" flex flex-col lg:flex-row sm:w-[50%] lg:w-1/2 justify-between sm:gap-4 ">
                     <div className="mb-6 md:mb-0  lg:w-[50%] flex flex-col gap-3 text-[14px] text-black">
