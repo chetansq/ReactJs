@@ -66,12 +66,15 @@ const AboutUs = () => {
                         <div className='grid grid-cols-1 lg:grid-cols-2 justify-center items-center  gap-5 my-20 py-4'>
                             <div>
 
-                                <img src={collection_img1} alt="" className="bg-white h-full w-full  relative after:absolute after:content-['hello']  after:bg-black after:h-full after:w-full after:translate-x-[100%] hover:after:-translate-x-[150%] after:duration-1000  after:z-0  " />
+                                <img src={collection_img1} alt="" className="bg-white h-full w-full  relative after:absolute after:content-['hello'] after:bg-black after:h-full after:w-full after:translate-x-[100%] hover:after:-translate-x-[150%] after:duration-1000  after:z-0  " />
 
                             </div>
                             <div className='flex justify-center items-center'>
+
                                 <div className='flex flex-col justify-center gap-4 w-[80%]'>
-                                    <p className="text-3xl bg-white w-full h-full relative after:absolute after:content-['world'] after:text-white after:bg-black after:h-full after:w-full after:translate-x-[100%] hover:after:-translate-x-[150%] after:duration-1000  after:z-0 ">Established - 1995</p>
+
+                                    <p className="text-3xl">Established - 1995</p>
+
                                     <p className='text-sm w-ful'>Ecomus was founded in 1995 by Jane Smith, a fashion lover with a
                                         passion for timeless style. Jane had always been drawn to classic
                                         pieces that could be worn season after season, and she believed that
@@ -98,6 +101,7 @@ const AboutUs = () => {
                                         are values that are at the heart of our brand.</p>
                                 </div>
                             </div>
+
                             <div className='relative'>
                                 <div className=' relative w-[70%] hover:z-50'>
                                     <img src={collection_img2} alt="" className=' w-full ' />
