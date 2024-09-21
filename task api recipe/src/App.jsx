@@ -7,8 +7,8 @@ import Recipes from './Recipes'
 const App = () => {
   return (
     <div>
-      {/* <Recipe_api /> */}
-      <Recipes />
+      <Recipe_api />
+      {/* <Recipes /> */}
     </div>
   )
 }
