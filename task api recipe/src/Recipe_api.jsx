@@ -3,6 +3,8 @@ import React, { useState, useEffect, useRef } from 'react'
 const Recipe_api = () => {
 
     const [data, setData] = useState([]);
+    
+    
     let fetch_data = useRef([])
     useEffect(
         () => {
@@ -15,11 +17,23 @@ const Recipe_api = () => {
     )
     console.log('fetch_data ', fetch_data);
 
+    const search_data = () => {
+        const input_ = document.getElementById('input_data').value.toLowerCase();
+        console.log("input value =>", input_);
+
+        const tittle_name = document.getElementById('tittle_').innerText.toLowerCase();
+        console.log('recipe name =>', tittle_name);
+
+
+        setData(input_ == tittle_name ? console.log('match') : console.log('not match')
+        );
+    }
+
     return (
         <div className='mx-5 my-4'>
             <div className='flex justify-center items-center gap-4 p-4 border my-3'>
-                <input type="search" placeholder='search item...' className='text-black border p-2' id='input' />
-                <button className='bg-red-300 p-2  hover:bg-black hover:text-white' onClick={search_()}>SEARCH</button>
+                <input type="search" placeholder='search item...' className='text-black border p-2' id='input_data' onChange={search_data} />
+                {/* <button className='bg-red-300 p-2  hover:bg-black hover:text-white' onClick={search_data} >SEARCH</button> */}
             </div>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5  justify-center items-center gap-5 overflow-hidden  '>
                 {
@@ -34,7 +48,7 @@ const Recipe_api = () => {
             </div>
 
             <div>
-               
+
             </div>
 
         </div>
@@ -54,7 +68,7 @@ function Recipes({ details }) {
                         <img src={details.image} alt="" className='w-full h-full object-cover' />
                     </div>
                     <div className='flex-nowrap'>
-                        <p className='text-xl font-bold my-2'>{details.name}</p>
+                        <p className='text-xl font-bold my-2' id='tittle_'>{details.name}</p>
                         <p> {details.ingredients[0]}</p>
                         <p> {details.instructions[3]}</p>
                     </div>
