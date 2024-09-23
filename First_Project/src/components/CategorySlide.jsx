@@ -63,9 +63,9 @@ const CategorySlide = () => {
         cssEase: "linear",
         responsive: [
             {
-                breakpoint: 1024,
+                breakpoint: 1149,
                 settings: {
-                    slidesToShow: 3,
+                    slidesToShow: 2,
                     slidesToScroll: 3,
                     infinite: false,
                     dots: false
@@ -89,33 +89,33 @@ const CategorySlide = () => {
         ]
     }
 
-
     return (
 
-        <div className='flex flex-col overflow-x-hidden px-8 my-10 '>
+        <div className='flex flex-col overflow-x-hidden px-4 lg:px-8 my-10 lg:mx-5 '>
 
-            <div className='flex items-center mb-4 gap-5' >
+            <div className='flex gap-4 items-center mb-4 my-10' >
                 <div className='flex gap-2 '>
 
-                    <a href="#" className='text-lg border-2 p-1 rounded-full hover:bg-black hover:text-white duration-300 hover:duration-300 slick-prev' ><IoIosArrowBack /></a>
-                    <a href="#" className='text-lg border-2 p-1 rounded-full hover:bg-black hover:text-white duration-300 hover:duration-300 slick-next'> <IoIosArrowForward /></a>
+                    <p className='text-lg border-2 p-1 rounded-full hover:bg-black hover:text-white duration-300 hover:duration-300 category_prev ' ><IoIosArrowBack /></p>
+                    <p className='text-lg border-2 p-1 rounded-full hover:bg-black hover:text-white duration-300 hover:duration-300 '> <IoIosArrowForward /></p>
 
                 </div>
+
                 <p className='font-semibold'>SHOP BY CATEGORIES</p>
             </div>
 
-            <div className='h-[50%] w-[90%] '>
+            <div className='h-[50%] w-[100%] flex flex-col md:flex-row  gap-2 '>
 
                 {/* <div className='absolute z-10 right-0 flex  flex-col justify-end gap-4  bg-white  rounded-md h-full w-1/6 border-2 p-3'>
                     <p className=' text-2xl '>Discover all new items</p>
                     <a href="#" className='text-2xl border-2 p-1 rounded-full hover:bg-black hover:text-white duration-300 hover:duration-300 w-fit '>  <MdArrowOutward className=' ' /></a>
                 </div> */}
 
-                <div className='category-slider '>
+                <div className='category-slider w-full lg:w-[75%]'>
 
                     <div className="slider-container">
 
-                        <Slider {...settings} className='HeroSlider'>
+                        <Slider {...settings} className='categoryArrows'>
 
                             {
                                 Category.map((current, index) => {
@@ -138,6 +138,14 @@ const CategorySlide = () => {
                         )
                     } */}
                 </div>
+
+                <div className='lg:w-[25%] border border-black rounded-lg p-3 lg:p-8 gap-5 flex  lg:flex-col justify-between  lg:justify-end mx-5'>
+                    <p className='text-xl md:text-2xl'>Discovery all new items</p>
+                    <a href="" className='border border-black rounded-full w-fit h-fit p-2 sm:p-3 lg:p-4  text-black bg-white  hover:bg-black hover:text-white'>
+
+                        <MdArrowOutward />
+                    </a>
+                </div>
             </div>
         </div>
     )
@@ -150,19 +158,19 @@ function CategoryDetails({ details }) {
 
     return (
         <div>
-            <div className="relative rounded-md  h-fit mx-5">
+            <div className="relative rounded-md overflow-hidden  h-fit mx-5 group">
                 <img
                     src={details.categoryImage}
                     alt="AirMax Pro"
-                    className="z-0 h-full w-full rounded-md object-cover hover:scale-105 duration-1000 hover:duration-1000 "
+                    className="z-0 h-full w-full rounded-md object-cover group-hover:scale-105 duration-1000 hover:duration-1000 "
 
                 />
                 {/* <div className="absolute inset-0 bg-gradient-to-t to-transparent"></div> */}
                 <div className="absolute bottom-4 left-4 text-left">
 
-                    <button className="mt-2 inline-flex cursor-pointer items-center text-sm hover:text-smfont-semibold text-black bg-white p-2 gap-2 hover:bg-black hover:text-white group">
+                    <button className="mt-2 inline-flex cursor-pointer items-center text-sm hover:text-smfont-semibold text-black bg-white p-2 gap-2 hover:bg-black hover:text-white group/btn">
                         {details.btnDescription}
-                        <MdArrowOutward className='hidden group-hover:block  ' />
+                        <MdArrowOutward className='hidden group-hover/btn:block  ' />
                     </button>
                 </div>
             </div>

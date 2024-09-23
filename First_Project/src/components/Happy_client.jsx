@@ -122,7 +122,7 @@ const icon_img_slider = () => {
                 }
             },
             {
-                breakpoint: 600,
+                breakpoint: 768,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2,
@@ -197,11 +197,11 @@ const Happy_client = () => {
                 }
             },
             {
-                breakpoint: 600,
+                breakpoint: 768,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 1,
                     slidesToScroll: 2,
-                    initialSlide: 2
+                    initialSlide: 1
                 }
             },
             {
@@ -274,7 +274,7 @@ function Clients_slider({ details }) {
                 </div>
                 <hr />
                 <div className="flex max-w-2xl  items-center rounded-md text-nowrap  md:flex-row w-full">
-                    <div className='flex max-w-2xl flex-col items-center text-nowrap md:flex-row w-full'>
+                    <div className='flex max-w-2xl  items-center text-nowrap md:flex-row w-full'>
 
                         <div className="h-fit w-fit ">
                             <a href="">

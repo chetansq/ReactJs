@@ -43,7 +43,7 @@ const FlatIconBox = () => {
                     })
                 }
 
-                
+
             </div>
 
         </div>

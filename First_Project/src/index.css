@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* @layer base {
   :root {
         --background: 0 0% 100%;
@@ -68,8 +67,6 @@
     }
 } */
 
-
-
 @layer base {
   * {
     box-sizing: border-box;
@@ -79,9 +76,8 @@
 
   body,
   html {
-    @apply w-screen overflow-x-hidden
+    @apply w-screen overflow-x-hidden;
   }
-
 
   /* ::-webkit-scrollbar-track{
     background-color: red;
@@ -97,28 +93,22 @@
   }
 }
 
-
 @layer components {
-
   .marqueeDiv {
-
     animation: marquees 30s linear infinite;
   }
 
   @keyframes marquees {
-
     0% {
       transform: translateX(0%);
     }
 
     100% {
-
       transform: translateX(-100%);
     }
   }
 
-
-  .marqueeContainer:hover>div {
+  .marqueeContainer:hover > div {
     animation-play-state: paused;
   }
 
@@ -127,34 +117,39 @@
     bottom: 30px;
   }
 
-
-
   .HeroSlider .slick-dots li button:before {
     font-size: small;
   }
 
   .BgGradient {
-
-    background-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+    background-image: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.25),
+      transparent
+    );
   }
 
   .BgGradientMove {
-
-    background-image: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0), transparent);
+    background-image: linear-gradient(
+      90deg,
+      transparent,
+      rgba(0, 0, 0, 0),
+      transparent
+    );
   }
 
   /* .category-slider  */
-
 
   /* .slick-arrow .slick-prev:before {
     color:black !important
   } */
 
   .happy-slider .slick-prev:before {
-    font-family: 'slick';
+    font-family: "slick";
     font-size: 20px;
     line-height: 1;
-    opacity: .75;
+    opacity: 0.75;
     color: black;
     background-color: white;
     -webkit-font-smoothing: antialiased;
@@ -162,41 +157,54 @@
   }
 
   .happy-slider .slick-next:before {
-    font-family: 'slick';
+    font-family: "slick";
     font-size: 20px;
     line-height: 1;
-    opacity: .75;
+    opacity: 0.75;
     color: black;
     background-color: white;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-
-  .categoryArrow .slick-prev:before,
-  .slick-next:before {
-
-    font-family: 'slick';
-    font-size: 20px;
+  
+  /* .categoryArrows .slick-prev:before {
+    position: absolute;
+    top: -34vh;
+    font-size: 30px;
     line-height: 1;
-    opacity: .75;
+    opacity: 1;
     color: white;
     background-color: black;
+    border-radius: 50%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
   }
+  
+  .categoryArrows .slick-next:before {
+    position: absolute;
+    top: -34vh;
+    left: -78vw;
+    font-size: 30px;
+    line-height: 1;
+    opacity: 1;
+    color: white;
+    background-color: black;
+    border-radius: 50%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  } */
 
-  .slider-containers>.categoryArrow {
-    /* display: none !important; */
+  /* .slider-containers>.categoryArrow {
     color: black;
-  }
+  } */
+  /* display: none !important; */
 
   /* .slick-next:before {
     display: none;
   } */
 
-  @media (1024>=width <1149px) {
+  @media (1024 >= width <= 1149px) {
     .flatIconBox {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -206,9 +214,7 @@
   /* .image_transfer{
     position: relative;
   } */
-
 }
-
 
 @layer base {
   :root {
