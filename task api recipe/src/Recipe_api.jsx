@@ -5,13 +5,13 @@ const Recipe_api = () => {
     const [data, setData] = useState([]);
     const [input, setInput] = useState();
 
+
     let fetch_data = useRef([])
 
     // for data show
-
     useEffect(
         () => {
-            fetch('https://dummyjson.com/recipes').then((res) => res.json()).then((res) => {
+            fetch('https://dummyjson.com/recipes?limit=50').then((res) => res.json()).then((res) => {
                 setData(res.recipes);
                 fetch_data.current.push(...res.recipes);
                 console.log(res.recipes)
@@ -27,6 +27,7 @@ const Recipe_api = () => {
             console.log(res.recipes)
         })
     }, [input])
+
 
     const search_data = () => {
         let input_ = document.getElementById('input_data').value.toLowerCase();
@@ -52,6 +53,10 @@ const Recipe_api = () => {
                         )
                     })
                 }
+            </div>
+
+            <div>
+
             </div>
 
         </div>
