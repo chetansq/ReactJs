@@ -3,9 +3,12 @@ import React, { useState, useEffect, useRef } from 'react'
 const Recipe_api = () => {
 
     const [data, setData] = useState([]);
-    
-    
+    const [input, setInput] = useState();
+
     let fetch_data = useRef([])
+
+    // for data show
+
     useEffect(
         () => {
             fetch('https://dummyjson.com/recipes').then((res) => res.json()).then((res) => {
@@ -15,18 +18,19 @@ const Recipe_api = () => {
             })
         }, []
     )
-    console.log('fetch_data ', fetch_data);
+
+    // for data search
+
+    useEffect(() => {
+        fetch(`https://dummyjson.com/recipes/search?q=${input}`).then((res) => res.json()).then((res) => {
+            setData(res.recipes);
+            console.log(res.recipes)
+        })
+    }, [input])
 
     const search_data = () => {
-        const input_ = document.getElementById('input_data').value.toLowerCase();
-        console.log("input value =>", input_);
-
-        const tittle_name = document.getElementById('tittle_').innerText.toLowerCase();
-        console.log('recipe name =>', tittle_name);
-
-
-        setData(input_ == tittle_name ? console.log('match') : console.log('not match')
-        );
+        let input_ = document.getElementById('input_data').value.toLowerCase();
+        setInput(input_);
     }
 
     return (
@@ -34,6 +38,9 @@ const Recipe_api = () => {
             <div className='flex justify-center items-center gap-4 p-4 border my-3'>
                 <input type="search" placeholder='search item...' className='text-black border p-2' id='input_data' onChange={search_data} />
                 {/* <button className='bg-red-300 p-2  hover:bg-black hover:text-white' onClick={search_data} >SEARCH</button> */}
+            </div>
+            <div className='text-center'>
+                <p className='text-4xl my-10 '>Recipes</p>
             </div>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5  justify-center items-center gap-5 overflow-hidden  '>
                 {
@@ -45,10 +52,6 @@ const Recipe_api = () => {
                         )
                     })
                 }
-            </div>
-
-            <div>
-
             </div>
 
         </div>
