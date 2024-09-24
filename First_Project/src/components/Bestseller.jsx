@@ -113,7 +113,7 @@ const Bestseller = () => {
 
 
             <div className='overflow-x-hidden'>
-                <div className='grid  grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 py-5 px-2 sm:px-4 md:px-6 lg:px-12   '>
+                <div className='grid  grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-8  px-[14px] sm:px-4 md:px-6 lg:px-12   '>
                     {
                         seller.map((current) => {
 
@@ -151,7 +151,7 @@ function SellerDetails({ details }) {
                 />
             </div>
 
-            <div className="  text-left">
+            <div className="  text-left text-sm md:text-base">
 
                 <p className='hover:text-red-500 hover:duration-300 my-1' >{details.description}</p>
                 <p className='flex items-center' ><BiDollar />{details.price}</p>

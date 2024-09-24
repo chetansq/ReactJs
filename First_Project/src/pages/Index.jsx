@@ -18,9 +18,9 @@ const Index = () => {
                 <Sliders />
                 <CategorySlide />
                 <div>
-                    <div className='flex flex-col justify-center items-center w-full my-10'>
+                    <div className='flex flex-col justify-center items-center w-full my-5 md:my-10 text-center '>
                         <p className='text-4xl font-semibold mb-4'>Best Seller</p>
-                        <p>Shop the Latest Styles: Stay ahead of the curve with our newest arrivals</p>
+                        <p className='text-sm md:text-base px-5'>Shop the Latest Styles: Stay ahead of the curve with our newest arrivals</p>
                     </div>
                     <Bestseller />
                 </div>

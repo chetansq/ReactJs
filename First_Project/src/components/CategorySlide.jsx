@@ -82,7 +82,7 @@ const CategorySlide = () => {
             {
                 breakpoint: 480,
                 settings: {
-                    slidesToShow: 1,
+                    slidesToShow: 2,
                     slidesToScroll: 1
                 }
             }
@@ -91,7 +91,7 @@ const CategorySlide = () => {
 
     return (
 
-        <div className='flex flex-col overflow-x-hidden px-4 lg:px-8 my-10 lg:mx-5 '>
+        <div className='flex flex-col overflow-x-hidden px-4 lg:px-8  md:my-10 lg:mx-5 '>
 
             <div className='flex gap-4 items-center mb-4 my-10' >
                 <div className='flex gap-2 '>
@@ -139,7 +139,7 @@ const CategorySlide = () => {
                     } */}
                 </div>
 
-                <div className='lg:w-[25%] border border-black rounded-lg p-3 lg:p-8 gap-5 flex  lg:flex-col justify-between  lg:justify-end mx-5'>
+                <div className='lg:w-[25%] border border-black rounded-lg p-3 lg:p-8 gap-5 flex  lg:flex-col justify-between  lg:justify-end md:mx-5'>
                     <p className='text-xl md:text-2xl'>Discovery all new items</p>
                     <a href="" className='border border-black rounded-full w-fit h-fit p-2 sm:p-3 lg:p-4  text-black bg-white  hover:bg-black hover:text-white'>
 
@@ -158,7 +158,7 @@ function CategoryDetails({ details }) {
 
     return (
         <div>
-            <div className="relative rounded-md overflow-hidden  h-fit mx-5 group">
+            <div className="relative rounded-md overflow-hidden  h-fit mx-1 md:mx-5 group">
                 <img
                     src={details.categoryImage}
                     alt="AirMax Pro"

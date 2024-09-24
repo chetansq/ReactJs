@@ -114,7 +114,7 @@ function HeroSlide({ details }) {
     return (
         <>
             <div>
-                <div style={{ backgroundImage: `url(${details.image})` }} className=' h-screen bg-cover bg-center relative'>
+                <div style={{ backgroundImage: `url(${details.image})` }} className='min-h-[450px] h-full lg:h-screen bg-cover bg-center relative'>
                     <div className='absolute z-40 text-black left-[10%] top-[28%] lg:top-[45%] px-4 lg:px-20 m-auto w-full object-cover overflow-hidden'>
                         <p className='text-4xl md:text-5xl lg:text-[80px]'>{details.tittle[0]} <br /> {details.tittle[1]}</p>
                         <p className='md:text-xl my-4 mb-6 max-md:hidden'>{details.description}</p>

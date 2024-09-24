@@ -49,7 +49,14 @@ const Shop_gram = () => {
         slidesToShow: 6,
         slidesToScroll: 3,
         initialSlide: 0,
-        arrow: false,
+
+        draggable: false,
+        swipe: false,
+        swipeToSlide: false,
+        touchMove: false,
+        draggable: false,
+        accessibility: false,
+        arrows: false,
         responsive: [
             {
                 breakpoint: 1149,
@@ -57,7 +64,14 @@ const Shop_gram = () => {
                     slidesToShow: 3,
                     slidesToScroll: 3,
                     infinite: false,
-                    dots: false
+                    dots: false,
+                    draggable: true,
+                    swipe: true,
+                    swipeToSlide: true,
+                    touchMove: true,
+                    draggable: true,
+                    accessibility: true,
+                    arrows: true,
                 }
             },
             {

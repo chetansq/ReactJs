@@ -201,7 +201,8 @@ const Happy_client = () => {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 2,
-                    initialSlide: 1
+                    initialSlide: 1,
+
                 }
             },
             {
