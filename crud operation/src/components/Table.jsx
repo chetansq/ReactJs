@@ -99,7 +99,7 @@ const Table = () => {
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody className='w-fit f'>
+                    <tbody className='w-fit '>
 
                         {
                             tableDetails.map((current) => {
