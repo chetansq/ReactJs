@@ -34,6 +34,12 @@
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
+
+
+  .scroll_bar .scroll-to-top{
+   
+    border: 2px solid black;
+  }
 }
 
 .card {
