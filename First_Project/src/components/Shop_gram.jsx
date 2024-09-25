@@ -50,7 +50,6 @@ const Shop_gram = () => {
         slidesToScroll: 3,
         initialSlide: 0,
 
-        draggable: false,
         swipe: false,
         swipeToSlide: false,
         touchMove: false,
@@ -65,7 +64,7 @@ const Shop_gram = () => {
                     slidesToScroll: 3,
                     infinite: false,
                     dots: false,
-                    draggable: true,
+
                     swipe: true,
                     swipeToSlide: true,
                     touchMove: true,

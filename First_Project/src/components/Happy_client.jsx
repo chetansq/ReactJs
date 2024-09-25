@@ -110,6 +110,13 @@ const icon_img_slider = () => {
         slidesToShow: 6,
         slidesToScroll: 0,
         initialSlide: 0,
+
+        draggable: false,
+        swipe: false,
+        swipeToSlide: false,
+        touchMove: false,
+        draggable: false,
+        accessibility: false,
         arrows: false,
         responsive: [
             {
@@ -118,7 +125,13 @@ const icon_img_slider = () => {
                     slidesToShow: 3,
                     slidesToScroll: 3,
                     infinite: true,
-                    dots: true
+                    dots: true,
+                    swipe: true,
+                    swipeToSlide: true,
+                    touchMove: true,
+                    draggable: true,
+                    accessibility: true,
+                    arrows: true,
                 }
             },
             {

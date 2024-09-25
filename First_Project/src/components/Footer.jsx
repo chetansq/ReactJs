@@ -13,6 +13,8 @@ import paypal from "../assets/asset_84.png";
 import masterCard from '../assets/asset_85.png'
 import amex from '../assets/asset_86.png'
 import dinnerclub from '../assets/asset_87.png'
+import Logo from '../assets/logo.svg'
+
 
 const help_detail = [
     {
@@ -82,6 +84,11 @@ export default function Footers() {
             <div className="container  flex flex-col md:flex-row h-full w-screen justify-between">
                 <div className=" flex flex-col lg:flex-row sm:w-[50%] lg:w-1/2 justify-between sm:gap-4 ">
                     <div className="mb-6 md:mb-0  lg:w-[50%] flex flex-col gap-3 text-[14px] text-black">
+                        <a href="/">
+
+                            <img src={Logo} alt="" />
+                        </a>
+
                         {/* <img src={logo} alt="logo" className="mb-4 lg:w-full sm:w-1/2" /> */}
                         <p className="sm:w-10/12 lg:w-full w-full">
                             Address: 1234 Fashion Street, Suite 567 <br />New York, NY 10001
