@@ -5,6 +5,8 @@ import { MdOutlineDownloadForOffline } from "react-icons/md";
 import { TiPlus } from "react-icons/ti";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
+import { BiSolidEdit } from "react-icons/bi";
+import { MdOutlineDeleteForever } from "react-icons/md";
 
 
 const tableDetails = [
@@ -47,22 +49,24 @@ const tableDetails = [
 
 const Table = () => {
 
+
+
     return (
         <div className='mx-5'>
             <p className='text-4xl my-5'>Crud Operation</p>
 
             <hr />
 
-            <div className='m-5 flex justify-between'>
+            <div className='m-5 flex md:justify-between flex-col md:flex-row gap-4'>
 
-                <div className='flex items-center  w-[20%]'>
-                    <input type="text" placeholder='Type a name...' className='border  p-1  w-full' />
-                    <div className='bg-sky-700 p-2 text-white rounded-e-md hover:bg-white border-2 border-sky-700 hover:text-sky-700'>
-                        <FiSearch className='' />
+                <div className='w-full flex items-center  md:w-[20%]  '>
+                    <input type="text" placeholder='Type a name...' className='border  p-2  w-full' />
+                    <div className='bg-sky-700 p-3 text-white rounded-e-md hover:bg-white border-2 border-sky-700 hover:text-sky-700'>
+                        <FiSearch />
                     </div>
                 </div>
 
-                <div className='flex gap-3  items-center'>
+                <div className='flex gap-3  items-center justify-between '>
 
                     <button className='flex  items-center bg-red-500 text-white p-2 rounded-md  hover:bg-white border-2 border-red-500 hover:text-red-500'>
                         <TiDelete className='text-xl' />
@@ -84,7 +88,7 @@ const Table = () => {
 
 
             <div>
-                <table className="table-auto w-full " >
+                <table className="table-auto w-[95%] m-auto" >
                     <thead className='border-2 '>
                         <tr className='text-xl'>
                             <th><input type="checkbox" /></th>
@@ -95,20 +99,20 @@ const Table = () => {
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody className=''>
+                    <tbody className='w-fit'>
 
                         {
-                            tableDetails.map((current, index) => {
+                            tableDetails.map((current) => {
                                 return (
-                                    <tr className='text-center border-0 ' key={index}>
+                                    <tr className='text-center border-0  ' key={current.id}>
                                         <td><input type="checkbox" /></td>
                                         <td> {current.name} </td>
                                         <td> {current.desc} </td>
                                         <td> {current.price} </td>
                                         <td> {current.category} </td>
                                         <td className='flex justify-center gap-4 border'>
-                                            <button className='bg-cyan-500 py-1 px-4 rounded-md text-white border-2 border-cyan-500 hover:bg-white hover:text-cyan-700 '>Edit</button>
-                                            <button className='bg-red-500 py-1 px-4 rounded-md text-white hover:text-red-500 hover:bg-white border-2 border-red-500'> Delete</button>
+                                            <button className='flex items-center gap-1  bg-cyan-500 py-1 px-4 rounded-md text-white border-2 border-cyan-500 hover:bg-white hover:text-cyan-700 '><BiSolidEdit />Edit</button>
+                                            <button className='flex items-center gap-1  bg-red-500 py-1 px-4 rounded-md text-white hover:text-red-500 hover:bg-white border-2 border-red-500' ><MdOutlineDeleteForever /> Delete</button>
                                         </td>
                                     </tr>
 
@@ -135,8 +139,8 @@ const Table = () => {
                 </div>
 
                 <div className='flex items-center  w-[20%]'>
-                    <input type="text" placeholder='Type a name...' className='border  p-1.5  w-full' />
-                    <div className='bg-sky-700 p-2 px-2 text-white rounded-e-md'>
+                    <input type="text" placeholder='Type a name...' className='border  p-2  w-full' />
+                    <div className='bg-sky-700 p-2  text-white rounded-e-md  hover:bg-white border-2 border-sky-700 hover:text-sky-700'>
                         GO
                     </div>
                 </div>
