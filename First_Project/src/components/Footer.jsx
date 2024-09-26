@@ -81,7 +81,7 @@ const social_detail = [
 export default function Footers() {
     return (
         <footer className="bg-white text-black flex  h-auto   items-center flex-col px-8  w-screen border-t-2 mt-14">
-            <div className="container  flex flex-col md:flex-row h-full w-screen justify-between">
+            <div className="container  flex flex-col md:flex-row h-full w-screen justify-between mt-8">
                 <div className=" flex flex-col lg:flex-row sm:w-[50%] lg:w-1/2 justify-between sm:gap-4 ">
                     <div className="mb-6 md:mb-0  lg:w-[50%] flex flex-col gap-3 text-[14px] text-black">
                         <a href="/">
@@ -99,9 +99,15 @@ export default function Footers() {
                         <p className="text-muted-foreground">
                             Phone: <span>(212) 555-1234</span>
                         </p>
-                        <a href="#" className="text-primary hover:underline hover:text-[red] hover:duration-300 duration-300">
-                            Get direction
+
+
+                        <a href="#" className="flex items-center text-center text-primary  underline hover:underline hover:text-[red] hover:duration-300 duration-300">
+                            <span>
+                                Get direction
+                            </span>
+                            <MdOutlineArrowOutward className="text-center place-items-center" />
                         </a>
+
 
                         <div className="flex gap-3 sm:w-[500px]">
                             {
