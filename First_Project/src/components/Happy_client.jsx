@@ -118,6 +118,7 @@ const icon_img_slider = () => {
         draggable: false,
         accessibility: false,
         arrows: false,
+
         responsive: [
             {
                 breakpoint: 1149,
@@ -146,7 +147,8 @@ const icon_img_slider = () => {
                 breakpoint: 480,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 1
+                    slidesToScroll: 1,
+
                 }
             }
         ]
@@ -199,6 +201,7 @@ const Happy_client = () => {
         slidesToShow: 3,
         slidesToScroll: 3,
         initialSlide: 0,
+
         responsive: [
             {
                 breakpoint: 1149,
@@ -222,13 +225,14 @@ const Happy_client = () => {
                 breakpoint: 480,
                 settings: {
                     slidesToShow: 1,
-                    slidesToScroll: 1
+                    slidesToScroll: 1,
+                    arrows: false,
                 }
             }
         ]
     };
     return (
-        <div className='h-fit px-4'>
+        <div className='h-fit md:px-4'>
             <div className=' h-full happy-slider  my-auto'>
                 <div className='flex flex-col justify-center items-center w-full mb-10'>
                     <p className='text-4xl font-semibold mb-4'>Happy Clients</p>
@@ -265,9 +269,9 @@ export default Happy_client
 function Clients_slider({ details }) {
     return (
 
-        <div className='mx-4 group '>
+        <div className=' md:mx-4 group '>
 
-            <div className='border flex flex-col gap-4 p-9  rounded-xl '>
+            <div className='border flex flex-col gap-4 md:p-9 p-4  rounded-xl '>
                 {/* review star icon section */}
 
                 <div className='flex gap-3 text-xl'>
@@ -286,31 +290,33 @@ function Clients_slider({ details }) {
                     <p className='font-semibold text-sm'>{details.name}</p>
                     <p>Customer from {details.from}</p>
                 </div>
-                <hr />
-                <div className="flex max-w-2xl  items-center rounded-md text-nowrap  md:flex-row w-full">
-                    <div className='flex max-w-2xl  items-center text-nowrap md:flex-row w-full'>
 
-                        <div className="h-fit w-fit ">
-                            <a href="">
-                                <img
-                                    src={details.img}
-                                    alt="Laptop"
-                                    className="h-full w-full  object-cover"
-                                />
-                            </a>
-                        </div>
+                <div className=" ">
+                    <hr />
+                    <div className='flex items-center text-nowrap md:flex-row pt-4'>
 
-                        <div className="p-4 w-full">
+
+                        <a href="" className='h-full min-w-fit'>
+                            <img
+                                src={details.img}
+                                alt="Laptop"
+                                className='h-full w-fit'
+                            />
+                        </a>
+
+
+                        <div className="px-4 w-full">
                             <a href='' className="inline-flex items-center text-md hover:text-red-600 duration-300 hover:duration-300">
                                 {details.img_desc}
                             </a>
                             <p className="mt-3 text-sm text-gray-900 flex items-center font-bold">
                                 <BiDollar /> {details.price}
                             </p>
-
                         </div>
+
+
                     </div>
-                    <div className={`relative z-0 h-[10px] w-[10px]   after:absolute  after:content-['f'] after:h-[20px] after:w-[20px] after:text-xl after:text-red-600  after:block `}>
+                    <div className={`relative z-0 h-[10px] w-[10px]   after:absolute  after:content-[''] after:h-[20px] after:w-[20px] after:text-xl after:text-red-600  after:block `}>
                         {/* hathe karvanu chhe */}
                     </div>
                 </div>

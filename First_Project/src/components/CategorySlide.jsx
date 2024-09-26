@@ -56,12 +56,12 @@ const CategorySlide = () => {
     const slider = useRef(null);
 
     function handleNextButtonOnClick() {
-        console.log("button trigger")
+        // console.log("button trigger")
         slider.current.slickNext()
     }
     
     function handlePrevButtonOnClick() {
-        console.log("button trigger")
+        // console.log("button trigger")
         slider.current.slickPrev()
     }
 
