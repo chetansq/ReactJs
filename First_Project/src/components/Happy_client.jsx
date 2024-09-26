@@ -111,7 +111,7 @@ const icon_img_slider = () => {
         slidesToScroll: 0,
         initialSlide: 0,
 
-        draggable: false,
+
         swipe: false,
         swipeToSlide: false,
         touchMove: false,
@@ -310,8 +310,8 @@ function Clients_slider({ details }) {
 
                         </div>
                     </div>
-                    <div className={`relative z-0 h-[10px] w-[10px]   after:absolute  after:content-[${<FaArrowAltCircleRight />}] after:h-[20px] after:w-[20px] after:text-xl after:text-red-600  after:block `}>
-                        f
+                    <div className={`relative z-0 h-[10px] w-[10px]   after:absolute  after:content-['f'] after:h-[20px] after:w-[20px] after:text-xl after:text-red-600  after:block `}>
+                        {/* hathe karvanu chhe */}
                     </div>
                 </div>
 

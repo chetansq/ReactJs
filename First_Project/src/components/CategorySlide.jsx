@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 
 // slider
 
@@ -52,6 +52,19 @@ let Category = [
 ]
 
 const CategorySlide = () => {
+
+    const slider = useRef(null);
+
+    function handleNextButtonOnClick() {
+        console.log("button trigger")
+        slider.current.slickNext()
+    }
+    
+    function handlePrevButtonOnClick() {
+        console.log("button trigger")
+        slider.current.slickPrev()
+    }
+
     const settings = {
         dots: false,
         infinite: false,
@@ -96,8 +109,8 @@ const CategorySlide = () => {
             <div className='flex gap-4 items-center mb-4 my-10' >
                 <div className='flex gap-2 '>
 
-                    <p className='text-lg border-2 p-1 rounded-full hover:bg-black hover:text-white duration-300 hover:duration-300 category_prev ' ><IoIosArrowBack /></p>
-                    <p className='text-lg border-2 p-1 rounded-full hover:bg-black hover:text-white duration-300 hover:duration-300 '> <IoIosArrowForward /></p>
+                    <p className='text-lg border-2 p-1 rounded-full hover:bg-black hover:text-white duration-300 hover:duration-300 category_prev ' onClick={handlePrevButtonOnClick} ><IoIosArrowBack /></p>
+                    <p className='text-lg border-2 p-1 rounded-full hover:bg-black hover:text-white duration-300 hover:duration-300 ' onClick={handleNextButtonOnClick}> <IoIosArrowForward /></p>
 
                 </div>
 
@@ -115,7 +128,7 @@ const CategorySlide = () => {
 
                     <div className="slider-container">
 
-                        <Slider {...settings} className='categoryArrows'>
+                        <Slider {...settings} className='categoryArrows' ref={slider}>
 
                             {
                                 Category.map((current, index) => {

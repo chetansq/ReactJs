@@ -34,7 +34,7 @@ const FlatIconBox = () => {
     return (
         <div className='h-1/2 px-5 md:px-20 lg:px-32 px-auto' >
 
-            <div className='grid  sm:grid-cols-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-center items-center w-full h-full flatIconBox'>
+            <div className='grid  sm:grid-cols-2 grid-cols-1 lg-1150:grid-cols-4 gap-4 justify-center items-center w-full h-full flatIconBox '>
                 {
                     BoxDetails.map((current, index) => {
                         return (

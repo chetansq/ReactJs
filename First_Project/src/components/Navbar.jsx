@@ -33,8 +33,20 @@ const Navbar = () => {
                                 <SheetHeader>
                                     <SheetTitle>Are you absolutely sure?</SheetTitle>
                                     <SheetDescription>
-                                        This action cannot be undone. This will permanently delete your account
-                                        and remove your data from our servers.
+                                    
+                                        <Sheet className='flex gap-4 font-semibold text-lg max-lg:hidden'>
+                                        <li><NavLink to='/'>Home</NavLink></li>
+                        <li>  <NavLink to='/shop'>Shop</NavLink></li>
+                       <li> <NavLink to='/product'>Products</NavLink></li>
+                        {/* <li onClick={page_details()}> <NavLink to='/page' className='flex place-items-center gap-1' >Pages <IoIosArrowDown className='relative top-0.5' /></NavLink> */}
+                       <l i className=''> <NavLink to='/about'>About</NavLink></l>
+
+                        {/* </li> */}
+                        <li> <NavLink to='blog'>Blog</NavLink></li>
+                        <li><NavLink to='buynow'>Buy now</NavLink></li>
+
+                    </Sheet>
+                
                                     </SheetDescription>
                                 </SheetHeader>
                             </SheetContent>
