@@ -44,9 +44,21 @@
 
 .card {
   padding: 2em;
+  background-color: black;
+  
+}
+
+.word{
+  padding: 100px;
 }
 
 .read-the-docs {
   color: #888;
 }
 
+/* { name: 'Best Selling', code: 'NY' },
+{ name: 'Alphabetically,A-Z', code: 'AZ' },
+{ name: 'Alphabetically,Z-A', code: 'ZA' },
+{ name: 'Price,low to high', code: 'LH' },
+{ name: 'Price,high to low', code: 'HL' },
+{ name: 'Date, old to new', code: 'PRS' } */

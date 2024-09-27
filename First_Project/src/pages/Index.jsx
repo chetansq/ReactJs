@@ -18,7 +18,7 @@ const Index = () => {
                 <Sliders />
                 <CategorySlide />
                 <div>
-                    <div className='flex flex-col justify-center items-center w-full my-5 md:my-10 text-center '>
+                    <div className='flex flex-col justify-center items-center w-full my-5 md:my-14 text-center '>
                         <p className='text-4xl font-semibold mb-4'>Best Seller</p>
                         <p className='text-sm md:text-base px-5'>Shop the Latest Styles: Stay ahead of the curve with our newest arrivals</p>
                     </div>

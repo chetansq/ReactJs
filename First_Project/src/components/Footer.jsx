@@ -86,7 +86,7 @@ export default function Footers() {
                     <div className="mb-6 md:mb-0  lg:w-[50%] flex flex-col gap-3 text-[14px] text-black">
                         <a href="/">
 
-                            <img src={Logo} alt="" />
+                            <img src={Logo} alt="" className="mb-5" />
                         </a>
 
                         {/* <img src={logo} alt="logo" className="mb-4 lg:w-full sm:w-1/2" /> */}
@@ -122,7 +122,7 @@ export default function Footers() {
                         </div>
                     </div>
                     <div className="mb-6 md:mb-0 lg:w-[30%]">
-                        <h3 className="mb-3 text-[18px]">Help</h3>
+                        <h3 className="mb-5 text-[18px]">Help</h3>
                         <ul className="list-none flex flex-col gap-1 text-[14px] duration-1000 text-black ">
                             {
                                 help_detail.map((current, index) => {
@@ -139,7 +139,7 @@ export default function Footers() {
 
                 <div className=" flex flex-col lg:flex-row sm:gap-14 lg:gap-0 sm:w-[50%] lg:w-[45%] justify-between ">
                     <div className="mb-6 md:mb-0">
-                        <h3 className="text-[18px]">About us</h3>
+                        <h3 className="text-[18px] mb-5">About us</h3>
                         <ul className="list-none flex flex-col gap-3 text-[14px] mt-2 text-black">
                             {
                                 about_detail.map((current, index) => {
@@ -153,7 +153,7 @@ export default function Footers() {
                         </ul>
                     </div>
                     <div className="mb-6 md:mb-0 flex flex-col lg:w-[50%]  w-full gap-5">
-                        <h3 className="font-semibold">Sign Up for Email</h3>
+                        <h3 className="font-semibold ">Sign Up for Email</h3>
                         <p className="text-[14px] w-full  text-black">
                             Sign up to get first dibs on new arrivals, sales, exclusive
                             content, events and more!
@@ -181,8 +181,9 @@ export default function Footers() {
                     </div>
                 </div>
             </div>
-            {/* <p className=" bg-black w-full mt-10"></p> */}
-            <hr />
+            
+            <p className=" bg-gray-300 w-full mt-10 h-[1px]"></p>
+           
             <div className="flex sm:flex-row flex-col items-center gap-3 sm:gap-0 sm:justify-between w-full py-6">
                 <p className="text-[14px] text-[#545454] ">
                     © 2024 Ecomus Store. All Rights Reserved

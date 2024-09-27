@@ -3,15 +3,20 @@ import page_image from '../assets/page_title_blog.png'
 import Bestseller from '../components/Bestseller'
 import Footers from '../components/Footer'
 
-import  { useState } from "react";
-import { Dropdown } from 'primereact/dropdown';
-
 // icon 
 
 import { BiMenuAltLeft } from "react-icons/bi";
 import { IoIosArrowDown } from "react-icons/io";
 
-// drop down
+// Select Menu
+
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
 
 
@@ -32,13 +37,24 @@ const Shop = () => {
           FILTER
         </button>
 
-        <button className=' flex  items-center gap-20 border px-4 py-2 hover:border-black rounded hover:duration-200 duration-200'>
-          <CheckmarkDemo />
-          Featured
-          <IoIosArrowDown />
 
 
-        </button>
+        <Select>
+          <SelectTrigger className="w-[180px]">
+            <SelectValue placeholder="Featured" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="light">Light</SelectItem>
+            <SelectItem value="dark">Dark</SelectItem>
+            <SelectItem value="system">System</SelectItem>
+          </SelectContent>
+        </Select>
+
+        {/* Featured
+          <IoIosArrowDown /> */}
+
+        {/* <button className=' flex  items-center gap-20 border px-4 py-2 hover:border-black rounded hover:duration-200 duration-200'>
+        </button> */}
       </div>
 
       <Bestseller />
@@ -57,20 +73,3 @@ export default Shop
 
 
 
-function CheckmarkDemo() {
-  const [selectedCity, setSelectedCity] = useState(null);
-  const cities = [
-    { name: 'New York', code: 'NY' },
-    { name: 'Rome', code: 'RM' },
-    { name: 'London', code: 'LDN' },
-    { name: 'Istanbul', code: 'IST' },
-    { name: 'Paris', code: 'PRS' }
-  ];
-
-  return (
-    <div className="card flex justify-content-center">
-      <Dropdown value={selectedCity} onChange={(e) => setSelectedCity(e.value)} options={cities} optionLabel="name"
-        placeholder="Select a City" className="w-full md:w-14rem" checkmark={true} highlightOnSelect={false} />
-    </div>
-  )
-}
