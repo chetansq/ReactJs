@@ -203,11 +203,27 @@
     display: none;
   } */
 
- 
-
   /* .image_transfer{
     position: relative;
   } */
+
+  .product_slider .slick-current img{
+    border: 2px solid black !important;
+    outline: none;
+  }
+  .product_slider2 .slick-active {
+    border: none !important;
+    outline: none;
+  }
+  .product_slider2 .slick-active:focus {
+    border: none !important;
+    outline: none;
+  }
+  .product_slider2 .slick-current {
+    border: none !important;
+    outline: none;
+  }
+
 }
 
 @layer base {

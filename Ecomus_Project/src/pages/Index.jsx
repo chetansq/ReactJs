@@ -11,7 +11,7 @@ import FlatIconBox from '../components/FlatIconBox';
 import Footers from '../components/Footer';
 
 const Index = () => {
-    console.log("index page");
+    // console.log("index page");
     return (
         <div>
             <main>
