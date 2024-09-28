@@ -44,9 +44,16 @@ const Product_details = () => {
                         </div>
 
                         {/* Sale timing section */}
-                        <div>
-                            <Sale_time />
-                        </div>
+                        <div className='border border-[red]'>
+//             <div className='flex gap-2 items-center'>
+//                 <IoMdAlarm />
+//                 <p className='text-sm text-gray-700 font-bold uppercase '>hurry up! sale ends in:</p>
+//             </div>
+
+//             <div>
+
+//             </div>
+//         </div> 
                     </div>
                 </div>
             </div>
@@ -56,18 +63,22 @@ const Product_details = () => {
 
 export default Product_details
 
-function Sale_time() {
-        
-    return (
-        <div className='border border-[red]'>
-            <div className='flex gap-2 items-center'>
-                <IoMdAlarm />
-                <p className='text-sm text-gray-700 font-bold uppercase '>hurry up! sale ends in:</p>
-            </div>
+// function Sale_time() {
 
-            <div>
+//     // const date = new Date();
+//     const new_date = Date().toLocaleString();
+ 
 
-            </div>
-        </div>
-    )
-}
+//     return (
+//         <div className='border border-[red]'>
+//             <div className='flex gap-2 items-center'>
+//                 <IoMdAlarm />
+//                 <p className='text-sm text-gray-700 font-bold uppercase '>hurry up! sale ends in:</p>
+//             </div>
+
+//             <div>
+
+//             </div>
+//         </div>
+//     )
+// }
