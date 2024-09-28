@@ -180,32 +180,32 @@ export const BestSellerProductData = [
         product_color_images: [
             {
                 product_color: "Black",
-                product_image_link: "/asset_45.jpeg",
+                product_image_link: "/asset_17.jpeg",
                 product_image_alt_text: "Basic Crewneck Tee in Orange",
             },
             {
                 product_color: "SlateGray",
-                product_image_link: "/asset_47.jpeg",
+                product_image_link: "/asset_17.jpeg",
                 product_image_alt_text: "Basic Crewneck Tee in Black",
             },
             {
                 product_color: "Wheat",
-                product_image_link: "/asset_48.jpeg",
+                product_image_link: "/asset_17.jpeg",
                 product_image_alt_text: "Basic Crewneck Tee in White",
             },
             {
                 product_color: "LightSkyBlue",
-                product_image_link: "/asset_49.jpeg",
+                product_image_link: "/asset_17.jpeg",
                 product_image_alt_text: "Basic Crewneck Tee in White",
             },
             {
                 product_color: "White",
-                product_image_link: "/asset_50.jpeg",
+                product_image_link: "/asset_17.jpeg",
                 product_image_alt_text: "Basic Crewneck Tee in White",
             },
         ],
         product_hover_image: {
-            product_image_link: "/asset_46.jpeg",
+            product_image_link: "/asset_17.jpeg",
             product_image_alt_text: "Basic Crewneck Tee",
         },
         product_sizes: ["S", "M", "L"],
@@ -219,22 +219,22 @@ export const BestSellerProductData = [
         product_color_images: [
             {
                 product_color: "Black",
-                product_image_link: "/asset_53.jpeg",
+                product_image_link: "/asset_17.jpeg",
                 product_image_alt_text: "Knitted Cardigan in Black",
             },
             {
                 product_color: "White",
-                product_image_link: "/asset_51.jpeg",
+                product_image_link: "/asset_17.jpeg",
                 product_image_alt_text: "Knitted Cardigan in Orange",
             },
             {
                 product_color: "DodgerBlue",
-                product_image_link: "/asset_54.jpeg",
+                product_image_link: "/asset_17.jpeg",
                 product_image_alt_text: "Knitted Cardigan in White",
             },
         ],
         product_hover_image: {
-            product_image_link: "/asset_52.jpeg",
+            product_image_link: "/asset_17.jpeg",
             product_image_alt_text: "Knitted Cardigan",
         },
         product_sizes: ["M", "L", "XL", "XXL"],

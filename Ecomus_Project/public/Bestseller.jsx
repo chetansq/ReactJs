@@ -135,10 +135,11 @@ import ProductDisplayCard from './ProductDisplayCard';
 
 const Bestseller = () => {
     return (
-        <div className=''>
+        <div className='my-4'>
+
 
             <div className='overflow-x-hidden'>
-                <div className='grid  grid-cols-2 md:grid-cols-3 lg-1150:grid-cols-4 gap-4 lg:gap-8  px-[14px] sm:px-4 md:px-6 lg:px-12  my-5 '>
+                <div className='grid  grid-cols-2 md:grid-cols-3 lg-1150:grid-cols-4 gap-4 lg:gap-8  px-[14px] sm:px-4 md:px-6 lg:px-12   '>
                     {
                         BestSellerProductData.map((current) => {
 

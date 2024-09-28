@@ -9,20 +9,15 @@ const ProductDisplayCard = ({ product }) => {
     const [currentColor, setCurrentColor] = useState(product.product_color_images[0])
     console.log(product);
 
-
     return (
-
         <div className=' h-fit rounded-md mt-5 m-auto '>
 
-
-            <div className=" h-fit w-fit rounded-md overflow-hidden relative group/card">
+            <div className=" h-fit w-fit  rounded-md overflow-hidden relative group/card">
                 <a href="">
-
                     <img
                         src={currentColor.product_image_link}
                         alt={currentColor.product_image_alt_text}
                         className="z-0 h-full w-full rounded-md object-cover hover:scale-105 duration-1000 hover:duration-1000 group-hover/card:opacity-0"
-
                     />
                 </a>
 
@@ -33,8 +28,6 @@ const ProductDisplayCard = ({ product }) => {
                         </div>
                         <div className=' flex flex-col gap-2 justify-center items-center  absolute h-14 w-full bottom-0'>
                             <div className='flex'>
-
-
                                 <RiShoppingBag2Line className='bg-white text-4xl p-2 rounded hover:bg-black hover:text-white' />
                                 <FaRegHeart className='bg-white  text-4xl p-2 rounded hover:bg-black hover:text-white' />
                                 <TbArrowsCross className='bg-white text-4xl p-2 rounded hover:bg-black hover:text-white' />
@@ -50,32 +43,26 @@ const ProductDisplayCard = ({ product }) => {
                                         })
                                     }
                                 </div>
-
                             }
                         </div>
-
                     </div>
                 </div>
-
             </div>
 
-
-            <div className=" text-left text-sm md:text-base">
+            <div className="flex flex-col gap-2 text-left text-sm md:text-base ">
 
                 <p className='hover:text-red-500 hover:duration-300 my-1' >{product.product_name} </p>
                 <p className='flex items-center' ><BiDollar /> {product.product_price} </p>
 
-                <div className='flex gap-2'>
+                <div className='flex gap-2 '>
                     {
                         product.product_color_images.map((crr) => {
-                            return <div onMouseOver={() => setCurrentColor(crr)} className={` ${currentColor.product_color == crr.product_color && 'outline-1 outline outline-black outline-offset-2'}  h-5 w-5 rounded-full shadow-[rgba(0,0,0,0.24)_0px_3px_8px] p-2`} style={{ backgroundColor: crr.product_color }}> </div>
+                            return <div onMouseOver={() => setCurrentColor(crr)} className={` ${currentColor.product_color == crr.product_color && 'outline-1 outline outline-black outline-offset-2'} h-3 w-3 md:h-5 md:w-5 rounded-full shadow-[rgba(0,0,0,0.24)_0px_3px_8px] md:p-2`} style={{ backgroundColor: crr.product_color }}> </div>
                         })
                     }
                 </div>
-
             </div>
         </div>
-
     )
 }
 

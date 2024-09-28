@@ -54,6 +54,7 @@ const Single_Slider = [
 const Product_details = () => {
 
     const [color, setColor] = useState('Beige')
+    const [size, setSize] = useState('S')
     return (
         <div>
             <div className="container-fluid m-auto">
@@ -109,10 +110,32 @@ const Product_details = () => {
                         {/* Color section */}
 
                         <div>
-                            <p>Color : <span>{color}</span> </p>
-                            <div>
-                                <p className='h-1 w-1 bg-[beige]'>fd</p>
+                            <p>Color : <span className='font-semibold'>{color}</span> </p>
+                            <div className='flex gap-4 my-4 '>
+
+                                <a href='#' className='h-5 w-5 bg-[#c5a572] border rounded-full hover:outline hover:outline-1  outline-offset-2' onClick={() => setColor('Beige')} ></a>
+                                <a href='#' className='h-5 w-5 bg-[black] border rounded-full hover:outline  hover:outline-1  outline-offset-2' onClick={() => setColor('Black')}></a>
+                                <a href='#' className='h-5 w-5 bg-[blue] border rounded-full hover:outline hover:outline-1  outline-offset-2' onClick={() => setColor('Blue')}></a>
+                                <a href='#' className='h-5 w-5 bg-[white] border rounded-full hover:outline hover:outline-1  outline-offset-2' onClick={() => setColor('White')}></a>
+
                             </div>
+                        </div>
+
+                        {/* Size Section */}
+
+                        <div>
+                            <p>Color : <span className='font-semibold'>{size}</span> </p>
+                            <div className='flex gap-4 my-4 '>
+                                <a href="#" className='py-1 px-4 border hover:border-black duration-300 text-black' onClick={() => setSize('S')} >S</a>
+                                <a href="#" className='py-1 px-4 border hover:border-black duration-300 text-black' onClick={() => setSize('M')} >M</a>
+                                <a href="#" className='py-1 px-4 border hover:border-black duration-300 text-black' onClick={() => setSize('L')} >L</a>
+                                <a href="#" className='py-1 px-4 border hover:border-black duration-300 text-black' onClick={() => setSize('XL')} >XL</a>
+                            </div>
+                        </div>
+
+                        {/* Quantity section */}
+                        <div>
+                            <p className="font-semibold text-sm">Quantity</p>
                         </div>
                     </div>
                 </div>
