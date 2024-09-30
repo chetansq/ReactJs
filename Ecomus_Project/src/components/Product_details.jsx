@@ -10,6 +10,14 @@ import { BiDollar } from "react-icons/bi";
 import { IoMdAlarm } from "react-icons/io";
 import { TbArrowsCross } from 'react-icons/tb'
 import { FaRegHeart } from 'react-icons/fa'
+import { RiDeleteBin5Line } from "react-icons/ri";
+import { FaCheck } from "react-icons/fa";
+import { FaRegQuestionCircle } from "react-icons/fa";
+import { LuShare2 } from "react-icons/lu";
+import { FiTruck } from "react-icons/fi";
+import { RiShipLine } from "react-icons/ri";
+import { IoMdRefresh } from "react-icons/io";
+import { AiOutlineSafety } from "react-icons/ai";
 
 
 
@@ -74,14 +82,45 @@ const Single_Slider = [
 // const color = [beige]
 const Product_details = () => {
 
+    // for color
     const changeSizeColor = 'text-black  '
     const [color, setColor] = useState('Beige')
 
+    // for size
     const [size, setSize] = useState('S')
     const [changeColor, setChangeColor] = useState(changeSizeColor)
 
+    // for product increment or decrement
     const [count, setCount] = useState(1)
 
+    // for wishlist
+    const [like, setLike] = useState(<FaRegHeart />)
+    const [change, setChange] = useState(true)
+
+    // for comapre
+    const [compare, setCompare] = useState(<TbArrowsCross />)
+
+
+    const chnageLike = () => {
+        if (change == true) {
+            setLike(<RiDeleteBin5Line />)
+            setChange(false)
+
+        } else {
+            setLike(<FaRegHeart />)
+            setChange(true)
+        }
+    }
+    const chnageCompare = () => {
+        if (change == true) {
+            setCompare(<FaCheck />)
+            setChange(false)
+
+        } else {
+            setCompare(<TbArrowsCross />)
+            setChange(true)
+        }
+    }
 
     return (
         <div>
@@ -141,10 +180,10 @@ const Product_details = () => {
                             <p>Color : <span className='font-semibold'>{color}</span> </p>
                             <div className='flex gap-4 my-4 '>
 
-                                <a href='#' className='h-5 w-5 bg-[#c5a572] border rounded-full hover:outline hover:outline-1  outline-offset-2' onClick={() => setColor('Beige')} ></a>
-                                <a href='#' className='h-5 w-5 bg-[black] border rounded-full hover:outline  hover:outline-1  outline-offset-2' onClick={() => setColor('Black')}></a>
-                                <a href='#' className='h-5 w-5 bg-[blue] border rounded-full hover:outline hover:outline-1  outline-offset-2' onClick={() => setColor('Blue')}></a>
-                                <a href='#' className='h-5 w-5 bg-[white] border rounded-full hover:outline hover:outline-1  outline-offset-2' onClick={() => setColor('White')}></a>
+                                <p className='h-5 w-5 cursor-pointer bg-[#c5a572] border rounded-full hover:outline hover:outline-1  outline-offset-2' onClick={() => setColor('Beige')} ></p>
+                                <p className='h-5 w-5 cursor-pointer bg-[black] border rounded-full hover:outline  hover:outline-1  outline-offset-2' onClick={() => setColor('Black')}></p>
+                                <p className='h-5 w-5 cursor-pointer bg-[blue] border rounded-full hover:outline hover:outline-1  outline-offset-2' onClick={() => setColor('Blue')}></p>
+                                <p className='h-5 w-5 cursor-pointer bg-[white] border rounded-full hover:outline hover:outline-1  outline-offset-2' onClick={() => setColor('White')}></p>
 
                             </div>
                         </div>
@@ -165,10 +204,10 @@ const Product_details = () => {
                                         } key={index} >{curr.size} </a>
                                     })
                                 } */}
-                                <p href="#" className={`py-1 px-4 border ${changeColor} hover:border-black duration-300 `} onClick={() => setSize('S')} >S</p>
-                                <p href="#" className={`py-1 px-4 border ${changeColor} hover:border-black duration-300 `} onClick={() => setSize('M')} > M</p>
-                                <p href="#" className={`py-1 px-4 border ${changeColor} hover:border-black duration-300 `} onClick={() => setSize('L')} >L</p>
-                                <p href="#" className={`py-1 px-4 border ${changeColor} hover:border-black duration-300 `} onClick={() => setSize('XL')} >XL</p>
+                                <p className={`py-1 px-4 cursor-pointer border ${changeColor} hover:border-black duration-300 `} onClick={() => setSize('S')} >S</p>
+                                <p className={`py-1 px-4 cursor-pointer border ${changeColor} hover:border-black duration-300 `} onClick={() => setSize('M')} > M</p>
+                                <p className={`py-1 px-4 cursor-pointer border ${changeColor} hover:border-black duration-300 `} onClick={() => setSize('L')} >L</p>
+                                <p className={`py-1 px-4 cursor-pointer border ${changeColor} hover:border-black duration-300 `} onClick={() => setSize('XL')} >XL</p>
                             </div>
                         </div>
 
@@ -186,39 +225,102 @@ const Product_details = () => {
                         </div>
 
                         {/* add to cart button */}
-                        <div className='w-[80%] flex gap-4'>
+                        <div className='w-full flex gap-4'>
 
-                            <button className="justify-center      p-1  bg-black w-full text-white text-md font-semibold rounded md:px-7 px-4 py-2 md:py-3  flex items-center gap-1 relative before:absolute before:content-[''] before:BgGradientMove before:h-full before:w-full before:translate-x-[100%] hover:before:-translate-x-[150%] before:duration-1000 overflow-hidden z-0 before:-skew-x-12 hover:before:BgGradient">
-
+                            <button className="justify-center  p-1 bg-black w-full text-white text-md font-semibold rounded md:px-7 px-4 py-2 md:py-3  flex items-center gap-1 relative before:absolute before:content-[''] before:BgGradientMove before:h-full before:w-full before:translate-x-[100%] hover:before:-translate-x-[150%] before:duration-1000 overflow-hidden z-0 before:-skew-x-12 hover:before:BgGradient">
                                 Add to cart - $8.00
                             </button>
-                            <div className=' border hover:border-black text-2xl p-3 '>
 
-                                <FaRegHeart />
+                            <div className='cursor-pointer border hover:border-black text-2xl p-3 ' onClick={chnageLike}>
+                                {like}
                             </div>
-                            <div className=' border hover:border-black text-2xl p-3'>
 
-                                <TbArrowsCross />
+                            <div className='cursor-pointer border hover:border-black text-2xl p-3' onClick={chnageCompare}>
+                                {compare}
                             </div>
 
                         </div>
 
                         {/* Buy with button */}
 
-                        <div className='w-[80%]'>
+                        <div className='w-full'>
                             <button className='w-full p-3 flex justify-center items-center rounded gap-4 bg-yellow-400 hover:bg-yellow-500'>Buy with <img src="/asset_116.png" alt="Paypal" /> </button>
+                        </div>
+
+                        {/* more paymet */}
+                        <div className='flex justify-center items-center w-full '>
+                            <a href="#" className='underline text-gray-500'>More payment options</a>
+                        </div>
+
+                        {/* share */}
+
+                        <div className='flex gap-6 '>
+                            <a href="" className='hover:text-[red] duration-300 flex gap-2'>
+                                <img src="/compare.svg" alt="" />
+                                <span>Compare color</span>
+                            </a>
+                            <a href="" className='hover:text-[red] duration-300 flex items-center gap-2'>
+
+                                <FaRegQuestionCircle />
+                                <span>Ask a queation</span>
+                            </a>
+                            <a href="" className='hover:text-[red] duration-300 flex items-center gap-2'>
+                                <FiTruck />
+                                <span>Delivery & Return</span>
+                            </a>
+                            <a href="" className='hover:text-[red] duration-300 flex items-center gap-2'>
+
+                                <LuShare2 />
+                                <span>Share</span>
+                            </a>
+
+                        </div>
+
+                        {/* ship */}
+
+                        <div className='grid grid-cols-2  gap-8 my-5'>
+                            <div className='flex flex-col text-center items-center p-7 border gap-6 '>
+                                <RiShipLine className='text-3xl' />
+                                <p className='text-sm'>Estimate delivery times: <strong>
+                                    12-26 days
+                                </strong> (International), <strong>
+                                        3-6 days
+                                    </strong>  (United States).</p>
+                            </div>
+
+                            <div className='flex flex-col  text-center items-center p-6 border gap-6 h-fit'>
+                                <IoMdRefresh className='text-3xl' />
+                                <p className='text-sm'>Return within <strong> 30 days </strong>  of purchase. Duties & taxes are non-refundable.</p>
+                            </div>
+                        </div>
+
+                        {/* safe checkout  */}
+
+                        <div className='flex gap-4'>
+                            <div className='flex items-center gap-2 '>
+                                <AiOutlineSafety className='text-xl' />
+                                <p className='text-sm font-semibold'>Guarantee Safe <br />
+                                    Checkout</p>
+                            </div>
+
+                            <div className="flex gap-2 h-8">
+                                <img src='/asset_83.png' alt="visa" />
+                                <img src='/asset_84.png' alt="paypal" />
+                                <img src='/asset_85.png' alt="master card" />
+                                <img src='/asset_86.png' alt="amex" />
+                                <img src='/asset_87.png' alt="dinner club" />
+
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div >
+        </div>
 
     )
 }
 
 export default Product_details
-
-
 
 
 function AsNavFor() {
@@ -261,7 +363,6 @@ function AsNavFor() {
                     }
                 </Slider>
 
-
                 <Slider asNavFor={nav2} ref={slider => (sliderRef1 = slider)} className='product_slider2' slidesToShow={1}>
 
                     {
@@ -274,7 +375,6 @@ function AsNavFor() {
                         })
                     }
                 </Slider>
-
 
             </div>
         </div>

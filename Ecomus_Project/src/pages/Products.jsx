@@ -1,5 +1,6 @@
 import React from 'react'
 import Product_details from '../components/Product_details'
+import Footer from '../components/Footer'
 // import { Link } from "next/link"
 
 // icon
@@ -19,6 +20,9 @@ import {
 
 const Products = () => {
     return (
+        <div>
+
+       
         <div className='px-10'>
             <div className='my-6 flex  justify-between'>
                 <Breadcrumb>
@@ -44,6 +48,8 @@ const Products = () => {
                 </div>
             </div>
             <Product_details />
+        </div>
+            <Footer/>
         </div>
     )
 }

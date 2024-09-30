@@ -8,11 +8,11 @@ import { MdOutlineArrowOutward } from "react-icons/md";
 
 
 // images
-import visa from '../assets/asset_83.png'
-import paypal from "../assets/asset_84.png";
-import masterCard from '../assets/asset_85.png'
-import amex from '../assets/asset_86.png'
-import dinnerclub from '../assets/asset_87.png'
+import visa from '/asset_83.png'
+import paypal from "/asset_84.png";
+import masterCard from '/asset_85.png'
+import amex from '/asset_86.png'
+import dinnerclub from '/asset_87.png'
 import Logo from '../assets/logo.svg'
 
 

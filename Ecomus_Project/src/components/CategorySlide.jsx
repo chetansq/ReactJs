@@ -181,7 +181,7 @@ function CategoryDetails({ details }) {
                 {/* <div className="absolute inset-0 bg-gradient-to-t to-transparent"></div> */}
                 <div className="absolute bottom-4 left-4 text-left">
 
-                    <button className="mt-2 inline-flex cursor-pointer items-center text-sm hover:text-smfont-semibold text-black bg-white p-2 gap-2 hover:bg-black hover:text-white group/btn">
+                    <button className="mt-2 inline-flex cursor-pointer items-center text-sm hover:text-smfont-semibold text-black bg-white p-2 gap-2 duration-700 hover:duration-700 hover:bg-black hover:text-white group/btn">
                         {details.btnDescription}
                         <MdArrowOutward className='hidden group-hover/btn:block  ' />
                     </button>
