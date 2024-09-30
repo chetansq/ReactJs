@@ -27,19 +27,21 @@ const ProductDisplayCard = ({ product }) => {
                             <img src={product.product_hover_image.product_image_link} alt="fd" className='hover:scale-105 duration-700' />
                         </div>
                         <div className=' flex flex-col gap-2 justify-center items-center  absolute h-14 w-full bottom-0'>
-                            <div className='flex'>
+                            <div className='flex gap-2 justify-center items-center'>
                                 <RiShoppingBag2Line className='bg-white text-4xl p-2 rounded hover:bg-black hover:text-white' />
                                 <FaRegHeart className='bg-white  text-4xl p-2 rounded hover:bg-black hover:text-white' />
                                 <TbArrowsCross className='bg-white text-4xl p-2 rounded hover:bg-black hover:text-white' />
                                 <MdOutlineRemoveRedEye className='bg-white text-4xl p-2 rounded hover:bg-black hover:text-white' />
                             </div>
                             {
-                                product.product_sizes && <div className=''>
+                                product.product_sizes && <div className='flex gap-2 items-center justify-center  bg-[#00000044]   w-full'>
                                     {
                                         product.product_sizes.map((crr) => {
-                                            return <span>
-                                                {crr}
-                                            </span>
+                                            return <div className=' p-2 mb-10 text-white font-bold '>
+                                                <span>
+                                                    {crr}
+                                                </span>
+                                            </div>
                                         })
                                     }
                                 </div>

@@ -106,8 +106,8 @@ const AboutUs = () => {
                                 <div className=' relative w-[70%] hover:z-50'>
                                     <img src={collection_img2} alt="" className=' w-full ' />
                                 </div>
-                                <div className='absolute z-30 -right-10 -bottom-20   '>
-                                    <img src={collection_img3} alt="" className='w-3/4' />
+                                <div className='absolute z-30 -right-1 -bottom-20   '>
+                                    <img src={collection_img3} alt="" className='' />
                                 </div>
                             </div>
                         </div>

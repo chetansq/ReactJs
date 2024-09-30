@@ -45,8 +45,8 @@ export const Sliders = () => {
         autoplaySpeed: 3000,
         cssEase: "linear",
         arrows: false,
-        
-       
+
+
     }
     return (
         <>

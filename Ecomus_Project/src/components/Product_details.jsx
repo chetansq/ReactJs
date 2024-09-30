@@ -8,8 +8,29 @@ import Slider from "react-slick";
 import { IoFlashSharp } from "react-icons/io5";
 import { BiDollar } from "react-icons/bi";
 import { IoMdAlarm } from "react-icons/io";
+import { TbArrowsCross } from 'react-icons/tb'
+import { FaRegHeart } from 'react-icons/fa'
 
 
+
+const sizeAdd = [
+    {
+        size: 'S',
+
+    },
+    {
+        size: 'M',
+
+    },
+    {
+        size: 'L',
+
+    },
+    {
+        size: 'XL',
+
+    },
+]
 
 const Single_Slider = [
 
@@ -53,8 +74,15 @@ const Single_Slider = [
 // const color = [beige]
 const Product_details = () => {
 
+    const changeSizeColor = 'text-black  '
     const [color, setColor] = useState('Beige')
+
     const [size, setSize] = useState('S')
+    const [changeColor, setChangeColor] = useState(changeSizeColor)
+
+    const [count, setCount] = useState(1)
+
+
     return (
         <div>
             <div className="container-fluid m-auto">
@@ -124,23 +152,66 @@ const Product_details = () => {
                         {/* Size Section */}
 
                         <div>
-                            <p>Color : <span className='font-semibold'>{size}</span> </p>
+                            <p>Size: <span className='font-semibold'>{size}</span> </p>
                             <div className='flex gap-4 my-4 '>
-                                <a href="#" className='py-1 px-4 border hover:border-black duration-300 text-black' onClick={() => setSize('S')} >S</a>
-                                <a href="#" className='py-1 px-4 border hover:border-black duration-300 text-black' onClick={() => setSize('M')} >M</a>
-                                <a href="#" className='py-1 px-4 border hover:border-black duration-300 text-black' onClick={() => setSize('L')} >L</a>
-                                <a href="#" className='py-1 px-4 border hover:border-black duration-300 text-black' onClick={() => setSize('XL')} >XL</a>
+                                {/* {
+                                    sizeAdd.map((curr,index) => {
+
+                                        return <a href="#" className={`py-1 px-4 border ${changeColor} hover:border-black duration-300 `} onClick={() => {
+
+                                            setSize(curr.size)
+                                            setChangeColor('bg-black text-white')
+                                        }
+                                        } key={index} >{curr.size} </a>
+                                    })
+                                } */}
+                                <p href="#" className={`py-1 px-4 border ${changeColor} hover:border-black duration-300 `} onClick={() => setSize('S')} >S</p>
+                                <p href="#" className={`py-1 px-4 border ${changeColor} hover:border-black duration-300 `} onClick={() => setSize('M')} > M</p>
+                                <p href="#" className={`py-1 px-4 border ${changeColor} hover:border-black duration-300 `} onClick={() => setSize('L')} >L</p>
+                                <p href="#" className={`py-1 px-4 border ${changeColor} hover:border-black duration-300 `} onClick={() => setSize('XL')} >XL</p>
                             </div>
                         </div>
 
                         {/* Quantity section */}
-                        <div>
-                            <p className="font-semibold text-sm">Quantity</p>
+                        <div className='  '>
+                            <p className="font-semibold text-sm ">Quantity : </p>
+                            <div className='flex *:py-2 *:px-4 bg-slate-200  items-center  my-4'>
+                                <p className='hover:text-[red] text-2xl cursor-pointer ' onClick={() => {
+                                    if (count > 1)
+                                        setCount(count - 1)
+                                }} >  &#8722; </p>
+                                <p className='text-md'>{count}</p>
+                                <p className='hover:text-[red] text-2xl cursor-pointer ' onClick={() => setCount(count + 1)}> &#43; </p>
+                            </div>
+                        </div>
+
+                        {/* add to cart button */}
+                        <div className='w-[80%] flex gap-4'>
+
+                            <button className="justify-center      p-1  bg-black w-full text-white text-md font-semibold rounded md:px-7 px-4 py-2 md:py-3  flex items-center gap-1 relative before:absolute before:content-[''] before:BgGradientMove before:h-full before:w-full before:translate-x-[100%] hover:before:-translate-x-[150%] before:duration-1000 overflow-hidden z-0 before:-skew-x-12 hover:before:BgGradient">
+
+                                Add to cart - $8.00
+                            </button>
+                            <div className=' border hover:border-black text-2xl p-3 '>
+
+                                <FaRegHeart />
+                            </div>
+                            <div className=' border hover:border-black text-2xl p-3'>
+
+                                <TbArrowsCross />
+                            </div>
+
+                        </div>
+
+                        {/* Buy with button */}
+
+                        <div className='w-[80%]'>
+                            <button className='w-full p-3 flex justify-center items-center rounded gap-4 bg-yellow-400 hover:bg-yellow-500'>Buy with <img src="/asset_116.png" alt="Paypal" /> </button>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
 
     )
 }
