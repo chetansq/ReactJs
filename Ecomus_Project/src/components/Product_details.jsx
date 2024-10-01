@@ -3,6 +3,7 @@ import React from 'react'
 import { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 
+import ProductDescription from './ProductDescription';
 
 // icon
 import { IoFlashSharp } from "react-icons/io5";
@@ -40,6 +41,24 @@ const sizeAdd = [
     },
 ]
 
+const colorAdd = [
+    {
+        colors: 'Beige',
+        bg: '#c5a572'
+    },
+    {
+        colors: 'Black',
+        bg: 'black'
+    },
+    {
+        colors: 'Blue',
+        bg: 'blue'
+    },
+    {
+        colors: 'White',
+        bg: 'white'
+    },
+]
 const Single_Slider = [
 
     {
@@ -83,12 +102,10 @@ const Single_Slider = [
 const Product_details = () => {
 
     // for color
-    const changeSizeColor = 'text-black  '
     const [color, setColor] = useState('Beige')
 
     // for size
     const [size, setSize] = useState('S')
-    const [changeColor, setChangeColor] = useState(changeSizeColor)
 
     // for product increment or decrement
     const [count, setCount] = useState(1)
@@ -99,7 +116,6 @@ const Product_details = () => {
 
     // for comapre
     const [compare, setCompare] = useState(<TbArrowsCross />)
-
 
     const chnageLike = () => {
         if (change == true) {
@@ -137,7 +153,7 @@ const Product_details = () => {
 
                     {/* product details section */}
 
-                    <div className=" flex flex-col gap-4 items-start h-full px-10 ">
+                    <div className=" flex flex-col gap-4 items-start h-full px-2 lg:px-10 ">
                         <p className='text-2xl'>Cotton jersey top</p>
 
                         <div className='flex items-center gap-2'>
@@ -180,10 +196,13 @@ const Product_details = () => {
                             <p>Color : <span className='font-semibold'>{color}</span> </p>
                             <div className='flex gap-4 my-4 '>
 
-                                <p className='h-5 w-5 cursor-pointer bg-[#c5a572] border rounded-full hover:outline hover:outline-1  outline-offset-2' onClick={() => setColor('Beige')} ></p>
-                                <p className='h-5 w-5 cursor-pointer bg-[black] border rounded-full hover:outline  hover:outline-1  outline-offset-2' onClick={() => setColor('Black')}></p>
-                                <p className='h-5 w-5 cursor-pointer bg-[blue] border rounded-full hover:outline hover:outline-1  outline-offset-2' onClick={() => setColor('Blue')}></p>
-                                <p className='h-5 w-5 cursor-pointer bg-[white] border rounded-full hover:outline hover:outline-1  outline-offset-2' onClick={() => setColor('White')}></p>
+                                {
+                                    colorAdd.map((curr, index) => {
+
+                                        return <p className={`h-5 w-5 cursor-pointer ${color === curr.colors && " outline-offset-2 outline outline-1 "}  bg-[${curr.bg}] border rounded-full hover:outline hover:outline-1  `}
+                                            key={index} onClick={() => setColor(curr.colors)}> </p>
+                                    })
+                                }
 
                             </div>
                         </div>
@@ -193,21 +212,14 @@ const Product_details = () => {
                         <div>
                             <p>Size: <span className='font-semibold'>{size}</span> </p>
                             <div className='flex gap-4 my-4 '>
-                                {/* {
-                                    sizeAdd.map((curr,index) => {
+                                {
+                                    sizeAdd.map((curr, index) => {
 
-                                        return <a href="#" className={`py-1 px-4 border ${changeColor} hover:border-black duration-300 `} onClick={() => {
-
-                                            setSize(curr.size)
-                                            setChangeColor('bg-black text-white')
-                                        }
-                                        } key={index} >{curr.size} </a>
+                                        return <p className={`py-1 px-4 border ${size === curr.size && "bg-black text-white"}  hover:border-black duration-300 cursor-pointer`}
+                                            key={index} onClick={() => setSize(curr.size)}>{curr.size} </p>
                                     })
-                                } */}
-                                <p className={`py-1 px-4 cursor-pointer border ${changeColor} hover:border-black duration-300 `} onClick={() => setSize('S')} >S</p>
-                                <p className={`py-1 px-4 cursor-pointer border ${changeColor} hover:border-black duration-300 `} onClick={() => setSize('M')} > M</p>
-                                <p className={`py-1 px-4 cursor-pointer border ${changeColor} hover:border-black duration-300 `} onClick={() => setSize('L')} >L</p>
-                                <p className={`py-1 px-4 cursor-pointer border ${changeColor} hover:border-black duration-300 `} onClick={() => setSize('XL')} >XL</p>
+                                }
+
                             </div>
                         </div>
 
@@ -227,7 +239,7 @@ const Product_details = () => {
                         {/* add to cart button */}
                         <div className='w-full flex gap-4'>
 
-                            <button className="justify-center  p-1 bg-black w-full text-white text-md font-semibold rounded md:px-7 px-4 py-2 md:py-3  flex items-center gap-1 relative before:absolute before:content-[''] before:BgGradientMove before:h-full before:w-full before:translate-x-[100%] hover:before:-translate-x-[150%] before:duration-1000 overflow-hidden z-0 before:-skew-x-12 hover:before:BgGradient">
+                            <button className="justify-center text-nowrap p-1 bg-black w-full text-white text-md font-semibold rounded md:px-7 px-4 py-2 md:py-3  flex items-center gap-1 relative before:absolute before:content-[''] before:BgGradientMove before:h-full before:w-full before:translate-x-[100%] hover:before:-translate-x-[150%] before:duration-1000 overflow-hidden z-0 before:-skew-x-12 hover:before:BgGradient">
                                 Add to cart - $8.00
                             </button>
 
@@ -254,7 +266,7 @@ const Product_details = () => {
 
                         {/* share */}
 
-                        <div className='flex gap-6 '>
+                        <div className='grid grid-cols-2 lg-1150:grid-cols-4 gap-6 '>
                             <a href="" className='hover:text-[red] duration-300 flex gap-2'>
                                 <img src="/compare.svg" alt="" />
                                 <span>Compare color</span>
@@ -278,7 +290,7 @@ const Product_details = () => {
 
                         {/* ship */}
 
-                        <div className='grid grid-cols-2  gap-8 my-5'>
+                        <div className='grid grid-cols-1 lg-1150:grid-cols-2  gap-8 my-5'>
                             <div className='flex flex-col text-center items-center p-7 border gap-6 '>
                                 <RiShipLine className='text-3xl' />
                                 <p className='text-sm'>Estimate delivery times: <strong>
@@ -312,7 +324,18 @@ const Product_details = () => {
 
                             </div>
                         </div>
+
+
                     </div>
+                </div>
+
+                {/* Description Section */}
+
+                <div className='h-screen'>
+
+                    <ProductDescription />
+
+
                 </div>
             </div>
         </div>

@@ -64,13 +64,12 @@ const Navbar = () => {
                         <li> <NavLink to='/'>Home</NavLink></li>
                         <li> <NavLink to='/shop'>Shop</NavLink></li>
                         <li> <NavLink to='/product'>Products</NavLink></li>
-                        {/* <li onClick={page_details()}> <NavLink to='/page' className='flex place-items-center gap-1' >Pages <IoIosArrowDown className='relative top-0.5' /></NavLink> */}
+                        {/* <li onClick={page_details()}> <NavLink to='/page' className='flex place-items-center gap-1' >Pages <IoIosArrowDown className='relative top-0.5' /></NavLink></li> */}
                         <li className=''> <NavLink to='/about'>About</NavLink></li>
 
                         {/* </li> */}
                         <li> <NavLink to='blog'>Blog</NavLink></li>
                         <li> <NavLink to='buynow'>Buy now</NavLink></li>
-
                     </ul>
 
                     {/* icon */}

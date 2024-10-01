@@ -11,8 +11,8 @@ const ProductDisplayCard = ({ product }) => {
 
     return (
         <div className=' h-fit rounded-md mt-5 m-auto '>
-
             <div className=" h-fit w-fit  rounded-md overflow-hidden relative group/card">
+                {/* card image */}
                 <a href="">
                     <img
                         src={currentColor.product_image_link}
@@ -21,20 +21,20 @@ const ProductDisplayCard = ({ product }) => {
                     />
                 </a>
 
-                <div className='absolute  h-full w-full inset-0 opacity-0 group-hover/card:opacity-100 duration-1000'>
+                <div className='absolute h-full w-full inset-0 opacity-0 group-hover/card:opacity-100 duration-1000'>
                     <div className='relative'>
                         <div>
                             <img src={product.product_hover_image.product_image_link} alt="fd" className='hover:scale-105 duration-700' />
                         </div>
-                        <div className=' flex flex-col gap-2 justify-center items-center  absolute h-14 w-full bottom-0'>
+                        <div className=' flex flex-col gap-2 justify-center items-center absolute h-14 w-full bottom-0'>
                             <div className='flex gap-2 justify-center items-center'>
                                 <RiShoppingBag2Line className='bg-white text-4xl p-2 rounded hover:bg-black hover:text-white' />
-                                <FaRegHeart className='bg-white  text-4xl p-2 rounded hover:bg-black hover:text-white' />
+                                <FaRegHeart className='bg-white text-4xl p-2 rounded hover:bg-black hover:text-white' />
                                 <TbArrowsCross className='bg-white text-4xl p-2 rounded hover:bg-black hover:text-white' />
                                 <MdOutlineRemoveRedEye className='bg-white text-4xl p-2 rounded hover:bg-black hover:text-white' />
                             </div>
                             {
-                                product.product_sizes && <div className='flex gap-2 items-center justify-center  bg-[#00000044]   w-full'>
+                                product.product_sizes && <div className='flex gap-2 items-center justify-center bg-[#00000044] w-full'>
                                     {
                                         product.product_sizes.map((crr) => {
                                             return <div className=' p-2 mb-10 text-white font-bold '>
@@ -58,8 +58,8 @@ const ProductDisplayCard = ({ product }) => {
 
                 <div className='flex gap-2 '>
                     {
-                        product.product_color_images.map((crr) => {
-                            return <div onMouseOver={() => setCurrentColor(crr)} className={` ${currentColor.product_color == crr.product_color && 'outline-1 outline outline-black outline-offset-2'} h-3 w-3 md:h-5 md:w-5 rounded-full shadow-[rgba(0,0,0,0.24)_0px_3px_8px] md:p-2`} style={{ backgroundColor: crr.product_color }}> </div>
+                        product.product_color_images.map((crr) => { // for single condition use && otherwise use tarnery operator 
+                            return <div onMouseOver={() => setCurrentColor(crr)} className={` ${currentColor.product_color == crr.product_color ? 'outline-1 outline outline-black outline-offset-2' : null} h-3 w-3 md:h-5 md:w-5 rounded-full shadow-[rgba(0,0,0,0.24)_0px_3px_8px] md:p-2`} style={{ backgroundColor: crr.product_color }}> </div>
                         })
                     }
                 </div>
