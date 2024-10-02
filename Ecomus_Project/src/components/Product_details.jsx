@@ -41,25 +41,8 @@ const sizeAdd = [
     },
 ]
 
-const colorAdd = [
-    {
-        colors: 'Beige',
-        bg: '#000'
-    },
-    {
-        colors: 'Black',
-        bg: '#000'
-    },
-    {
-        colors: 'Blue',
-        bg: '#000'
-    },
-    {
-        colors: 'White',
-        bg: 'white'
-    },
-]
-console.log(colorAdd[0].bg);
+
+const colorsAdd = ['Beige','Black','Blue','White']
 
 
 const Single_Slider = [
@@ -200,14 +183,13 @@ const Product_details = () => {
                             <p>Color : <span className='font-semibold'>{color}</span> </p>
                             <div className='flex gap-4 my-4 '>
                                 {
-                                    colorAdd.map((curr, index) => {
-                                        return <p key={index} className={`h-5 w-5 cursor-pointer ${color === curr.colors && " outline-offset-2 outline outline-1 "} bg-[${curr.bg}]  border rounded-full hover:outline hover:outline-1 `}
-                                            onClick={() => setColor(curr.colors)}></p>
+                                    colorsAdd.map((curr, index) => {
+                                        return <p key={index} className={`h-5 w-5 cursor-pointer ${color === curr && " outline-offset-2 outline outline-1 "}   border rounded-full hover:outline hover:outline-1 `}
+                                            onClick={() => setColor(curr)} style={{backgroundColor:curr}}></p>
                                     })
                                 }
 
                             </div>
-                            <p className={`h-5 w-5 cursor-pointer ${colorAdd[0].bg}  border rounded-full hover:outline hover:outline-1 `}></p>
                         </div>
 
                         {/* Size Section */}

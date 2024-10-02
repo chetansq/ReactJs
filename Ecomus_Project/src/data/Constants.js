@@ -241,3 +241,32 @@ export const BestSellerProductData = [
         product_wishlist: true,
     },
 ];
+
+
+const LoadMoreProductImage = [
+    {
+        product_id: 1,
+        product_name: "Patterned scarf",
+        product_price: "14.95",
+        prodcut_qty: 1,
+        product_color_images: [
+            {
+                product_color: "FireBrick",
+                product_image_link: "/asset_55.jpeg",
+                product_image_alt_text: "Brown scarf",
+            },
+            {
+                product_color: "Black",
+                product_image_link: "/asset_56.jpeg",
+                product_image_alt_text: "Black scarf",
+            },
+
+        ],
+        product_hover_image: {
+            product_image_link: "/asset_56.jpeg",
+            product_image_alt_text: "Black scarf",
+        },
+        product_sizes: ["M", "L", "XL"],
+        product_wishlist: true,
+    },
+]

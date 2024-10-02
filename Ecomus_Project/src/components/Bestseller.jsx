@@ -154,7 +154,7 @@ const Bestseller = () => {
             </div>
 
             <div className='flex justify-center my-4 '>
-                <button className='border border-black rounded py-3 px-7 hover:duration-300 font-semibold duration-300 hover:text-[red] hover:border-[red] text-sm'>Load More</button>
+                <button className='border border-black rounded py-3 px-7 hover:duration-300 font-semibold duration-300 hover:text-[red] hover:border-[red] text-sm'  >Load More</button>
             </div>
 
         </div>
