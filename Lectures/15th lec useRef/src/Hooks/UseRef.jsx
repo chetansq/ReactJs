@@ -25,6 +25,7 @@ const UseRef = () => {
         setTime(0);
     }
 
+    
     return (
         <div className='flex flex-col gap-6 justify-center items-center h-screen bg-slate-600'>
             <p className='text-5xl bg-gray-300 p-4 rounded'>
