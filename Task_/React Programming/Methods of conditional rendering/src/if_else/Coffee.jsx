@@ -18,7 +18,6 @@ const Coffee = () => {
 
             <div className=''>
 
-
                 <div className='border-2 p-2'>
                     <p className='text-2xl font-bold bg-[#422008] text-slate-200'>Spiced Coffee Recipe</p>
                     <hr />
