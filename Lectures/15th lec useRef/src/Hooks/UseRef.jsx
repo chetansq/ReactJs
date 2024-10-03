@@ -2,43 +2,20 @@ import React, { useRef, useState } from 'react'
 
 const UseRef = () => {
 
-    const [time, setTime] = useState(0);
+    const [count, setCount] = useState(0);
 
-    const timeRef = useRef(null);
+    const num = useRef(0);
+    num.current = num.current + 1;
+    console.log("number ", num)
 
-    function startTimer() {
-        timeRef.current = setInterval(() => {
-            setTime(time => time + 1);
-        }, 1000);
-        // console.log(timeRef.current);
-
-    }
-
-    function stopTimer() {
-        clearTimeout(timeRef.current);
-        timeRef.current = null;
-    }
-
-    function resetTimer() {
-        // console.log(timeRef.current);
-        stopTimer()
-        setTime(0);
-    }
-
-    
+    // let num = 0;
+    // num = num + 1;
+    // console.log("number ", num);
     return (
         <div className='flex flex-col gap-6 justify-center items-center h-screen bg-slate-600'>
-            <p className='text-5xl bg-gray-300 p-4 rounded'>
-                STOPWATCH
-            </p>
-            <div className='bg-slate-400 p-2 text-xl px-8 rounded'>
-                {time.toFixed(3)}s
-            </div>
-            <div className='*:text-xl *:text-white *:p-2 *:rounded rounded p-4 bg-slate-200 flex gap-7 *:bg-slate-800'>
-                <button className='hover:bg-slate-400 hover:text-slate-900' onClick={startTimer}>START</button>
-                <button className='hover:bg-slate-400 hover:text-slate-900' onClick={stopTimer}>STOP</button>
-                <button className='hover:bg-slate-400 hover:text-slate-900' onClick={resetTimer}>RESET</button>
-            </div>
+
+            <p className='bg-slate-300 px-5'>{count}</p>
+            <button onClick={() => setCount(count + 1)} className='bg-slate-400 p-2 rounded'>click</button>
         </div>
     )
 }
