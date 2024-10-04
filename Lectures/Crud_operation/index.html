@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud Operation</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="text-4xl my-5">Crud Operation</div>
+    <hr>
+
+
+
+    <div class='m-5 flex md:justify-between flex-col md:flex-row gap-4'>
+
+        <div class='w-full flex items-center  md:w-[30%]  '>
+            <input type="text" placeholder='Type a name...' class='border  p-2  w-full' />
+            <div
+                class='bg-sky-700 p-2 px-3 text-white rounded-e-md hover:bg-white border-2 border-sky-700 hover:text-sky-700'>
+                <i class="ri-search-2-line"></i>
+            </div>
+        </div>
+
+        <div class='flex gap-3  items-center justify-between flex-col max-sm:justify-center sm:flex-row'>
+
+            <button
+                class='flex max-sm:w-full  max-sm:justify-center items-center bg-red-500 text-sm sm:text-[16px]  text-white p-2 rounded-md  hover:bg-white border-2 border-red-500 hover:text-red-500'>
+                <i class="ri-close-circle-line"></i>
+                Delete Selected
+            </button>
+
+            <button
+                class='flex max-sm:w-full  max-sm:justify-center items-center bg-cyan-600 text-sm sm:text-[16px] text-white p-2 rounded-md hover:bg-white border-2 border-cyan-600 hover:text-cyan-600'>
+                <i class="ri-export-line"></i>
+                Export CSV
+            </button>
+
+            <button class='flex max-sm:w-full  max-sm:justify-center items-center bg-cyan-700 text-sm sm:text-[16px] text-white p-2 rounded-md
+            hover:bg-white border-2 border-cyan-700 hover:text-cyan-700'>
+                <i class="ri-add-line"></i>
+                Create Record
+            </button>
+        </div>
+
+    </div>
+    <table class="w-[95%] m-auto text-center">
+        <thead>
+            <tr class='text-xl text-nowrap bg-gray-200 '>
+                <th><input type="checkbox" /></th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>pillow</td>
+                <td>Sleeping well is important.</td>
+                <td>&dollar; 8.99</td>
+                <td>Personal</td>
+                <td class='flex justify-center gap-4 h-full item-center'>
+                    <a href=""
+                        class='flex items-center gap-1 h-full  bg-cyan-500 py-1 px-2 md:px-4 rounded-md text-white border-2 border-cyan-500 hover:bg-white hover:text-cyan-700 '>
+
+                        <i class="ri-edit-box-line"></i>
+                        <button class=' max-sm:hidden '>
+                            Edit
+                        </button>
+                    </a>
+
+                    <a href=""
+                        class='flex items-center gap-1 h-full bg-red-500 py-1 px-2 md:px-4 rounded-md text-white hover:text-red-500 hover:bg-white border-2 border-red-500'>
+
+
+                        <i class="ri-delete-bin-7-line"></i>
+                        <button class=' max-sm:hidden'>
+                            Delete
+                        </button>
+                    </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>Earphone</td>
+                <td>You need this one if you love music.</td>
+                <td>&dollar; 9.00</td>
+                <td>Personal</td>
+                <td class='flex justify-center gap-4 h-full item-center'>
+                    <a href=""
+                        class='flex items-center gap-1 h-full  bg-cyan-500 py-1 px-2 md:px-4 rounded-md text-white border-2 border-cyan-500 hover:bg-white hover:text-cyan-700 '>
+
+                        <i class="ri-edit-box-line"></i>
+                        <button class=' max-sm:hidden '>
+                            Edit
+                        </button>
+                    </a>
+
+                    <a href=""
+                        class='flex items-center gap-1 h-full bg-red-500 py-1 px-2 md:px-4 rounded-md text-white hover:text-red-500 hover:bg-white border-2 border-red-500'>
+
+
+                        <i class="ri-delete-bin-7-line"></i>
+                        <button class=' max-sm:hidden'>
+                            Delete
+                        </button>
+                    </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>Mouse</td>
+                <td>Very useful if you love your computer.</td>
+                <td>&dollar;11.35</td>
+                <td>Personal</td>
+                <td class='flex justify-center gap-4 h-full item-center'>
+                    <a href=""
+                        class='flex items-center gap-1 h-full  bg-cyan-500 py-1 px-2 md:px-4 rounded-md text-white border-2 border-cyan-500 hover:bg-white hover:text-cyan-700 '>
+
+                        <i class="ri-edit-box-line"></i>
+                        <button class=' max-sm:hidden '>
+                            Edit
+                        </button>
+                    </a>
+
+                    <a href=""
+                        class='flex items-center gap-1 h-full bg-red-500 py-1 px-2 md:px-4 rounded-md text-white hover:text-red-500 hover:bg-white border-2 border-red-500'>
+
+
+                        <i class="ri-delete-bin-7-line"></i>
+                        <button class=' max-sm:hidden'>
+                            Delete
+                        </button>
+                    </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>Trash Can</td>
+                <td>It will help you maintain cleanliness.</td>
+                <td>&dollar;11.35</td>
+                <td>Personal</td>
+                <td class='flex justify-center gap-4 h-full item-center'>
+                    <a href=""
+                        class='flex items-center gap-1 h-full  bg-cyan-500 py-1 px-2 md:px-4 rounded-md text-white border-2 border-cyan-500 hover:bg-white hover:text-cyan-700 '>
+
+                        <i class="ri-edit-box-line"></i>
+                        <button class=' max-sm:hidden '>
+                            Edit
+                        </button>
+                    </a>
+
+                    <a href=""
+                        class='flex items-center gap-1 h-full bg-red-500 py-1 px-2 md:px-4 rounded-md text-white hover:text-red-500 hover:bg-white border-2 border-red-500'>
+
+
+                        <i class="ri-delete-bin-7-line"></i>
+                        <button class=' max-sm:hidden'>
+                            Delete
+                        </button>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <div class='flex justify-between items-center my-8 flex-col sm:flex-row gap-4 px-4'>
+
+        <div class='flex items-center'>
+            <a href=''
+                class='bg-cyan-800 text-white p-2 text-xl hover:text-cyan-800 border-2 border-cyan-800 hover:bg-white'>
+                <i class="ri-arrow-left-double-line"></i>
+            </a>
+            <a href="" class='px-2 py-1.5 bg-gray-100'>1</a>
+            <a href="" class='px-2 py-1.5 bg-gray-100'>2</a>
+            <a href="" class='px-2 py-1.5 bg-gray-100'>...</a>
+            <a href=''
+                class='bg-cyan-800 text-white p-2 text-xl  hover:text-cyan-800 border-2 border-cyan-800 hover:bg-white'>
+                <i class="ri-arrow-right-double-line"></i>
+            </a>
+        </div>
+
+        <div class='flex items-center w-full sm:w-[30%]'>
+            <input type="text" placeholder='Type a name...' class='border  p-2  w-full' />
+            <div
+                class='bg-sky-700 p-2  text-white rounded-e-md  hover:bg-white border-2 border-sky-700 hover:text-sky-700'>
+                GO
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
