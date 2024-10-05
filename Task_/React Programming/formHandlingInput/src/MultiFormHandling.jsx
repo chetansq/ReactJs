@@ -5,7 +5,8 @@ const MultiFormHandling = () => {
     const [data, setData] = useState({
         username: '',
         email: '',
-        password: ''
+        password: '',
+        gender: ''
     });
 
     const obj = (e) => {
@@ -15,7 +16,8 @@ const MultiFormHandling = () => {
             {
                 username: '',
                 email: '',
-                password: ''
+                password: '',
+                gender: ''
             }
         )
     }
@@ -34,18 +36,36 @@ const MultiFormHandling = () => {
                 <label htmlFor="password"></label>
                 <input type="password" placeholder='Password' className='border p-2 px-5 rounded w-full' name="password" id='pwd' value={data.password} onChange={(e) => setData({ ...data, [e.target.name]: e.target.value })} />
 
+                {/* gender */}
+
+                <div>
+                    <input type="radio" name="gender" id="male" value={data.gender} onChange={(e) => setData({ ...data, [e.target.name]: e.target.checked })} />
+                    <label htmlFor="male">male</label>
+                    <input type="radio" name="gender" id="female" value={data.gender} onChange={(e) => setData({ ...data, [e.target.name]: e.target.checked })} />
+                    <label htmlFor="female">female</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" name="gujrati" id="" />
+                    <label htmlFor="gujrati">Gujrati</label>
+                    <input type="checkbox" name="hindi" id="" />
+                    <label htmlFor="hindi">Hindi</label>
+                    <input type="checkbox" name="english" id="" />
+                    <label htmlFor="english">English</label>
+                </div>
+
                 {/* submit */}
                 <button type='submit' className='bg-black text-white p-2 hover:bg-gray-300 hover:text-black rounded' onClick={obj} >Submit</button>
 
             </form>
 
-            <div className='flex flex-col gap-4'>
+            {/* <div className='flex flex-col gap-4'>
                 <div>
                     <p>your Name:{data.username}</p>
                     <p>password:{data.password}</p>
                 </div>
 
-            </div>
+            </div> */}
         </div>
     )
 }
