@@ -1,0 +1,11 @@
+1. Methods of Conditional Rendering
+a. If else Statements
+b. Ternary Operator
+c. Logical && Operator
+d. Switch Case Statements
+
+2. Nesting React Component
+3.Form Component (Handling Input)
+6.Object State
+7. Toggle State (Boolean)
+8. State with Arrays
