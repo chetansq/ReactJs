@@ -34,10 +34,10 @@ const FormHandling = () => {
             </form>
 
             <div className='flex flex-col gap-4'>
-                <div>
+                {/* <div>
                     <p>your Name:{data.username}</p>
                     <p>password:{data.password}</p>
-                </div>
+                </div> */}
 
             </div>
         </div>
