@@ -8,8 +8,9 @@ function App() {
 
   return (
     <>
-      {/* <Timer /> */}
-      <ListRendring />
+      <Timer />
+      {/* <ListRendring /> */}
+
     </>
   )
 }

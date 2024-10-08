@@ -1,24 +1,31 @@
 import React, { useState } from 'react'
-
+import { useRef } from 'react';
 const Timer = () => {
 
     const [time, setTime] = useState(0);
 
+    let currentTime = useRef(null);
     function start() {
-        setInterval(() => {
-
-            setTime(time => time + 1);
+        currentTime.current = setInterval(() => {
+            setTime((time) => time + 1);
         }, 1000);
+
+        console.log(currentTime.current);
+
     }
 
     function stop() {
 
-        clearInterval();
+        clearInterval(currentTime.current);
+        currentTime.current = null;
 
         // interval_id = 0;
     }
 
-
+    function reset() {
+        stop();
+        setTime(0);
+    }
     return (
         <div className='container'>
 
@@ -29,7 +36,7 @@ const Timer = () => {
             <div className='*:bg-slate-700 *:text-white *:m-4 *:p-2 *:rounded '>
                 <button className='hover:bg-slate-400 hover:text-black border hover:border-black' onClick={start}>START</button>
                 <button className='hover:bg-slate-400 hover:text-black border hover:border-black' onClick={stop}>STOP</button>
-                <button className='hover:bg-slate-400 hover:text-black border hover:border-black'>RESET</button>
+                <button className='hover:bg-slate-400 hover:text-black border hover:border-black' onClick={reset}>RESET</button>
             </div>
         </div>
     )
