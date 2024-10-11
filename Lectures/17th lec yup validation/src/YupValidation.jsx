@@ -14,29 +14,29 @@ const YupValidation = () => {
         console.log(values);
     }
 
-    const validate = values => {
-        const errors = {}
-        if(!values.email){
-            errors.email = 'Required'
-        }else
-        if (
-            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-          ) {
-            errors.email = 'Invalid email address';
-          }
-          return errors;
-    }
+    // const validate = values => {
+    //     const errors = {}
+    //     if(!values.email){
+    //         errors.email = 'Required'
+    //     }else
+    //     if (
+    //         !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+    //       ) {
+    //         errors.email = 'Invalid email address';
+    //       }
+    //       return errors;
+    // }
 
-    // const validationSchema = yup.object(
-    //     {
-    //         fullName: yup.string().required('please required'),
-    //         email: yup.string().email('invalid email address').test(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i).required('please required'),
-    //         password: yup.string().required('please required')
-    //     }
-    // )
+    const validationSchema = yup.object(
+        {
+            fullName: yup.string().required('please required'),
+            email: yup.string().email('invalid email address').test(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i).required('please required'),
+            password: yup.string().required('please required')
+        }
+    )
 
     const formik = useFormik({
-        initialValues,  
+        initialValues,
         onSubmit,
         validate
     })

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Formik, Form, Field, ErrorMessage, validateYupSchema } from 'formik'
+import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 
 const FormikComponent = () => {
@@ -25,7 +25,7 @@ const FormikComponent = () => {
 
     const validationschema = Yup.object({
         fullName: Yup.string().max(10, 'No More Then 10 Char').required('please required'),
-        email: Yup.string().required('please required').email('Invalid').matches(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, 'kjshdcasjh'),
+        email: Yup.string().required('please required').email('Invalid').matches(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, 'Invalid Email Address'),
         password: Yup.string().required('please required')
     })
 
@@ -41,21 +41,21 @@ const FormikComponent = () => {
                         <Form className='flex flex-col p-12 rounded  shadow-[rgba(0,0,0,0.5)_0px_3px_8px_1px]' action='#'  >
                             <div className=''>
                                 <label htmlFor="fullName" className='text-white'>FullName</label>
-                                <Field className='p-2' type="text" name="fullName" id="fullName" />
+                                <Field className='p-2 w-full mb-4' type="text" name="fullName" id="fullName" />
                                 <div className='text-white'>
                                     <ErrorMessage name='fullName' className='text-white'></ErrorMessage>
                                 </div>
                             </div>
                             <div>
                                 <label htmlFor="email" className='text-white'>Email</label>
-                                <Field className='p-2' type="email" name="email" id="email" />
+                                <Field className='p-2 w-full mb-4' type="email" name="email" id="email" />
                                 <div className='text-white'>
                                     <ErrorMessage name='email'></ErrorMessage>
                                 </div>
                             </div>
                             <div>
                                 <label htmlFor="password" className='text-white'>Password</label>
-                                <Field className='p-2 mb-4' type="password" name="password" id="password" />
+                                <Field className='p-2 mb-4 w-full ' type="password" name="password" id="password" />
                                 <div className='text-white'>
                                     <ErrorMessage name='password'></ErrorMessage>
                                 </div>
