@@ -26,14 +26,20 @@ const RegistrationForm = () => {
 
         if (!values.userId) {
             errors.userId = 'Required'
+        } else if (!/^[0-9]{5,12}$/i.test(values.userId)) {
+            errors.userId = 'Only number and must be of length 5 to 12.';
         }
 
         if (!values.password) {
             errors.password = 'Required'
+        } else if (!/^[0-9]{5,12}$/i.test(values.password)) {
+            errors.password = 'Only number and must be of length 5 to 12.';
         }
 
         if (!values.Name) {
             errors.Name = 'Required'
+        } else if (!/^[A-Z]{2,}$/i.test(values.Name)) {
+            errors.Name = 'Alphabates only';
         }
 
         if (!values.address) {
@@ -88,7 +94,7 @@ const RegistrationForm = () => {
                         {/* user Id  section */}
                         <div className=''>
                             <label htmlFor="userid" className='text-white'>user id:</label>
-                            <input className='p-2 w-full' type="number" name="userId" id="userid" onChange={formik.handleChange} />
+                            <input className='p-2 w-full' type="text" name="userId" id="userid" onChange={formik.handleChange} />
                             <span className='mb-6'>
                                 {
                                     formik.errors.userId ? <div className='text-red-300'>*{formik.errors.userId}</div> : null
