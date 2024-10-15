@@ -24,15 +24,15 @@ const SignUp = () => {
     })
 
     return (
-        <div>
+        <div className='flex justify-center items-center h-screen'>
             <Formik validationSchema={validationschema} initialValues={initialValues} onSubmit={onSubmit}>
 
-                <Form className='flex flex-col p-12 rounded  shadow-[rgba(0,0,0,0.5)_0px_3px_8px_1px]' action='#' style={{ backgroundImage: "url('https://t4.ftcdn.net/jpg/03/92/25/09/360_F_392250914_2Od8jNRBPgpMu8W29vCh4hiu5EUXbgGU.jpg')" }}>
+                <Form className='flex flex-col p-12 w-[30%] justify-center rounded  shadow-[rgba(0,0,0,0.5)_0px_3px_8px_1px]' action='#' style={{ backgroundImage: "url('https://t4.ftcdn.net/jpg/03/92/25/09/360_F_392250914_2Od8jNRBPgpMu8W29vCh4hiu5EUXbgGU.jpg')" }}>
                     {/* username section */}
                     <div className=''>
                         <label htmlFor="userName" className='text-white'>userName</label>
                         <Field className='p-2 w-full mb-4' type="text" name="userName" id="userName" />
-                        <div className='text-red-600'>
+                        <div>
                             <ErrorMessage name='userName' className='text-white'></ErrorMessage>
                         </div>
                     </div>
@@ -69,7 +69,7 @@ const SignUp = () => {
                     <button type="submit" className='bg-green-600 text-white p-2'>Submit</button>
                 </Form>
             </Formik>
-        </div>
+        </div >
     )
 }
 
