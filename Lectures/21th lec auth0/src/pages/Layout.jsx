@@ -8,6 +8,7 @@ import Login from './Login'
 import Navbar from '../components/Navbar'
 import Error from './Error'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Profile from './Profile'
 
 
 const Layout = () => {
@@ -23,6 +24,7 @@ const Layout = () => {
                     <Route path="/contact" element={<Contact />}></Route>
                     <Route path="/login" element={<Login />}></Route>
                     <Route path="/error" element={<Error />}></Route>
+                    <Route path="/profile" element={<Profile />}></Route>
                 </Routes>
             </BrowserRouter>
         </div>
