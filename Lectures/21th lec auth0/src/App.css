@@ -40,3 +40,12 @@
 .read-the-docs {
   color: #888;
 } */
+
+.active {
+  color: red;
+  text-shadow: 0px 0px 2px red;
+  border-bottom: 1px solid red;
+  transition: all;
+  transition-duration: .6s;
+  
+}

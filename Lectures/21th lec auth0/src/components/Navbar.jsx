@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink , Link  } from 'react-router-dom'
 import { useAuth0 } from "@auth0/auth0-react";
 
 const Navbar = () => {
@@ -13,20 +13,20 @@ const Navbar = () => {
             <div>
                 <nav>
                     <ul className='flex gap-8'>
-                        <li><Link to='/'>Home</Link></li>
-                        <li><Link to='/about'>About</Link></li>
-                        <li><Link to='/cart'>Cart</Link></li>
-                        <li><Link to='/shop'>Shop</Link></li>
-                        <li><Link to='/contact'>Contact</Link></li>
+                        <li><NavLink to='/'>Home</NavLink></li>
+                        <li><NavLink to='/about'>About</NavLink></li>
+                        <li><NavLink to='/cart'>Cart</NavLink></li>
+                        <li><NavLink to='/shop'>Shop</NavLink></li>
+                        <li><NavLink to='/contact'>Contact</NavLink></li>
 
 
                         {
                             isAuthenticated ? (
                                 <div className="flex gap-5">
                                     <li>
-                                        <Link to='/profile'>
+                                        <NavLink to='/profile'>
                                             Profile
-                                        </Link>
+                                        </NavLink>
                                     </li>
                                     <li>
                                         <Link>
@@ -37,7 +37,7 @@ const Navbar = () => {
                                 </div>
                             ) : (
 
-                                <li><Link to='/login' onClick={() => loginWithRedirect()}>Login</Link></li>
+                                <li><NavLink to='/login' onClick={() => loginWithRedirect()}>Login</NavLink></li>
                             )
                         }
                     </ul>
