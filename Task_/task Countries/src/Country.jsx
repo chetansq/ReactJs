@@ -200,7 +200,9 @@ const countries_obj = [
         "currentTime": "2024-10-18T20:00:00",
 
         "region": "Asia",
-        "viewMap": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23711826.169871457!2d-116.75483103688838!3d54.22227356209138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4b0d03d337cc6ad9%3A0x9968b72aa2438fa5!2sCanada!5e1!3m2!1sen!2sin!4v1729230956588!5m2!1sen!2sin",
+
+        "viewMap": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d33656978.0939605!2d82.83479083838715!3d33.91651502248239!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31508e64e5c642c1%3A0x951daa7c349f366f!2sChina!5e1!3m2!1sen!2sin!4v1729314484983!5m2!1sen!2sin",
+
     },
     {
         "name": "Russia",
@@ -316,9 +318,20 @@ const countries_obj = [
 
 const Country = () => {
 
+    const [data, setData] = useState();
+
+    const search_Data = () => {
+        const country_data = document.getElementById('get_data').value.toLowerCase();
+        setData(country_data);
+        console.log(country_data);
+    }
 
     return (
         <div>
+            <div>
+                <p className='font-serif text-4xl text-slate-800 '>COUNTRIES DETAIlS</p>
+            </div>
+            <input type="text" name="" id="get_data" placeholder='Search...' className='p-2 border my-10 w-[40%] shadow-black shadow-md rounded' onChange={search_Data} />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {
                     countries_obj.map((current, index) => {
@@ -332,11 +345,9 @@ const Country = () => {
 
 export default Country
 
-
 function Country_details({ details }) {
 
     const [showMap, setShowMap] = useState(false);
-
 
     const toggleMap = () => {
         setShowMap(prev => !prev); // Toggle the map visibility
@@ -344,8 +355,6 @@ function Country_details({ details }) {
     return (
         <>
             <div className="container mx-auto">
-
-
 
                 <div className="bg-white shadow-lg rounded-lg overflow-hidden text-left">
                     <img className="w-full h-48 object-cover" src={details.image} alt={details.alt_img} />
@@ -362,15 +371,12 @@ function Country_details({ details }) {
                         <p className="text-gray-600 mb-2"><span className="font-semibold">ISO Codes:</span> {details.isoCodes.alpha2} (alpha2), {details.isoCodes.alpha3} (alpha3)</p>
                         <p className="text-gray-600 mb-2"><span className="font-semibold">Current Time:</span> {details.currentTime} </p>
 
-
                         <button
                             onClick={toggleMap}
                             className="bg-blue-500 text-white py-2 px-4 rounded mt-4"
                         >
                             {showMap ? "Hide Map" : "Show Map"}
                         </button>
-
-
 
                         {showMap && details.viewMap && (
                             <iframe

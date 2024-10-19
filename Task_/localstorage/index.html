@@ -9,7 +9,22 @@
 </head>
 
 <body>
-    <button onclick='btn()' class="bg-white border-black border p-2 m-3">click</button>
+
+    <h1>Local Storage</h1>
+    <div>
+        <button onclick='add()' class="bg-white border-black border p-2 m-3">AddData</button>
+        <button onclick='getitem()' class="bg-white border-black border p-2 m-3">GetItem</button>
+        <button onclick='removeitem()' class="bg-white border-black border p-2 m-3">RemoveItem</button>
+        <button onclick='allclear()' class="bg-white border-black border p-2 m-3">Clear</button>
+    </div>
+
+    <h1>Session Storage</h1>
+    <div>
+        <button onclick='addsession()' class="bg-white border-black border p-2 m-3">AddData</button>
+        <button onclick='getitem_session()' class="bg-white border-black border p-2 m-3">GetItem</button>
+        <button onclick='removeitem_session()' class="bg-white border-black border p-2 m-3">RemoveItem</button>
+        <button onclick='allclear_session()' class="bg-white border-black border p-2 m-3">Clear</button>
+    </div>
     <script src="./localstorage.js"></script>
 </body>
 
