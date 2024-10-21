@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Login from './components/Login'
 import SignUp from './components/SignUp'
+import Shop from './components/Shop'
 
 
 const LocalstorageWithFormik = () => {
@@ -13,6 +14,7 @@ const LocalstorageWithFormik = () => {
                 <Navbar />
                 <Routes>
                     <Route path='/' element={<Home />}></Route>
+                    <Route path='/shop' element={<Shop />}></Route>
                     <Route path='/login' element={<Login />}></Route>
                     <Route path='/signup' element={<SignUp />}></Route>
                 </Routes>

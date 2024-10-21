@@ -4,7 +4,7 @@ export const formDataSaveFromLocalStorage = (user) => {
     localStorage.setItem('users', JSON.stringify(users))
 }
 
-export const getFormDataFromLocalStorage = (user) => {
+export const getFormDataFromLocalStorage = (email) => {
     let users = JSON.parse(localStorage.getItem('users')) || [];
     return users.find(user => user.email === email)
 } 
