@@ -9,7 +9,7 @@ const Home = () => {
                     <div className="md:w-1/2 space-y-4">
                         <h1 className="text-4xl md:text-5xl font-bold text-gray-800">Your Non-Stop Online Shop</h1>
                         <p className="text-gray-600 text-lg">Discover the latest trends and shop over 10,000 products in fashion, tech, home & more.</p>
-                        <a href="#" className="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700">Start Shopping</a>
+                        <a href="./shop" className="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700">Start Shopping</a>
                     </div>
                     <div className="md:w-1/2 mt-8 md:mt-0">
                         <img src="https://wealthyhabits.org/wp-content/uploads/2019/04/online-shopping-e1567402745948.png" alt="Shopping Banner" className="rounded-lg shadow-md" />
@@ -24,22 +24,22 @@ const Home = () => {
                         <div className="bg-white rounded-lg shadow-md p-6 text-center">
                             <img className=' w-full' src="https://i.pinimg.com/474x/ab/35/d0/ab35d0c207b0cb4cff71b24db925591e.jpg" alt="" />
                             <h3 className="text-lg font-semibold text-gray-700">Men's Fashion</h3>
-                            <a href="#" className="block mt-2 bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700">Shop Now</a>
+                            <a href="./shop" className="block mt-2 bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700">Shop Now</a>
                         </div>
                         <div className="bg-white rounded-lg shadow-md p-6 text-center">
                             <img className=' w-full' src="https://idaho-o.com/wp-content/uploads/2024/06/image-11.png" alt="" />
                             <h3 className="text-lg font-semibold text-gray-700">Women's Fashion</h3>
-                            <a href="#" className="block mt-2 bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700">Shop Now</a>
+                            <a href="./shop" className="block mt-2 bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700">Shop Now</a>
                         </div>
                         <div className="bg-white rounded-lg shadow-md p-6 text-center">
                             <img className=' w-full' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwQic0HmizmCJO-tR6gXI88IwS52SdjPtL3A&s" alt="" />
                             <h3 className="text-lg font-semibold text-gray-700">Electronics</h3>
-                            <a href="#" className="block mt-2 bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700">Shop Now</a>
+                            <a href="./shop" className="block mt-2 bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700">Shop Now</a>
                         </div>
                         <div className="bg-white rounded-lg shadow-md p-6 text-center">
                             <img className=' w-full' src="https://static.athome.com/image/upload/f_auto,q_auto/v1675721330/webcontent/ABtest/FurnitureCLP/FY24Q1_TRAD_LR_Providence_2.jpg" alt="" />
                             <h3 className="text-lg font-semibold text-gray-700">Home & Furniture</h3>
-                            <a href="#" className="block mt-2 bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700">Shop Now</a>
+                            <a href="./shop" className="block mt-2 bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700">Shop Now</a>
                         </div>
                     </div>
                 </div>

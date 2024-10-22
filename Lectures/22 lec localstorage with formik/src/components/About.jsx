@@ -4,6 +4,35 @@ const About = () => {
     return (
         <div>
 
+<main class="container mx-auto mt-10 px-4">
+        <section class="bg-white shadow-md rounded-lg p-6">
+            <h2 class="text-2xl font-semibold mb-4">Our Mission</h2>
+            <p class="text-gray-700 mb-4">
+                At Electronics Store, we are committed to providing our customers with top-notch electronic products and services that enhance their lives. 
+            </p>
+
+            <h2 class="text-2xl font-semibold mb-4">Our Values</h2>
+            <ul class="list-disc pl-5 text-gray-700 mb-4">
+                <li>Innovation: We embrace cutting-edge technology.</li>
+                <li>Quality: We ensure every product meets our high standards.</li>
+                <li>Customer Satisfaction: Our customers are our priority.</li>
+                <li>Integrity: We believe in honest and transparent practices.</li>
+            </ul>
+
+            <h2 class="text-2xl font-semibold mb-4">Our Team</h2>
+            <p class="text-gray-700 mb-4">
+                Our team consists of passionate electronics enthusiasts and experts who are always ready to assist you in finding the perfect product for your needs.
+            </p>
+        </section>
+
+        <section class="mt-10">
+            <h2 class="text-2xl font-semibold mb-4">Join Us on Our Journey</h2>
+            <p class="text-gray-700 mb-4">
+                We invite you to explore our extensive range of products and discover how we can help you stay connected and powered up in today’s digital world.
+            </p>
+        </section>
+    </main>
+
             {/* <!-- Footer --> */}
             <footer className="bg-gray-800 py-12">
                 <div className="container mx-auto px-4">
