@@ -5,6 +5,7 @@ import Home from './components/Home'
 import Login from './components/Login'
 import SignUp from './components/SignUp'
 import Shop from './components/Shop'
+import About from './components/About'
 
 
 const LocalstorageWithFormik = () => {
@@ -15,6 +16,7 @@ const LocalstorageWithFormik = () => {
                 <Routes>
                     <Route path='/' element={<Home />}></Route>
                     <Route path='/shop' element={<Shop />}></Route>
+                    <Route path='/about' element={<About />}></Route>
                     <Route path='/login' element={<Login />}></Route>
                     <Route path='/signup' element={<SignUp />}></Route>
                 </Routes>
