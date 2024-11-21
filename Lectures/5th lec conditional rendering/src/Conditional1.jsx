@@ -82,6 +82,7 @@ export function Products({ data1, data2 }) {
     }
 }
 
+
 const Conditional1 = (props) => {
     const data1 = props.name;
     const data2 = props.stock;
