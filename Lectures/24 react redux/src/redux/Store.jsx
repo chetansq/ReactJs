@@ -3,6 +3,8 @@ import { createStore } from "redux";
 import { combineReducers } from "redux";
 import { applyMiddleware } from "redux";
 import logger from "redux-logger";
+import { configureStore } from "@reduxjs/toolkit"
+
 // import { useSelector, useDispatch } from 'react-redux'
 
 const rootReducer = combineReducers({
@@ -10,7 +12,8 @@ const rootReducer = combineReducers({
     coldrinks: coldrinksReducer
 })
 
-const Store = createStore(rootReducer, applyMiddleware(logger));
+// const Store = createStore(rootReducer, applyMiddleware(logger));
+const Store = configureStore({ reducer: rootReducer }, applyMiddleware(logger));
 
 
 
