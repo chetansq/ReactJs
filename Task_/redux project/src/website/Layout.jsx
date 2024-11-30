@@ -6,6 +6,8 @@ import WishlistPage from './WishlistPage'
 import CartPage from './CartPage'
 import Navbar from './Navbar'
 import Login from './Login'
+import SignUp from './SignUp'
+import Contact from './Contact'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
@@ -20,8 +22,9 @@ const Layout = () => {
                     <Route path="/cart" element={<CartPage />}></Route>
                     <Route path="/buy" element={<BuyPage />}></Route>
                     <Route path="/wishlist" element={<WishlistPage />}></Route>
-                    {/* <Route path="/contact" element={<Contact />}></Route> */}
+                    <Route path="/contact" element={<Contact />}></Route>
                     <Route path="/login" element={<Login />}></Route>
+                    <Route path="/signup" element={<SignUp />}></Route>
 
                     <Route path="/error" element={<Error />}></Route>
                 </Routes>

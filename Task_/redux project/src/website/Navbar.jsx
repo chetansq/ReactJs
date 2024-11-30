@@ -20,6 +20,7 @@ const Navbar = () => {
                         <li><NavLink to='/buy'>Buy</NavLink></li>
                         <li><NavLink to='/contact'>Contact</NavLink></li>
                         <li><NavLink to='/login'>Login</NavLink></li>
+                        <li><NavLink to='/signup'>SignUp</NavLink></li>
                     </ul>
                 </nav>
             </div>
