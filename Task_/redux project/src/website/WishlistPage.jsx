@@ -1,17 +1,18 @@
 import React from "react";
-
+import { useSelector, useDispatch } from "react-redux";
 const WishlistPage = () => {
-    const wishlistItems = [
-        { id: 1, name: "Shoes VIR", price: "$20", image: "https://rukminim2.flixcart.com/image/850/1000/xif0q/shoe/c/n/h/10-126-grey-10-winprice-grey-original-imagrmcyhvmzxhvv.jpeg?q=90&crop=false" },
+    // const wishlistItems = [
+    //     { id: 1, name: "Shoes VIR", price: "$20", image: "https://rukminim2.flixcart.com/image/850/1000/xif0q/shoe/c/n/h/10-126-grey-10-winprice-grey-original-imagrmcyhvmzxhvv.jpeg?q=90&crop=false" },
 
-    ];
+    // ];
+    const wishlist_data = useSelector((state) => state.wishlist)
 
     return (
         <div className="p-6">
             <h1 className="text-2xl font-bold mb-4">Wishlist</h1>
-            {wishlistItems.length > 0 ? (
+            {wishlist_data.length > 0 ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {wishlistItems.map((item) => (
+                    {wishlist_data.map((item) => (
                         <div
                             key={item.id}
                             className="border rounded-lg p-4 shadow hover:shadow-lg transition"

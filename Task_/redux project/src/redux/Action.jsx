@@ -1,9 +1,9 @@
 import { ADD_TO_CART, REMOVE_TO_CART, EMPTY_CART, ADD_TO_WISHLIST, REMOVE_TO_WISHLIST, EMPTY_WISHLIST } from "./Constant";
 
-export const add_to_cart = () => {
+export const add_to_cart = (for_add_to_cart) => {
     return {
         type: ADD_TO_CART,
-        info: 'add to cart called'
+        paylod: for_add_to_cart
     }
 }
 export const remove_to_cart = () => {
@@ -18,10 +18,10 @@ export const empty_cart = () => {
         info: 'empty cart called'
     }
 }
-export const add_to_wishlist = () => {
+export const add_to_wishlist = (for_add_to_wishlist) => {
     return {
         type: ADD_TO_WISHLIST,
-        info: 'add to wishlist called'
+        paylod: for_add_to_wishlist
     }
 }
 export const remove_to_wishlist = () => {
