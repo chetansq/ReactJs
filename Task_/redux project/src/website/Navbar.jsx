@@ -7,7 +7,7 @@ const Navbar = () => {
     return (
         <div className='bg-slate-200 flex justify-around p-4 items-center'>
             <div>
-                <img src="https://reactrouter.com/_brand/react-router-stacked-color.png" alt="" className='h-20' />
+                <img src="https://redux.js.org/img/redux.svg" alt="" className='h-20 w-20' />
             </div>
 
             <div>
