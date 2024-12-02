@@ -1,8 +1,8 @@
 import { PRODUCT_SET } from "./Constant";
 
-export const product_set = () => {
+export const product_set = (forProduct) => {
     return {
         type: PRODUCT_SET,
-        info: 'product set called'
+        paylod:forProduct
     }
 }

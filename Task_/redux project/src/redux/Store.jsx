@@ -3,6 +3,6 @@ import { applyMiddleware } from "redux";
 import logger from "redux-logger";
 import { configureStore } from '@reduxjs/toolkit'
 
-const Store = configureStore(RootReducer, applyMiddleware(logger));
+const Store = configureStore({ reducer: RootReducer }, applyMiddleware(logger));
 
 export default Store;
