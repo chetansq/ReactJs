@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { add_to_wishlist } from "../redux/Action";
+import { cart_to_wishlist } from "../redux/Action";
 
 const CartPage = () => {
 
@@ -14,9 +14,9 @@ const CartPage = () => {
     console.log('cart to wishlist ', wishlist_data);
 
 
-    const calculateTotal = () => 
+    const calculateTotal = () =>
 
-        cart_data.reduce((total, item) => total + parseFloat(item.price.slice(1)) * item.quantity,0);
+        cart_data.reduce((total, item) => total + parseFloat(item.price.slice(1)) * item.quantity, 0);
 
 
 
@@ -46,10 +46,10 @@ const CartPage = () => {
                                         <p className='hover:text-[red] text-2xl cursor-pointer ' onClick={() => setQuantity(quantity + 1)}> &#43; </p>
                                     </div>
                                 </div>
-                                <button onClick={() => dispatch(add_to_wishlist(item))} className="mt-4 bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600">
+                                <button onClick={() => dispatch(cart_to_wishlist(item))} className="mt-4 bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600">
 
 
-                                    Add to wishlist
+                                    Cart to wishlist
 
                                 </button>
                                 <button className="bg-red-500 text-white px-4 py-2 mt-4 rounded hover:bg-red-600">
