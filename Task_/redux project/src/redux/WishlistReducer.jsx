@@ -11,9 +11,19 @@ export const wishlistReducer = (state = [], action) => {
             return [...state, action.payload]
 
         case REMOVE_TO_WISHLIST:
-            return {
 
-            }
+            // const remove_wishlist_data = state.slice(1);
+            // console.log('remove to wishlist',remove_wishlist_data);
+
+            // return [...remove_wishlist_data];
+
+
+
+            const remove_wishlist_data = state.filter((state) => state.id !== action.payload.id)
+            console.log('remove_wishlist_data from CART', remove_wishlist_data);
+
+            return [...remove_wishlist_data];
+
 
         case EMPTY_WISHLIST:
             return {

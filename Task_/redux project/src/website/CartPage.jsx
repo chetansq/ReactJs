@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { cart_to_wishlist } from "../redux/Action";
+import { cart_to_wishlist, remove_to_cart } from "../redux/Action";
 
 const CartPage = () => {
 
@@ -52,7 +52,7 @@ const CartPage = () => {
                                     Cart to wishlist
 
                                 </button>
-                                <button className="bg-red-500 text-white px-4 py-2 mt-4 rounded hover:bg-red-600">
+                                <button onClick={() => dispatch(remove_to_cart(item))} className="bg-red-500 text-white px-4 py-2 mt-4 rounded hover:bg-red-600">
                                     Remove
                                 </button>
                             </div>

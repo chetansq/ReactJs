@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux'
 import { product_set } from "../redux/ProductAction";
 import { add_to_cart } from "../redux/Action";
 import { add_to_wishlist } from "../redux/Action";
 
+import axios from "axios";
 
 const products = [
     {
@@ -99,6 +100,20 @@ const products = [
 
 
 const ProductPage = () => {
+
+    const [data, setData] = useState([])
+    // https://dummyjson.com/products
+
+
+    // useEffect(() => {
+    //     axios.get("https://dummyjson.com/products")
+    //         .then((res) => {
+    //             console.log(res.data.products)
+    //             setData(res.data.products)
+    //         })
+    // }, [])
+
+
 
     const productData = useSelector((state) => state.product);
     console.log("product data", productData);

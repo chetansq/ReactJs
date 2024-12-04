@@ -18,12 +18,14 @@ export const add_to_cart = (for_add_to_cart) => {
         payload: for_add_to_cart
     }
 }
-export const remove_to_cart = () => {
+export const remove_to_cart = (for_remove_to_cart) => {
     return {
         type: REMOVE_TO_CART,
-        info: 'remove to cart called'
+        info: 'remove to cart called',
+        payload: for_remove_to_cart
     }
 }
+
 export const empty_cart = () => {
     return {
         type: EMPTY_CART,
@@ -47,10 +49,11 @@ export const add_to_wishlist = (for_add_to_wishlist) => {
         payload: for_add_to_wishlist
     }
 }
-export const remove_to_wishlist = () => {
+export const remove_to_wishlist = (for_remove_to_wishlist) => {
     return {
         type: REMOVE_TO_WISHLIST,
-        info: 'remove to wishlist called'
+        info: 'remove to wishlist called',
+        payload: for_remove_to_wishlist
     }
 }
 export const empty_wishlist = () => {

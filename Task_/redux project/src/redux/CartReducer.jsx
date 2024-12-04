@@ -11,9 +11,15 @@ export const cartReducer = (state = [], action) => {
             return [...state, action.payload]
 
         case REMOVE_TO_CART:
-            return {
 
-            }
+            const remove_cart_data = state.filter((state) => state.id !== action.payload.id)
+            console.log('remove_cart_data from CART', remove_cart_data);
+
+            return [...remove_cart_data];
+
+            // const removeData = state.splice(1);
+            // return [...removeData];
+
 
         case EMPTY_CART:
             return {
