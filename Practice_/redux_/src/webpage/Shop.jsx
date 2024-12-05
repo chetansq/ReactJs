@@ -5,9 +5,9 @@ import { product_set } from '../redux/ProductAction';
 
 const products = [
     { id: 1, name: "Mixer-juicer", price: "$99.99", image: "https://m.media-amazon.com/images/I/71vfrhmJ1SL._AC_UF894,1000_QL80_.jpg" },
-    { id: 2, name: "Fashion", price: "$89.99", image: "" },
-    { id: 3, name: "Sofa", price: "$79.99", image: "" },
-    { id: 4, name: "Product 4", price: "$69.99", image: "" },
+    { id: 2, name: "Fashion", price: "$89.99", image: "https://images.squarespace-cdn.com/content/v1/58cfd41c17bffcb09bd654f0/1714659598649-AIS5CV4YT942V6KXFUU0/image-asset.jpeg" },
+    { id: 3, name: "Sofa", price: "$79.99", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJZhlgWiCBBrmllrY5RArKlTmTg0nWRc3ZEg&s" },
+    { id: 4, name: "Product 4", price: "$69.99", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLVa3wnVidCkNlg6zwK_bYDliGSvFlyAQJEA&s" },
     { id: 5, name: "Product 5", price: "$59.99", image: "https://via.placeholder.com/150" },
     { id: 6, name: "Product 6", price: "$49.99", image: "https://via.placeholder.com/150" },
     { id: 7, name: "Product 7", price: "$39.99", image: "https://via.placeholder.com/150" },
@@ -36,7 +36,7 @@ const Shop = () => {
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                         <button onClick={() => dispatch(product_set(products))}>click for action</button>
 
-                        {productData.map((item) => (
+                        {productData.flat().map((item) => (
                             <div key={item.id} className="bg-white p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
                                 <img src={item.image} alt={item.name} className="mb-4 w-full rounded" />
                                 <h4 className="font-bold text-lg">{item.name}</h4>
