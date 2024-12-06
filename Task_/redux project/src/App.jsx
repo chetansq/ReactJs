@@ -4,8 +4,8 @@ function App() {
 
   return (
     <>
-      {/* <Layout /> */}
-      <NewPage />
+      <Layout />
+      {/* <NewPage /> */}
     </>
   )
 }

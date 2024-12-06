@@ -126,15 +126,15 @@ const ProductPage = () => {
 
     const dispatch = useDispatch()
 
-    // useEffect(() => {
-    //     dispatch(product_set(products))
-    // }, [])
+    useEffect(() => {
+        dispatch(product_set(products))
+    }, [])
 
 
     return (
         <div className="p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-            <button onClick={() => dispatch(product_set(products))}>click for action</button>
+            {/* <button onClick={() => dispatch(product_set(products))}>click for action</button> */}
 
             {productData.flat().map(item => (
                 <div

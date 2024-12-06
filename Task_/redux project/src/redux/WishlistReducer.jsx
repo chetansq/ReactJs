@@ -26,9 +26,14 @@ export const wishlistReducer = (state = [], action) => {
 
 
         case EMPTY_WISHLIST:
-            return {
-
+            const empty_data = () => {
+                if (state.length == 0) {
+                    alert('cart is empty');
+                } else {
+                    return state = []
+                }
             }
+            return empty_data()
 
         case WISHLIST_TO_CART:
             return {

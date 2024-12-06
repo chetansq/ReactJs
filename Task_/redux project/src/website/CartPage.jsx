@@ -1,14 +1,33 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { cart_to_wishlist, remove_to_cart } from "../redux/Action";
+import { cart_to_wishlist, empty_cart, remove_to_cart } from "../redux/Action";
 
 const CartPage = () => {
 
     const [quantity, setQuantity] = useState(1)
 
+    const [enableBtn, setEnableBtn] = useState(false)
+    const [BtnOpacity, setBtnOpacity] = useState('bg-red-600')
+
     const cart_data = useSelector((state) => state.cart);
     console.log("cart data ", cart_data);
+
+    const empty_data_list = () => {
+        dispatch(empty_cart())
+        if (cart_data.length == 0) {
+
+            console.log("state length", cart_data.length);
+
+            setEnableBtn(false)
+            setBtnOpacity('bg-blue-700')
+
+        }
+        else {
+            setEnableBtn(true)
+            setBtnOpacity('bg-green-700')
+        }
+    }
 
     const wishlist_data = useSelector((state) => state.wishlist);
     console.log('cart to wishlist ', wishlist_data);
@@ -24,6 +43,12 @@ const CartPage = () => {
     return (
         <div className="p-6">
             <h1 className="text-2xl font-bold mb-4">Cart</h1>
+            <button onClick={() => empty_data_list()} className={`${BtnOpacity} mt-4 text-white px-6 py-2 rounded hover:bg-red-700`} disabled={enableBtn} >
+
+                Empty Cart
+
+            </button>
+
             {cart_data.length > 0 ? (
                 <div>
                     <div className="space-y-4">
@@ -47,10 +72,7 @@ const CartPage = () => {
                                     </div>
                                 </div>
                                 <button onClick={() => dispatch(cart_to_wishlist(item))} className="mt-4 bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600">
-
-
                                     Cart to wishlist
-
                                 </button>
                                 <button onClick={() => dispatch(remove_to_cart(item))} className="bg-red-500 text-white px-4 py-2 mt-4 rounded hover:bg-red-600">
                                     Remove
@@ -64,7 +86,6 @@ const CartPage = () => {
                             <p className="text-lg font-bold">Total: ${calculateTotal()}</p>
                             <button className="mt-4 bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600">
                                 <NavLink to='/buy'>
-
                                     Proceed to Buy
                                 </NavLink>
                             </button>
