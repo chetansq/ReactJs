@@ -7,26 +7,11 @@ const CartPage = () => {
 
     const [quantity, setQuantity] = useState(1)
 
-    const [enableBtn, setEnableBtn] = useState(false)
-    const [BtnOpacity, setBtnOpacity] = useState('bg-red-600')
-
     const cart_data = useSelector((state) => state.cart);
     console.log("cart data ", cart_data);
 
     const empty_data_list = () => {
         dispatch(empty_cart())
-        if (cart_data.length == 0) {
-
-            console.log("state length", cart_data.length);
-
-            setEnableBtn(false)
-            setBtnOpacity('bg-blue-700')
-
-        }
-        else {
-            setEnableBtn(true)
-            setBtnOpacity('bg-green-700')
-        }
     }
 
     const wishlist_data = useSelector((state) => state.wishlist);
@@ -41,13 +26,19 @@ const CartPage = () => {
 
     const dispatch = useDispatch()
     return (
-        <div className="p-6">
+        <div className="p-6 h-screen">
             <h1 className="text-2xl font-bold mb-4">Cart</h1>
-            <button onClick={() => empty_data_list()} className={`${BtnOpacity} mt-4 text-white px-6 py-2 rounded hover:bg-red-700`} disabled={enableBtn} >
-
-                Empty Cart
-
-            </button>
+            {
+                cart_data.length == 0 ? (
+                    <button onClick={() => empty_data_list()} className={`mt-4 text-white px-6 py-2 rounded bg-red-400`} disabled>
+                        Empty Cart
+                    </button>
+                ) : (
+                    <button onClick={() => empty_data_list()} className={`mt-4 text-white px-6 py-2 rounded  bg-green-700`}>
+                        Empty Cart
+                    </button>
+                )
+            }
 
             {cart_data.length > 0 ? (
                 <div>
@@ -93,7 +84,9 @@ const CartPage = () => {
                     </div>
                 </div>
             ) : (
-                <p>Your cart is empty!</p>
+               
+                    <p className="flex justify-center items-center text-gray-800 text-5xl h-1/2 ">Your cart is empty!</p>
+                
             )}
 
 
