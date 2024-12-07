@@ -80,28 +80,8 @@ const products = [
     },
 ];
 
-// const products =
-//     [{
-//         id: 1,
-//         name: "Shoes VIR",
-//         price: "$20",
-//         image: "https://rukminim2.flixcart.com/image/850/1000/xif0q/shoe/c/n/h/10-126-grey-10-winprice-grey-original-imagrmcyhvmzxhvv.jpeg?q=90&crop=false",
-//         quantity: 1
-//     },
-//     {
-//         id: 2,
-//         name: "Shoes VIR", 
-//         price: "$30", 
-//         image: "https://rukminim2.flixcart.com/image/850/1000/xif0q/shoe/n/k/3/7-vir-ezdezario-grey-original-imagqjhugthkmygb.jpeg?q=90&crop=false", 
-//         quantity: 1
-//     }]
-// { id: 3, name: "Shoes ATP", price: "$40", image: "https://rukminim2.flixcart.com/image/850/1250/xif0q/shoe/d/l/j/7-b201-kardam-sons-black-original-imagygdknhbjwsah.jpeg?q=20&crop=false", quantity: 1 },
-
-
-
 const ProductPage = () => {
 
-    const [data, setData] = useState([])
     // https://dummyjson.com/products
 
 
@@ -112,7 +92,6 @@ const ProductPage = () => {
     //             setData(res.data.products)
     //         })
     // }, [])
-
 
 
     const productData = useSelector((state) => state.product);

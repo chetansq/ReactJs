@@ -2,9 +2,6 @@ import {
     ADD_TO_CART,
     REMOVE_TO_CART,
     EMPTY_CART,
-    CART_TO_WISHLIST,
-    EMPTY_WISHLIST,
-    REMOVE_TO_WISHLIST
 } from "./Constant";
 
 
@@ -12,6 +9,7 @@ import {
 export const cartReducer = (state = [], action) => {
     switch (action.type) {
         case ADD_TO_CART:
+
             return [...state, action.payload]
 
         case REMOVE_TO_CART:
@@ -26,16 +24,7 @@ export const cartReducer = (state = [], action) => {
 
 
         case EMPTY_CART:
-
-            const empty_data = () => {
-                if (state.length == 0) {
-                    alert('cart is empty');
-                } else {
-                    return state = []
-                }
-            }
-
-            return empty_data()
+            return state = []
 
         default: return state
     }

@@ -49,11 +49,11 @@ export const add_to_wishlist = (for_add_to_wishlist) => {
         payload: for_add_to_wishlist
     }
 }
-export const remove_to_wishlist = (for_remove_to_wishlist) => {
+export const remove_to_wishlist = (id) => {
     return {
         type: REMOVE_TO_WISHLIST,
         info: 'remove to wishlist called',
-        payload: for_remove_to_wishlist
+        payload: id
     }
 }
 export const empty_wishlist = () => {
