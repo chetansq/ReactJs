@@ -1,13 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { FaShoppingCart } from "react-icons/fa";
-import { FaHeart } from "react-icons/fa";
+// import { FaHeart } from "react-icons/fa";
+// import { FaHeart } from "react-icons/fa6";
+// import { FaRegHeart } from "react-icons/fa";
+
+import { IoHeartCircle } from "react-icons/io5";
+import { IoHeartCircleOutline } from "react-icons/io5";
 import { useSelector } from 'react-redux';
 
 
 const Navbar = () => {
 
+
     const cart_data_length = useSelector(state => state.cart)
+
+    const wishlist_data1_length = useSelector((state) => state.wishlist.productWish)
+    const wishlist_data2_length = useSelector((state) => state.wishlist.cartWish)
+
+    const data_length = wishlist_data1_length.concat(wishlist_data2_length);
+
 
     return (
         <div className='bg-slate-200 flex justify-around p-4 items-center'>
@@ -34,8 +46,21 @@ const Navbar = () => {
                             </span>
                         </NavLink></li>
 
-                        <li><NavLink to='/wishlist' className='text-lg'>
-                            <FaHeart />
+                        <li><NavLink to='/wishlist' className='text-lg' >
+                            <div>
+                                <span className=''>
+                                    {
+                                        data_length.length
+                                            ?
+                                            <IoHeartCircle className='text-blue-500 rounded-full text-2xl' />
+                                            :
+                                            <IoHeartCircleOutline className='text-black rounded-full text-2xl' />
+
+                                        // color ? (<IoHeartCircle className='active' />)
+                                        //     : (<IoHeartCircle className='text-blue-600  ' />)
+                                    }
+                                </span>
+                            </div>
                         </NavLink></li>
                     </ul>
 

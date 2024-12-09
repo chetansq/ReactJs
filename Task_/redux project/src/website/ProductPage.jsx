@@ -82,15 +82,17 @@ const products = [
 
 const ProductPage = () => {
 
+    // const [product_data, setProduct_data] = useState([])
+
     // https://dummyjson.com/products
 
 
-    // useEffect(() => {
-    //     axios.get("https://dummyjson.com/products")
-    //         .then((res) => {
-    //             console.log(res.data.products)
-    //             setData(res.data.products)
-    //         })
+    //     useEffect(() => {
+    //         axios.get("http://localhost:3000/products")
+    //             .then((res) => {
+    //                 console.log(res.data.products)
+    //                 setProduct_data(res.data.products)
+    //             }).catch((error) => console.log(error))
     // }, [])
 
 
@@ -108,7 +110,6 @@ const ProductPage = () => {
     useEffect(() => {
         dispatch(product_set(products))
     }, [])
-
 
     return (
         <div className="p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
