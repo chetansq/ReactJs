@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    .btn {
+        @apply bg-red-700 hover:bg-red-500 text-white p-2 rounded border-2 border-black
+    }
+}
