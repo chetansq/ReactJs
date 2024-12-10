@@ -4,6 +4,8 @@ import { product_set } from "../redux/ProductAction";
 import { add_to_cart } from "../redux/Action";
 import { add_to_wishlist } from "../redux/Action";
 
+
+
 import axios from "axios";
 
 const products = [

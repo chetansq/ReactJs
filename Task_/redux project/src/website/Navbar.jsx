@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { FaShoppingCart } from "react-icons/fa";
-// import { FaHeart } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
 // import { FaHeart } from "react-icons/fa6";
 // import { FaRegHeart } from "react-icons/fa";
 
 import { IoHeartCircle } from "react-icons/io5";
 import { IoHeartCircleOutline } from "react-icons/io5";
 import { useSelector } from 'react-redux';
-
+import { ToastContainer, toast } from 'react-toastify';
 
 const Navbar = () => {
 
@@ -46,21 +46,21 @@ const Navbar = () => {
                             </span>
                         </NavLink></li>
 
-                        <li><NavLink to='/wishlist' className='text-lg' >
-                            <div>
-                                <span className=''>
-                                    {
-                                        data_length.length
-                                            ?
-                                            <IoHeartCircle className='text-blue-500 rounded-full text-2xl' />
-                                            :
-                                            <IoHeartCircleOutline className='text-black rounded-full text-2xl' />
+                        <li><NavLink to='/wishlist' className='flex relative text-lg' >
+                            <FaHeart />
+                            <span className=''>
+                                {
+                                    !data_length.length
+                                        ?
+                                        <span className='absolute top-[-5px] right-[-5px] text-[10px] h-2 w-2 rounded-full items-center flex justify-center bg-transparent' />
+                                        :
+                                        <span className='absolute top-[-5px] right-[-5px] text-[10px] h-2 w-2 rounded-full items-center flex justify-center bg-red-500 text-white' />
 
-                                        // color ? (<IoHeartCircle className='active' />)
-                                        //     : (<IoHeartCircle className='text-blue-600  ' />)
-                                    }
-                                </span>
-                            </div>
+                                    // color ? (<IoHeartCircle className='active' />)
+                                    //     : (<IoHeartCircle className='text-blue-600  ' />)
+                                }
+                            </span>
+
                         </NavLink></li>
                     </ul>
 

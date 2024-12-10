@@ -4,13 +4,24 @@ import {
     EMPTY_CART,
 } from "./Constant";
 
+import { ToastContainer, toast } from 'react-toastify';
+
 
 
 export const cartReducer = (state = [], action) => {
     switch (action.type) {
         case ADD_TO_CART:
+            {
+                const added_to_cart = state.some((state) => state.id === action.payload.id)
 
-            return [...state, action.payload]
+                if (added_to_cart) {
+                    toast.warn("Item already exist !");
+                    return state
+                } else {
+                    toast.success("item add to cart !");
+                    return [...state, action.payload]
+                }
+            }
 
         case REMOVE_TO_CART:
 
