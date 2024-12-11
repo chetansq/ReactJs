@@ -6,7 +6,7 @@ const Chnage_state = () => {
 
     const [index, setIndex] = useState(0)
     const [btn, setBtn] = useState('line-clamp-1');
-
+    const [toggle,setToggle] = useState(false);
     const List = [AnimalList[index]];
 
     const nextState = () => {
@@ -50,6 +50,9 @@ const Chnage_state = () => {
                         return (
 
                             <div div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700" key={item.id} >
+
+
+
                                 <a href="#">
                                     <img
                                         className="rounded-t-lg h-52 w-full object-cover object-top"
