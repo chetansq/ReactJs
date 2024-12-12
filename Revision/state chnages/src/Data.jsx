@@ -11,7 +11,7 @@ export const AnimalList = [
     weight_kg: 190,
     height_cm: 120,
     image: "https://cdn.britannica.com/30/150930-120-D3D93F1E/lion-Namibia.jpg",
-    bg_image: 'https://img.freepik.com/free-photo/view-3d-lion-with-nature-background_23-2150800659.jpg?t=st=1733915611~exp=1733919211~hmac=7a2503c8e4eddb6e3fbe41bb938339e406155eaed0a4851a191a377dedbafe15&w=1060'
+    bg_image: 'https://img.freepik.com/free-photo/view-lion-animal-its-natural-habitat_23-2151657639.jpg?t=st=1733980955~exp=1733984555~hmac=b6691a8af340397baf2d58b9b53cd6840ad8be15873bea0dcb16f60c123766a0&w=1380'
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ export const AnimalList = [
     weight_kg: 6000,
     height_cm: 300,
     image: "https://i.natgeofe.com/k/e7ba8001-23ac-457f-aedb-abd5f2fdda62/moms5_4x3.png",
-    bg_image: 'https://img.freepik.com/premium-photo/thai-elephant_38810-1366.jpg?w=900',
+    bg_image: 'https://img.freepik.com/free-photo/photorealistic-scene-wild-elephants_23-2151436817.jpg?t=st=1733981173~exp=1733984773~hmac=296f256553b148eeaaf75072fbe8a6faf817d0f8a2253a6f46ef4b63cd1f3582&w=1380',
   },
   {
     id: 3,
@@ -39,7 +39,7 @@ export const AnimalList = [
     weight_kg: 250,
     height_cm: 100,
     image: "https://images.unsplash.com/photo-1618142990632-1afb1bd67e7c?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8dGlnZXJzfGVufDB8fDB8fHww",
-    bg_image: ''
+    bg_image: 'https://img.freepik.com/free-photo/ferocious-tiger-nature_23-2150767625.jpg?t=st=1733980808~exp=1733984408~hmac=9d0e3f8e0494b94f43d8e8ff5e7a682ac5fd2d39972dfdda3672b47cabe20b71&w=1380'
   },
   {
     id: 4,
@@ -53,7 +53,7 @@ export const AnimalList = [
     weight_kg: 85,
     height_cm: 150,
     image: "https://i.natgeofe.com/k/aa4c480f-89ec-4c21-97c3-4348a9c310bf/kangaroo-joey_square.jpg",
-    bg_image: ''
+    bg_image: 'https://img.freepik.com/free-photo/free-kangaroo-wild_23-2151639092.jpg?t=st=1733978528~exp=1733982128~hmac=8986d82859905302f60634ee3543d5183e0fb4dbf82e15c2f5a748a692849ce4&w=1380'
   },
   {
     id: 5,
@@ -67,7 +67,7 @@ export const AnimalList = [
     weight_kg: 180,
     height_cm: 160,
     image: "https://files.worldwildlife.org/wwfcmsprod/images/Mountain_Gorilla_Silverback_WW22557/story_full_width/36fcoamev0_Mountain_Gorilla_Silverback_WW22557.jpg",
-    bg_image: ''
+    bg_image: 'https://img.freepik.com/free-photo/3d-rendering-gorilla-portrait_23-2151270762.jpg?t=st=1733978656~exp=1733982256~hmac=7bc69535055c9c13eb9375c2ceb86554b31bff2b6fde18cdd58ae6d70a528a68&w=1380'
   },
   {
     id: 6,
@@ -81,7 +81,7 @@ export const AnimalList = [
     weight_kg: 500,
     height_cm: 130,
     image: "https://bloximages.newyork1.vip.townnews.com/valpotorch.com/content/tncms/assets/v3/editorial/3/4b/34b39260-c783-11ec-9097-f3d860fdf9c7/626b82e91b1c1.image.jpg?resize=1200%2C755",
-    bg_image: ''
+    bg_image: 'https://img.freepik.com/free-photo/view-glacier-night_23-2151795096.jpg?t=st=1733978697~exp=1733982297~hmac=403961acb3ebbb44e86b91b6afbfa237da663e57c80c06f98abd53bc05b218e0&w=1380'
   },
   {
     id: 7,
@@ -95,7 +95,7 @@ export const AnimalList = [
     weight_kg: 12,
     height_cm: 60,
     image: "https://d1jyxxz9imt9yb.cloudfront.net/medialib/1594/image/s1300x1300/DR_2020-01-18_Koroit-Victoria-AU_Bushfires-MosswoodWildlife-RescuedKoalas_1D_MelanieMahoney_094V1077_reduced.jpg",
-    bg_image: ''
+    bg_image: 'https://img.freepik.com/free-photo/cute-koala-sitting-tree-branch-looking-camera-generated-by-artificial-intelligence_188544-130787.jpg?t=st=1733978887~exp=1733982487~hmac=07c42f75237f483cbaf700e233d8ab072cc5f978e4a1bb15ebc97dcdb06db6de&w=1380'
   },
   {
     id: 8,
@@ -108,8 +108,8 @@ export const AnimalList = [
     description: "Giraffes are the tallest land animals and have long necks and legs.",
     weight_kg: 800,
     height_cm: 550,
-    image: "https://animalfactguide.com/wp-content/uploads/2024/11/giraffe4.jpg",
-    bg_image: ''
+    image: "https://img.freepik.com/free-photo/cute-massai-giraffe-tsavo-east-national-park-kenya-africa_181624-26133.jpg?t=st=1733978950~exp=1733982550~hmac=62157b627799fdc5d0960b1161ac91a83b0335b739454e28fabb2693c3d1962c&w=1380",
+    bg_image: 'https://img.freepik.com/free-photo/beautiful-giraffe-wild_23-2151708889.jpg?t=st=1733979556~exp=1733983156~hmac=043d79728d595885a159c9f82fc4580e1ca99be6d77fda2df0c363146a14ec1d&w=1380'
   },
   {
     id: 9,
@@ -123,7 +123,7 @@ export const AnimalList = [
     weight_kg: 85,
     height_cm: 90,
     image: "https://bambooimport.com/cdn/shop/articles/pandabeer-scaled.jpg?v=1668091796",
-    bg_image: '',
+    bg_image: 'https://img.freepik.com/free-photo/view-panda-bear-nature_23-2150453042.jpg?t=st=1733980364~exp=1733983964~hmac=b2c707e820266154a3cd78d21c7c5ec98052cc4a14cfc29cc7af98b50aebc25f&w=1380',
   },
   {
     id: 10,
@@ -137,6 +137,6 @@ export const AnimalList = [
     weight_kg: 50,
     height_cm: 80,
     image: "https://thesudantimes.com/wp-content/uploads/2024/09/image_12760e-Cheetah.jpg",
-    bg_image: '',
+    bg_image: 'https://img.freepik.com/free-photo/view-wild-leopard-nature_23-2150460827.jpg?t=st=1733980605~exp=1733984205~hmac=1fc3325fc8c49870226e5a7d8a68b12fa3549c52ed5d4a622e3f3705ba0f16c7&w=1380',
   }
 ]
