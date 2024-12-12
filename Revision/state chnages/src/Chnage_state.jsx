@@ -50,8 +50,8 @@ const Chnage_state = () => {
                 List.map((item) => {
                     return (
 
-                        <div className='bg-slate-200 p-10' key={item.id} style={{ backgroundImage: `url('${item.bg_image}')`, backgroundRepeat: 'no-repeat' , backgroundSize:"cover",height:'100svh',width:"100%"}}>
-                            <div className='flex justify-between gap-8 my-14'>
+                        <div className='bg-slate-200 p-5' key={item.id} style={{ backgroundImage: `url('${item.bg_image}')`, backgroundRepeat: 'no-repeat' , backgroundSize:"cover",height:'100svh',width:"100%"}}>
+                            <div className='flex justify-between gap-8 my-2'>
                                 <button className='btn' onClick={prevState}>Previous</button>
 
                                 <button className='btn' onClick={nextState}>Next</button>
