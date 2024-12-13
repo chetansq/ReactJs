@@ -10,28 +10,27 @@
     max-width: 2000px;
   }
 }
-@keyframes slide-right {
-  from {
-      transform: translateX(-100%);
-      opacity: 0;
-  }
-  to {
-      transform: translateX(0);
-      opacity: 1;
-  }
-}
 
-.slide-right {
-  animation: slide-right 3s ease forwards; /* Adjust duration as needed */
-}
+
+
 @layer components {
   .btn {
     @apply bg-red-700 hover:bg-red-500 text-white p-2 rounded border-2 border-black;
   }
 
   .slide-right {
-    -webkit-animation: slide-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-      both;
-    animation: slide-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   }
+
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(-1000px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+
 }
