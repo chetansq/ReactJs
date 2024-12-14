@@ -9,6 +9,7 @@ const Chnage_state = () => {
     const [toggle, setToggle] = useState(false);
     const [theam, setTheam] = useState(index);
     const [animation, setAnimation] = useState('')
+    const [cardSlide, setCardSlide] = useState('')
 
     const List = [AnimalList[index]];
 
@@ -51,115 +52,122 @@ const Chnage_state = () => {
 
     const changeIndex = () => {
         if (index == theam) {
+            alert('already exist !');
             console.log('not');
         } else {
-            setIndex(theam)
-
+            setIndex(theam);
+            setIndex(index + 1);
         }
+        setTheam(0);
 
     }
 
     useEffect(() => {
-        index == 0 ? setAnimation('slide-right') : setAnimation('')
+        index == 0 ? setAnimation('slide-right') : setAnimation('');
+        index == 0 ? setCardSlide('scale-up-center') : setCardSlide('');
+
     }, [])
 
     return (
-        <div>
-            {
-                List.map((item) => {
-                    return (
+        <div  className={` bg-slate-800`}>
 
-                        <div className={`bg-slate-200 p-5 slide-right ${animation}`} key={item.id} style={{ backgroundImage: `url('${item.bg_image}')`, backgroundRepeat: 'no-repeat', backgroundSize: "cover", height: '100svh', width: "100%" }}>
-                            <div className='flex justify-between gap-8 my-2 '>
-                                <button className='btn' onClick={prevState}>Previous</button>
-                                <div className='flex gap-3 '>
-                                    <input type="text" name="" id="" value={theam} onChange={changeTheam} className='border border-black' />
-                                    <button className='btn' onClick={changeIndex}>click</button>
+            <div className={` ${animation}`}>
+                {
+                    List.map((item) => {
+                        return (
+
+                            <div className={`bg-slate-200 p-5`} key={item.id} style={{ backgroundImage: `url('${item.bg_image}')`, backgroundRepeat: 'no-repeat', backgroundSize: "cover", height: '100svh', width: "100%" }}>
+                                <div className='flex justify-between gap-8 my-2 '>
+                                    <button className='btn' onClick={prevState}>Previous</button>
+                                    <div className='flex gap-3 '>
+                                        <input type="text" name="" id="" value={theam} onChange={changeTheam} className='border border-green-900 p-2' />
+                                        <button className='btn' onClick={changeIndex}>click</button>
+                                    </div>
+                                    <button className='btn' onClick={nextState}>Next</button>
                                 </div>
-                                <button className='btn' onClick={nextState}>Next</button>
-                            </div>
 
-                            <div className='flex justify-left mt-10'>
+                                <div className={` flex justify-left mt-10`}>
 
 
-                                {
-                                    List.map((item) => {
+                                    {
+                                        List.map((item) => {
 
-                                        return (
+                                            return (
 
-                                            <div div className="max-w-sm bg-white  rounded-lg shadow dark:bg-transparent  dark:border-gray-700" key={item.id} >
-                                                <a href="#">
-                                                    <img
-                                                        className="rounded-t-lg h-52 w-full object-cover object-top"
-                                                        src={item.image}
-                                                        alt=""
-                                                    />
-                                                </a>
-                                                <div className="p-5">
+                                                <div div className={` max-w-sm bg-white  rounded-lg shadow dark:bg-transparent  dark:border-gray-700 ${cardSlide}`} key={item.id} >
                                                     <a href="#">
-                                                        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                                            {item.name}
-                                                        </h5>
+                                                        <img
+                                                            className="rounded-t-lg h-52 w-full object-cover object-top"
+                                                            src={item.image}
+                                                            alt=""
+                                                        />
                                                     </a>
-                                                    <div className={`${btn}  mb-3 font-normal text-gray-300 dark:text-gray-300 text-left leading-8 `}>
-                                                        <p>{item.description}</p>
-                                                        <hr className=' border-gray-600 my-3' />
-                                                        <p className='text-white'> Species :
-                                                            <span className='text-gray-300 font-light'> {item.species}</span>
-                                                        </p>
-                                                        <p className='text-white'> Family :
-                                                            <span className='text-gray-300 font-light'> {item.family}</span>
-                                                        </p>
-                                                        <p className='text-white'> Habitat :
-                                                            <span className='text-gray-300 font-light'> {item.habitat}</span>
-                                                        </p>
-                                                        <p className='text-white'> Place Of Found :
-                                                            <span className='text-gray-300 font-light'> {item.place_of_found}</span>
-                                                        </p>
-                                                        <p className='text-white'> Diet :
-                                                            <span className='text-gray-300 font-light'> {item.diet}</span>
-                                                        </p>
-                                                        <p className='text-white'> Weight kg :
-                                                            <span className='text-gray-300 font-light'> {item.weight_kg}</span>
-                                                        </p>
-                                                        <p className='text-white'> Height cm :
-                                                            <span className='text-gray-300 font-light'> {item.height_cm}</span>
-                                                        </p>
+                                                    <div className="p-5">
+                                                        <a href="#">
+                                                            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                                                {item.name}
+                                                            </h5>
+                                                        </a>
+                                                        <div className={`${btn}  mb-3 font-normal text-gray-300 dark:text-gray-300 text-left leading-8 `}>
+                                                            <p>{item.description}</p>
+                                                            <hr className=' border-gray-600 my-3' />
+                                                            <p className='text-white'> Species :
+                                                                <span className='text-gray-300 font-light'> {item.species}</span>
+                                                            </p>
+                                                            <p className='text-white'> Family :
+                                                                <span className='text-gray-300 font-light'> {item.family}</span>
+                                                            </p>
+                                                            <p className='text-white'> Habitat :
+                                                                <span className='text-gray-300 font-light'> {item.habitat}</span>
+                                                            </p>
+                                                            <p className='text-white'> Place Of Found :
+                                                                <span className='text-gray-300 font-light'> {item.place_of_found}</span>
+                                                            </p>
+                                                            <p className='text-white'> Diet :
+                                                                <span className='text-gray-300 font-light'> {item.diet}</span>
+                                                            </p>
+                                                            <p className='text-white'> Weight kg :
+                                                                <span className='text-gray-300 font-light'> {item.weight_kg}</span>
+                                                            </p>
+                                                            <p className='text-white'> Height cm :
+                                                                <span className='text-gray-300 font-light'> {item.height_cm}</span>
+                                                            </p>
+                                                        </div>
+                                                        <a
+                                                            href="#"
+                                                            className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                                                            onClick={btnToggle}>
+                                                            Read more
+                                                            <svg
+                                                                className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                                                                aria-hidden="true"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                fill="none"
+                                                                viewBox="0 0 14 10"
+                                                            >
+                                                                <path
+                                                                    stroke="currentColor"
+                                                                    strokeLinecap="round"
+                                                                    strokeLinejoin="round"
+                                                                    strokeWidth={2}
+                                                                    d="M1 5h12m0 0L9 1m4 4L9 9"
+                                                                />
+                                                            </svg>
+                                                        </a>
                                                     </div>
-                                                    <a
-                                                        href="#"
-                                                        className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                                                        onClick={btnToggle}>
-                                                        Read more
-                                                        <svg
-                                                            className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-                                                            aria-hidden="true"
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                            fill="none"
-                                                            viewBox="0 0 14 10"
-                                                        >
-                                                            <path
-                                                                stroke="currentColor"
-                                                                strokeLinecap="round"
-                                                                strokeLinejoin="round"
-                                                                strokeWidth={2}
-                                                                d="M1 5h12m0 0L9 1m4 4L9 9"
-                                                            />
-                                                        </svg>
-                                                    </a>
                                                 </div>
-                                            </div>
-                                        )
+                                            )
 
 
-                                    })
-                                }
-                            </div>
+                                        })
+                                    }
+                                </div>
 
-                        </div >
-                    )
-                })
-            }
+                            </div >
+                        )
+                    })
+                }
+            </div>
         </div>
     )
 }
