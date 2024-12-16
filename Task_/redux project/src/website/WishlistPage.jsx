@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { empty_wishlist, remove_to_wishlist } from "../redux/Action";
 
@@ -18,7 +18,12 @@ const WishlistPage = () => {
     const empty_data_list = () => {
         dispatch(empty_wishlist())
     }
-
+    const wishlist_data3 = useSelector((state) => state.wishlist.cartWish === state.wishlist.productWish)
+    if (wishlist_data3) {
+        alert('data already exist !');
+    }else{
+        console.log("not found");
+    }
     const dispatch = useDispatch()
     return (
         <div className="p-6 h-screen ">
