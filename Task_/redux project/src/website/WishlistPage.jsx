@@ -22,7 +22,7 @@ const WishlistPage = () => {
     if (wishlist_data3) {
         alert('data already exist !');
     }else{
-        console.log("not found");
+        console.log("not found");  
     }
     const dispatch = useDispatch()
     return (
