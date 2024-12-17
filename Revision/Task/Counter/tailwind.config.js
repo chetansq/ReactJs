@@ -11,7 +11,7 @@ export default {
       keyframes: {
         slidenext: {
           "0%": {
-            transform: "translate(1500px)",
+            transform: "translate(1000px)",
           },
         },
         slideprev: {
@@ -19,7 +19,7 @@ export default {
             transform: "translate(0px)",
           },
           "100%": {
-            transform: "translate(1500px)",
+            transform: "translate(1000px)",
           },
         },
       },
