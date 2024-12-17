@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <Chnage_state />
+      {/* <Chnage_state /> */}
 
       <Counter />
     </>
