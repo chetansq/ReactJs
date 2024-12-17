@@ -5,18 +5,21 @@ export default {
     extend: {
       animation: {
         slidenext: "slidenext 2s linear",
-        slideprev: "slidprev 2s linear",
+        slideprev: "slideprev 2s linear",
       },
 
       keyframes: {
         slidenext: {
           "0%": {
-            transform: "translate(500px)",
+            transform: "translate(1500px)",
           },
         },
         slideprev: {
           "0%": {
-            transform: "translate(-500px)",
+            transform: "translate(0px)",
+          },
+          "100%": {
+            transform: "translate(1500px)",
           },
         },
       },

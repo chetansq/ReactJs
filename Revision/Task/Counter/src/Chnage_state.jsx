@@ -11,7 +11,7 @@ const Chnage_state = () => {
     const [animation, setAnimation] = useState('')
     const [cardSlide, setCardSlide] = useState(false)
     const [prevslide, setPrevSlide] = useState('')
-    const [nextslide, setNextSlide] = useState('')
+    const [nextslide, setNextSlide] = useState('animate-slidenext')
 
     const List = [AnimalList[index]];
 
@@ -23,9 +23,12 @@ const Chnage_state = () => {
         } else {
 
             setIndex(index + 1);
-            setCardSlide(true)
+            setCardSlide(true);
+            setNextSlide("animate-slidenext");
             setBtn('line-clamp-1');
         }
+
+
     }
 
     const prevState = () => {
@@ -36,7 +39,8 @@ const Chnage_state = () => {
         } else {
 
             setIndex(index - 1);
-            setCardSlide(true)
+            setCardSlide(false);
+            setPrevSlide('animate-slideprev');
             setBtn('line-clamp-1');
         }
     }
@@ -63,17 +67,18 @@ const Chnage_state = () => {
         } else {
             setIndex(theam);
             setIndex(index + 1);
+            
         }
         setTheam(0);
 
     }
 
     useEffect(() => {
-        // index == 0 ? setAnimation('slide-right') : setAnimation('');
+        index == 0 ? setAnimation('slide-right') : setAnimation('');
         setTimeout(() => {
 
-            index == 0 ? setCardSlide(true) : setCardSlide("");
-        }, 5000);
+            index == 0 ? setCardSlide(true) : setCardSlide(false);
+        }, 4000);
 
     }, [])
 
@@ -95,7 +100,7 @@ const Chnage_state = () => {
                                     <button className='btn' onClick={nextState}>Next</button>
                                 </div>
 
-                                <div className={` ${cardSlide ? 'animate-slidenext' : ''} flex justify-left mt-10`}>
+                                <div className={` ${cardSlide ? nextslide : prevslide} flex justify-left mt-10`}>
 
 
                                     {
