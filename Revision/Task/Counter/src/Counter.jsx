@@ -61,12 +61,10 @@ const Counter = () => {
   const [time, setTime] = useState(0);
   const [run, setRun] = useState(false);
   const [bgcolor, setBgColor] = useState('');
-  // const [resetcolor, setResetColor] = useState('');
-
 
   useEffect(() => {
     if (run && time > 0) {
-      setBgColor('bg-slate-700')
+      setBgColor('bg-black')
       let id = setInterval(() => {
         setTime(prev => prev - 1)
 
@@ -77,31 +75,28 @@ const Counter = () => {
       setRun(false)
       setBgColor('bg-white')
 
-    }else if(time == time)
-    {
+    } else if (time == time) {
       setRun(false)
-      setBgColor('bg-black')
+      setBgColor('bg-slate-700')
     }
 
     // setRun(true)
-
 
   }, [time, run])
 
   const hours = Math.floor(time / 3600).toString().padStart(2, '0');
   const minutes = Math.floor((time % 3600) / 60).toString().padStart(2, '0');
   const seconds = (time % 60).toString().padStart(2, '0');
-  console.log('minute : ', minutes, 'seconds : ', seconds);
+  // console.log('minute : ', minutes, 'seconds : ', seconds);
 
 
   return (
     <div className={`${bgcolor} flex flex-col gap-6 justify-center items-center h-screen`}>
       <div>
 
-        <input type="number" name="" id="" placeholder='minutes' onChange={(e) => setTime(parseInt(e.target.value))} className='border-2 p-2' />
+        <input type="number" name="" id="" placeholder='minutes' value={time} onChange={(e) => setTime(parseInt(e.target.value))} className='border-2 p-2' />
       </div>
       <div>
-
         <button className='btn1' onClick={() => setRun(true)}>Start</button>
         <button className='btn1' onClick={() => setRun(false)}>Stop</button>
         <button className='btn1' onClick={() => setTime(0)}>Reset</button>
