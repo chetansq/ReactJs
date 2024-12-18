@@ -92,9 +92,9 @@ const Counter = () => {
 
   return (
     <div className={`${bgcolor} flex flex-col gap-6 justify-center items-center h-screen`}>
-      <div>
 
-        <input type="number" name="" id="" placeholder='minutes' value={time} onChange={(e) => setTime(parseInt(e.target.value))} className='border-2 p-2' />
+      <div>
+        <input type="number" name="" id="" placeholder='Seconds' value={time} onChange={(e) => setTime(parseInt(e.target.value))} className='border-2 p-2' />
       </div>
       <div>
         <button className='btn1' onClick={() => setRun(true)}>Start</button>
@@ -103,6 +103,7 @@ const Counter = () => {
       </div>
 
       <h1 className='bg-slate-300 py-2 px-5'>{time ? <p><span className='bg-red-900 p-4 text-white'>{` ${hours} h : ${minutes} m : ${seconds} s`}</span> remainig</p> : 'Time-Up'}</h1>
+    
     </div>
   )
 }
