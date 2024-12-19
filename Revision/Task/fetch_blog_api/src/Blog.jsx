@@ -15,20 +15,19 @@ const Blog = () => {
     const [index, setIndex] = useState(0)
 
 
-
-
-
     useEffect(() => {
 
-        axios.get('https://dummyapi.online/api/blogposts').then(res => {
-            setData(res.data)
-
-        }
-        ).catch((error) => error);
+        axios.get('https://dummyapi.online/api/blogposts')
+            .then(res => {
+                setData(res.data)
+            }
+            ).catch((error) => error);
     }, [])
 
-    Data[index];
-    console.log('data index', Data[index]);
+    const List = [Data[index]];
+    // Data[index]
+
+    console.log('data index of', Data[index]);
 
 
     const nextState = () => {
@@ -36,8 +35,8 @@ const Blog = () => {
             setIndex(0)
         }
         else {
-            setIndex(index => index + 1)
-            console.log('index', index);
+            setIndex(index + 1)
+            console.log('index + 1', index);
 
         }
     }
@@ -60,7 +59,7 @@ const Blog = () => {
                 <button className='btn' onClick={prevState}>Previous</button>
                 <button className='btn' onClick={nextState}>Next</button>
             </div>
-            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-7' >
+            <div className='flex flex-col items-center justify-center  gap-7' >
 
                 {
                     Data.map((details) => {
@@ -98,7 +97,6 @@ const Blog = () => {
                                         </p>
                                     </div>
                                 </div>
-
 
                             </div>
                         )
