@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .heading {
+    @apply p-4 bg-blue-600 text-white text-center text-3xl my-2;
+  }
+}
