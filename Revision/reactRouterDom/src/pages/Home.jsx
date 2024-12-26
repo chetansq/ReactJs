@@ -9,7 +9,7 @@ const products = [
     name: "Wireless Headphones",
     description: "High-quality sound with noise cancellation.",
     price: 89.99,
-    imageUrl: "https://cdn.pixabay.com/photo/2016/09/15/20/47/headphone-1672628_1280.jpg",
+    imageUrl: "https://m.media-amazon.com/images/G/31/img23/Wireless/Xiaomi/Note14/sale/golive/D183640088_IN_WLD_RedmiNote14_NewLaunch_SIM_1400x800_1._CB539538720_.jpg",
     category: "Electronics"
   },
   {
@@ -17,7 +17,7 @@ const products = [
     name: "Smartwatch",
     description: "Track your fitness and stay connected.",
     price: 199.99,
-    imageUrl: "https://cdn.pixabay.com/photo/2021/10/07/21/10/smartwatch-6689805_1280.jpg",
+    imageUrl: "https://m.media-amazon.com/images/G/31/img24/Wireless/Samsung/Tiles/25thDec/D182254770_IN_WLD_vivo_X200_launch_launch_1400x800._CB538856465_.jpg",
     category: "Wearables"
   },
   {
@@ -25,7 +25,7 @@ const products = [
     name: "Bluetooth Speaker",
     description: "Portable speaker with deep bass and clear sound.",
     price: 49.99,
-    imageUrl: "https://cdn.pixabay.com/photo/2019/03/09/22/50/music-4045162_1280.jpg",
+    imageUrl: "https://m.media-amazon.com/images/G/31/img22/WLA/2024/Launches24/iTel/Buds_Ace/Sale/D184039124_1400x800_1._CB538399423_.gif",
     category: "Audio"
   },
   {
@@ -33,7 +33,7 @@ const products = [
     name: "4K Ultra HD TV",
     description: "Experience stunning picture quality and vibrant colors.",
     price: 799.99,
-    imageUrl: "https://img.freepik.com/free-photo/modern-indoor-living-room-with-comfortable-sofa-generative-ai_188544-19449.jpg?t=st=1735021938~exp=1735025538~hmac=e0c6383d4294d7aa09aaabb3e022cdc58e6f82435a2e000a551b6c5f1886ea68&w=1380",
+    imageUrl: "https://m.media-amazon.com/images/G/31/img23/Wireless/OnePlus/Flagship/OnePlus13R_NewLaunch/Teaser/GW/26thDec/D189060327_WLD_OnePlus_13R_NewLaunch__1400x800._CB538574147_.jpg",
     category: "Home Entertainment"
   },
   {
@@ -41,7 +41,7 @@ const products = [
     name: "Gaming Laptop",
     description: "Powerful performance for the ultimate gaming experience.",
     price: 1299.99,
-    imageUrl: "https://cdn.pixabay.com/photo/2024/06/21/17/28/ai-generated-8844739_1280.jpg",
+    imageUrl: "https://m.media-amazon.com/images/G/31/img22/Wireless/Meghana/iQOO/D174512533_WLD_-_iQOO_13_-_New_LaunchDesign_SIMcatpage_1400x800._CB538859515_.jpg",
     category: "Computers"
   },
   {
@@ -49,7 +49,7 @@ const products = [
     name: "Fitness Tracker",
     description: "Monitor your activity and health metrics.",
     price: 59.99,
-    imageUrl: "https://cdn.pixabay.com/photo/2017/07/31/11/38/green-2557522_1280.jpg",
+    imageUrl: "https://m.media-amazon.com/images/G/31/img23/Wireless/nbshagun/bau/clp/26Dec/1400x800_8._CB538844889_.jpg",
     category: "Wearables"
   },
   {
@@ -57,7 +57,7 @@ const products = [
     name: "Digital Camera",
     description: "Capture stunning photos and videos with ease.",
     price: 499.99,
-    imageUrl: "https://cdn.pixabay.com/photo/2019/02/09/18/41/camera-3985711_1280.jpg",
+    imageUrl: "https://m.media-amazon.com/images/G/31/img24/Wireless/Samsung/Tiles/25thDec/D142626032_IN_WLD_Samsung_M35-5G_Launch_catpage_1400x800._CB538856465_.jpg",
     category: "Photography"
   },
   {
@@ -65,7 +65,7 @@ const products = [
     name: "Smart Home Assistant",
     description: "Control your smart home devices with voice commands.",
     price: 99.99,
-    imageUrl: "https://cdn.pixabay.com/photo/2020/09/30/09/07/google-assistant-5615055_1280.jpg",
+    imageUrl: "https://m.media-amazon.com/images/G/31/img23/Wireless/nbshagun/clp/BAU/4Dec/D119951047_WLD_5Grevamp_March2024_1400x800_14._CB539119306_.jpg",
     category: "Smart Home"
   }
 ];
@@ -109,20 +109,20 @@ const Home = () => {
     <div>
       <div>
 
-        <div className="slider-container ">
+        <div className="slider-container main_slider">
           <Slider {...settings} className=''>
             {
               products.map((item) => {
                 return (
-                  <div key={item.id} className='' style={{ backgroundImage: `url('${item.imageUrl}')`, backgroundRepeat: 'no-repeat', backgroundSize: "cover", height: '100svh', width: "100%" }}>
-                    {/* <div>
-                      <img src={item.imageUrl} alt="" className='w-full' />
-                    </div> */}
-                    <div>
-                      <p>{item.name}</p>
-                      <p>{item.description}</p>
-                      <p>{item.price}</p>
-                      <p>{item.category}</p>
+                  <div key={item.id} className=' '>
+                    <div className='relative  ' style={{ backgroundImage: `url('${item.imageUrl}')`, backgroundRepeat: 'no-repeat', backgroundSize: "cover",height:"80svh",width:""}}>
+                      {/* <img src={item.imageUrl} alt="" className='w-full' /> */}
+                      {/* <div className=' absolute px-4 *:text-white flex flex-col justify-start top-20 items-start h-1/2'>
+                        <p className='text-5xl'>{item.name}</p>
+                        <p>{item.description}</p>
+                        <p>{item.price}</p>
+                        <p>{item.category}</p>
+                      </div> */}
                     </div>
                   </div>
                 )

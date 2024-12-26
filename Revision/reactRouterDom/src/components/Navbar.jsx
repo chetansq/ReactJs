@@ -1,24 +1,36 @@
 import React from 'react'
-import Home from '../pages/Home'
-import About from '../pages/About'
-import Shop from '../pages/Shop'
-import Contact from '../pages/Contact'
-import Cart from '../pages/Cart'
-import Wishlist from '../pages/Wishlist'
-import Error from '../pages/Error'
+
+import { Link, NavLink, Outlet } from 'react-router-dom';
+
+
 
 const Navbar = () => {
     return (
         <div>
-            <Home />
-            {/* <About />
-            <Shop />
-            <Contact />
-            <Cart />
-            <Wishlist />
-            <Error /> */}
+            {/* Header Section Start */}
+
+            <header className='bg-slate-100'>
+                <nav className='  w-full  flex justify-between mx-3 lg:mx-0 py-5 items-center  '>
+
+                    <ul className='flex gap-4 font-semibold text-lg '>
+                        <li> <NavLink to='/'>Home</NavLink></li>
+                        <li> <NavLink to='/shop'>Shop</NavLink></li>
+                        <li> <NavLink to='/about'>About</NavLink></li>
+                        <li> <NavLink to='/contact'>Contact</NavLink></li>
+                        <li> <NavLink to='/cart'>cart</NavLink></li>
+                        <li> <NavLink to='/wishlist'>Wishlist</NavLink></li>
+                    </ul>
+
+                </nav>
+            </header>
+
+            {/* Header Section End */}
+
+            <Outlet />
         </div>
     )
 }
 
 export default Navbar
+
+
