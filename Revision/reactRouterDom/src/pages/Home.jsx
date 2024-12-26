@@ -109,27 +109,27 @@ const Home = () => {
     <div>
       <div>
 
-        <div className="slider-container main_slider">
+        {/* <div className="slider-container main_slider">
           <Slider {...settings} className=''>
             {
               products.map((item) => {
                 return (
                   <div key={item.id} className=' '>
                     <div className='relative  ' style={{ backgroundImage: `url('${item.imageUrl}')`, backgroundRepeat: 'no-repeat', backgroundSize: "cover",height:"80svh",width:""}}>
-                      {/* <img src={item.imageUrl} alt="" className='w-full' /> */}
-                      {/* <div className=' absolute px-4 *:text-white flex flex-col justify-start top-20 items-start h-1/2'>
-                        <p className='text-5xl'>{item.name}</p>
-                        <p>{item.description}</p>
-                        <p>{item.price}</p>
-                        <p>{item.category}</p>
-                      </div> */}
                     </div>
                   </div>
                 )
               })
             }
           </Slider>
-        </div>
+        </div> */}
+            {/* <img src={item.imageUrl} alt="" className='w-full' /> */}
+            {/* <div className=' absolute px-4 *:text-white flex flex-col justify-start top-20 items-start h-1/2'>
+              <p className='text-5xl'>{item.name}</p>
+              <p>{item.description}</p>
+              <p>{item.price}</p>
+              <p>{item.category}</p>
+            </div> */}
 
 
       </div>
