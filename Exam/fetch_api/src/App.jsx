@@ -8,8 +8,8 @@ function App() {
 
   return (
     <>
-      {/* <Fetch_api /> */}
-      <Data />
+      <Fetch_api />
+      {/* <Data /> */}
     </>
   )
 }
