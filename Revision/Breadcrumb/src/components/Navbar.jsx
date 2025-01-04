@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { Link, NavLink, Outlet } from 'react-router-dom';
+import Breadcrumb from './Breadcrumb';
 
 const Navbar = () => {
     return (
@@ -22,8 +23,8 @@ const Navbar = () => {
                 </nav>
             </header>
 
-           
 
+            <Breadcrumb />
             <Outlet />
         </div>
     )
