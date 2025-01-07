@@ -1,14 +1,15 @@
 // import './App.css'
-import BookAdd from './BookAdd'
-import BookCard from './BookCard'
+import BookAdd from './Pages/BookAdd'
+import BookCard from './Pages/BookCard'
+import Layout from './Pages/Layout'
+import Navbar from './components/Navbar'
 import BookProviderContext from './context/BookProviderContext'
 function App() {
 
   return (
     <>
       <BookProviderContext>
-        <BookAdd />
-        <BookCard />
+        <Layout />
       </BookProviderContext>
     </>
   )
