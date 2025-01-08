@@ -2,20 +2,24 @@ import React, { useContext } from 'react'
 import { useState } from 'react'
 import Book_Context from '../context/Bookcontext'
 import img from '../assets/page_title_blog.png'
+import { v4 as uuidv4} from "uuid"
 
 const BookAdd = () => {
 
     const [title, setTitle] = useState('')
     const [author, setAuthor] = useState('')
     const [status, setStatus] = useState('')
+    
+    const id = uuidv4();
 
     const { setBook } = useContext(Book_Context)
+    
     const { booklist } = useContext(Book_Context)
 
     const handleButton = (e) => {
         e.preventDefault()
 
-        setBook([...booklist, { title, author, status }])
+        setBook([...booklist, { id, title, author, status }])
 
         setTitle('')
         setAuthor('')

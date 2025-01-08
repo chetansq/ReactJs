@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react'
 import Book_Context from '../context/Bookcontext'
 import BookDetails from './BookDetails'
-
 const BookCard = () => {
 
     const [data, setData] = useState('')
@@ -9,16 +8,21 @@ const BookCard = () => {
 
     const ReadMore = () => {
         <BookDetails />
+        console.log("render");
+
         // setData(booklist.title, booklist.author.booklist.status)
     }
     // setViewBook(book)
     // console.log('book  card page', setViewBook(book));\
     console.log('book card', booklist);
 
+    const { setBook } = useContext(Book_Context)
+
 
     return (
 
         <div className='flex  justify-center items-center'>
+
             {
                 booklist.length == 0 ? <div className='text-4xl flex justify-center items-center h-[calc(100svh-65px)] bg-blue-100 w-screen text-red-600'>No Books Available</div> : booklist.map((details) => {
                     return (
@@ -43,7 +47,7 @@ const BookCard = () => {
                                             </div>
                                             <div className="inline-flex items-center text-base font-semibold text-gray-900  gap-4">
                                                 <button className='bg-green-600 text-white rounded hover:bg-green-100 hover:text-green-700 border hover:border-green-700 py-1 px-3'>Update</button>
-                                                <button className='bg-red-600 text-white rounded hover:bg-red-100 hover:text-red-700 border hover:border-red-700 py-1 px-3'>Delete</button>
+                                                <button className='bg-red-600 text-white rounded hover:bg-red-100 hover:text-red-700 border hover:border-red-700 py-1 px-3' onClick={() => { setBook(booklist.filter((item) => item.title === booklist.title)) }}>Delete</button>
                                             </div>
 
                                         </div>
