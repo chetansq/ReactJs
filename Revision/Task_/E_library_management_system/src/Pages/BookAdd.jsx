@@ -8,8 +8,6 @@ const BookAdd = () => {
     const [title, setTitle] = useState('')
     const [author, setAuthor] = useState('')
     const [status, setStatus] = useState('')
-    const [viewBook, setViewBook] = useState([])
-
 
     const { setBook } = useContext(Book_Context)
     const { booklist } = useContext(Book_Context)
@@ -17,7 +15,11 @@ const BookAdd = () => {
     const handleButton = (e) => {
         e.preventDefault()
 
-        setBook([...booklist,{ title, author, status }])
+        setBook([...booklist, { title, author, status }])
+
+        setTitle('')
+        setAuthor('')
+        setStatus('')
     }
 
     return (
