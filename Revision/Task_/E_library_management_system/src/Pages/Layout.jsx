@@ -3,11 +3,13 @@ import { Routes, Route, createBrowserRouter, createRoutesFromElements, RouterPro
 import BookAdd from './BookAdd'
 import BookCard from './BookCard'
 import Navbar from '../components/Navbar'
+import BookDetails from './BookDetails'
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path='/' element={<Navbar />}>
             <Route path='/' element={<BookAdd />} />
             <Route path='/bookcard' element={<BookCard />} />
+            <Route path='/bookdetails' element={<BookDetails />} />
         </Route>
     )
 )
