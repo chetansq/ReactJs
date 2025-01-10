@@ -1,12 +1,14 @@
 import React, { useContext, useState } from 'react'
 import Book_Context from '../context/Bookcontext'
 import { useNavigate } from 'react-router-dom'
+import BookUpdate from './BookUpdate'
 
 const BookCard = () => {
 
     const navigate = useNavigate()
 
     const [search, setSearch] = useState("")
+    const [bookupdate, setBookUpdate] = useState(null)
 
     const { booklist } = useContext(Book_Context)
 
@@ -47,7 +49,10 @@ const BookCard = () => {
 
                                             <div className="inline-flex items-center text-base font-semibold text-gray-900  gap-4">
 
-                                                <button className='bg-green-600 text-white rounded hover:bg-green-100 hover:text-green-700 border hover:border-green-700 py-1 px-3' onClick={() => navigate('/bookupdate')}>Update</button>
+                                                <button className='bg-green-600 text-white rounded hover:bg-green-100 hover:text-green-700 border hover:border-green-700 py-1 px-3' onClick={() => {
+                                                    setBookUpdate(details)
+                                                    navigate('/bookupdate')
+                                                }}>Update</button>
 
                                                 <button className='bg-red-600 text-white rounded hover:bg-red-100 hover:text-red-700 border hover:border-red-700 py-1 px-3' onClick={() => { setBook(booklist.filter((item) => item.id !== details.id)) }}>Delete</button>
 
@@ -71,6 +76,11 @@ const BookCard = () => {
                 })
             }
 
+            <BookUpdate book={bookupdate} />
+                {
+                    console.log('after book update',bookupdate)
+                    
+                }
         </div>
     )
 }
