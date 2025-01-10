@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Book_Context from '../context/Bookcontext'
 import img from '../assets/page_title_blog.png'
 import { v4 as uuidv4 } from "uuid"
+import BookUpdate from './BookUpdate'
 
 const BookAdd = () => {
 
@@ -26,6 +27,7 @@ const BookAdd = () => {
             e.preventDefault()
 
             setBook([...booklist, { id, title, author, status }])
+            
             setTitle('')
             setAuthor('')
             setStatus('')

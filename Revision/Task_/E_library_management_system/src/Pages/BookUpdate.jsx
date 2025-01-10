@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import Book_Context from '../context/Bookcontext'
 import { useNavigate } from 'react-router-dom'
 
-const BookAdd = () => {
+const BookUpdate = () => {
 
     const navigate = useNavigate()
 
@@ -10,12 +10,15 @@ const BookAdd = () => {
 
     const { booklist } = useContext(Book_Context)
 
+    const { setSingleBook } = useContext(Book_Context)
+
+
     console.log('update page', booklist);
 
     const Update_data = () => {
 
 
-        setBook([...booklist, { title, author, status }])
+        setSingleBook([...booklist, { title, author, status }])
     }
 
     return (
@@ -28,17 +31,17 @@ const BookAdd = () => {
                             <div className='flex flex-col justify-center items-start gap-6 '>
                                 <label htmlFor="title" className='flex gap-5 items-center'>
                                     <p className='text-black mr-5'> Title </p>
-                                    <input type="text" className='p-2' name='title' id='title' value={item.title} placeholder='Book Title' />
+                                    <input type="text" className='p-2' name='title' id='title' value={item.title} onChange={(e) => setSingleBook(e.target.value)} placeholder='Book Title' />
                                 </label>
 
                                 <label htmlFor="author" className='flex gap-5 items-center'>
                                     <p className='text-black '> Author </p>
-                                    <input type="text" className='p-2' name='author' id='author' value={item.author} placeholder='Book Author' />
+                                    <input type="text" className='p-2' name='author' id='author' value={item.author} onChange={(e) => setSingleBook(e.target.value)} placeholder='Book Author' />
                                 </label>
 
                                 <label htmlFor="status" className='flex gap-5 items-center'>
                                     <p className='text-black mr-1'> Status </p>
-                                    <input type="text" className='p-2' name='status' id='status' value={item.status} placeholder='Status' />
+                                    <input type="text" className='p-2' name='status' id='status' value={item.status} onChange={(e) => setSingleBook(e.target.value)} placeholder='Status' />
                                 </label>
                             </div>
                             <div>
@@ -59,4 +62,4 @@ const BookAdd = () => {
 }
 
 
-export default BookAdd
+export default BookUpdate
