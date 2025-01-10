@@ -9,6 +9,7 @@ const BookAdd = () => {
     const [title, setTitle] = useState('')
     const [author, setAuthor] = useState('')
     const [status, setStatus] = useState('')
+    const [btn, setBtn] = useState(false)
 
     const id = uuidv4();
 
@@ -17,13 +18,19 @@ const BookAdd = () => {
     const { booklist } = useContext(Book_Context)
 
     const handleButton = (e) => {
-        e.preventDefault()
 
-        setBook([...booklist, { id, title, author, status }])
+        if (title, author, status == "") {
+            setBtn(false)
+        } else {
+            setBtn(true)
+            e.preventDefault()
 
-        setTitle('')
-        setAuthor('')
-        setStatus('')
+            setBook([...booklist, { id, title, author, status }])
+            setTitle('')
+            setAuthor('')
+            setStatus('')
+        }
+
     }
 
     return (
@@ -47,9 +54,9 @@ const BookAdd = () => {
                     </label>
                 </div>
 
-                <button className='bg-blue-600 px-5 py-1 rounded border hover:border-blue-800 text-white hover:text-black hover:bg-white ' id='submit' onClick={handleButton}>Add</button>
+                <button className='bg-blue-600 px-5 py-1 rounded border hover:border-blue-800 text-white hover:text-black hover:bg-white ' id='submit' onClick={handleButton} disabled={false}>Add</button>
             </div>
-            
+
         </div>
     )
 }

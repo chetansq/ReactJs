@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import Book_Context from '../context/Bookcontext'
 import { useNavigate } from 'react-router-dom'
 
-
 const BookAdd = () => {
 
     const navigate = useNavigate()
@@ -10,8 +9,6 @@ const BookAdd = () => {
     const { setBook } = useContext(Book_Context)
 
     const { booklist } = useContext(Book_Context)
-
-
 
     console.log('update page', booklist);
 
@@ -23,10 +20,11 @@ const BookAdd = () => {
 
     return (
         <div className='bg-blue-100'>
+            <p className='p-3  flex justify-center  items-center '>Update page</p>
             {
                 booklist.map((item) => {
                     return (
-                        <div className='container mx-auto flex flex-col justify-center items-start pl-40 gap-6 h-[calc(100svh)]' key={item.id}>
+                        <div className='container mx-auto flex flex-col justify-center items-start pl-40 gap-6 h-[calc(100svh-120px)]' key={item.id}>
                             <div className='flex flex-col justify-center items-start gap-6 '>
                                 <label htmlFor="title" className='flex gap-5 items-center'>
                                     <p className='text-black mr-5'> Title </p>
@@ -53,7 +51,7 @@ const BookAdd = () => {
                     )
                 })
             }
-            <p className='bg-blue-400 p-3 m-4 flex justify-center  items-center '>Update page</p>
+
 
 
         </div>

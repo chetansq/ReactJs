@@ -1,22 +1,20 @@
 import React, { useContext, useState } from 'react'
 import Book_Context from '../context/Bookcontext'
 import { useNavigate } from 'react-router-dom'
-import BookDetails from './BookDetails'
 
 const BookCard = () => {
 
     const navigate = useNavigate()
 
     const [search, setSearch] = useState("")
+
     const { booklist } = useContext(Book_Context)
+
+    const { setSingleBook } = useContext(Book_Context)
 
     console.log('book list', booklist);
 
     const { setBook } = useContext(Book_Context)
-
-    // const set_BookDetails = () => {
-
-    // }
 
     const searchFilteredData = booklist.filter((item) => item.title.toLowerCase().includes(search.toLowerCase()));
 
@@ -60,7 +58,7 @@ const BookCard = () => {
 
                                 <div>
                                     <button className='text-center bg-blue-600 text-white py-1 px-4 mt-5 rounded hover:text-blue-600 border hover:border-blue-600 hover:bg-blue-100' onClick={() => {
-                                        setBook(booklist.filter((item) => item.id === details.id))
+                                        setSingleBook(booklist.filter((item) => item.id === details.id))
                                         navigate('/bookdetails')
                                     }}>
                                         Read More
