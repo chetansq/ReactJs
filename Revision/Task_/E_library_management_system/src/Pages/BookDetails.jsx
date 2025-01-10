@@ -21,39 +21,40 @@ const BookDetails = () => {
                     booklist.map((details) => {
                         return (
                             <div key={details.id} className='flex justify-center items-center '>
-                                
-                                <div className="flex-1  min-w-0  p-3 *:text-bold gap-3 border   mt-10">
-                                    <p className=" font-medium text-gray-900 truncate ">
-                                        Title :
-                                        <span className='text-gray-500'>
-                                            {details.title}
-                                        </span>
-                                    </p>
+                                {
+                                    booklist.filter((item) => item.id !== details.id) ? <div className="flex-1  min-w-0  p-3 *:text-bold gap-3 border   mt-10">
+                                        <p className=" font-medium text-gray-900 truncate ">
+                                            Title :
+                                            <span className='text-gray-500'>
+                                                {details.title}
+                                            </span>
+                                        </p>
 
-                                    <p className=" text-gray-900 truncate ">
-                                        Author :
-                                        <span className='text-gray-500'>
-                                            {details.author}
-                                        </span>
-                                    </p>
-                                    
-                                    <p className=" text-gray-900 truncate ">
-                                        Status:
-                                        <span className='text-gray-500'>
-                                            {details.status}
-                                        </span>
-                                    </p>
-                                </div>
+                                        <p className=" text-gray-900 truncate ">
+                                            Author :
+                                            <span className='text-gray-500'>
+                                                {details.author}
+                                            </span>
+                                        </p>
+
+                                        <p className=" text-gray-900 truncate ">
+                                            Status:
+                                            <span className='text-gray-500'>
+                                                {details.status}
+                                            </span>
+                                        </p>
+                                    </div> : ''
+                                }
                             </div>
                         )
                     })
                 }
-                </div>
-                <div>
-
-                    <button className='text-center bg-blue-600 text-white py-1 px-4 mt-5 rounded hover:text-blue-600 border hover:border-blue-600 hover:bg-blue-100' onClick={() => navigate('/bookcard')}>Back</button>
             </div>
-        </div>
+            <div>
+
+                <button className='text-center bg-blue-600 text-white py-1 px-4 mt-5 rounded hover:text-blue-600 border hover:border-blue-600 hover:bg-blue-100' onClick={() => navigate('/bookcard')}>Back</button>
+            </div>
+        </div >
     )
 }
 
