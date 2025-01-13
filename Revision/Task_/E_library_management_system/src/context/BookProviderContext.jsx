@@ -4,6 +4,7 @@ import Book_Context from './Bookcontext'
 const BookProviderContext = ({ children }) => {
     const [book, setBook] = useState([])
     const [singleBook , setSingleBook] = useState([])
+    const [edit , setEdit] = useState({})
     console.log('book provider', book);
 
     let booklist = [...book]

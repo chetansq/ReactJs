@@ -8,7 +8,10 @@ const BookCard = () => {
     const navigate = useNavigate()
 
     const [search, setSearch] = useState("")
-    const [bookupdate, setBookUpdate] = useState(null)
+
+    const [bookupdate, setBookUpdate] = useState({})
+
+    console.log('bookupdate'  , bookupdate);
 
     const { booklist } = useContext(Book_Context)
 
@@ -77,10 +80,7 @@ const BookCard = () => {
             }
 
             <BookUpdate book={bookupdate} />
-                {
-                    console.log('after book update',bookupdate)
-                    
-                }
+            
         </div>
     )
 }

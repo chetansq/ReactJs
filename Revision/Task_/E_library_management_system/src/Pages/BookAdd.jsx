@@ -3,13 +3,15 @@ import { useState } from 'react'
 import Book_Context from '../context/Bookcontext'
 import img from '../assets/page_title_blog.png'
 import { v4 as uuidv4 } from "uuid"
-import BookUpdate from './BookUpdate'
 
 const BookAdd = () => {
 
-    const [title, setTitle] = useState('')
-    const [author, setAuthor] = useState('')
-    const [status, setStatus] = useState('')
+    const [add, setAdd] = useState({
+        title: '',
+        author: '',
+        status: ''
+    })
+
     const [btn, setBtn] = useState(false)
 
     const id = uuidv4();
@@ -20,18 +22,20 @@ const BookAdd = () => {
 
     const handleButton = (e) => {
 
-        if (title, author, status == "") {
+        if (add.title, add.author, add.status == "") {
             setBtn(false)
         } else {
             setBtn(true)
             e.preventDefault()
 
-            setBook([...booklist, { id, title, author, status }])
-            
-            setTitle('')
-            setAuthor('')
-            setStatus('')
+            setBook([...booklist, id,]) //add.title, add.author, add.status
+
         }
+
+        add.title = ''
+        add.author = ''
+        add.status = ''
+
 
     }
 
@@ -42,21 +46,21 @@ const BookAdd = () => {
                 <div className='flex flex-col justify-center items-start gap-6 '>
                     <label htmlFor="title" className='flex gap-5 items-center'>
                         <p className='text-white mr-5'> Title </p>
-                        <input type="text" className='p-2' name='title' id='title' value={title} onChange={(e) => setTitle(e.target.value)} placeholder='Book Title' />
+                        <input type="text" className='p-2' name='title' id='title' value={add.title} onChange={(e) => setAdd({ ...add, title: e.target.value })} placeholder='Book Title' />
                     </label>
 
                     <label htmlFor="author" className='flex gap-5 items-center'>
                         <p className='text-white '> Author </p>
-                        <input type="text" className='p-2' name='author' id='author' value={author} onChange={(e) => setAuthor(e.target.value)} placeholder='Book Author' />
+                        <input type="text" className='p-2' name='author' id='author' value={add.author} onChange={(e) => setAdd({ ...add, author: e.target.value })} placeholder='Book Author' />
                     </label>
 
                     <label htmlFor="status" className='flex gap-5 items-center'>
                         <p className='text-white mr-1'> Status </p>
-                        <input type="text" className='p-2' name='status' id='status' value={status} onChange={(e) => setStatus(e.target.value)} placeholder='Status' />
+                        <input type="text" className='p-2' name='status' id='status' value={add.status} onChange={(e) => setAdd({ ...add, status: e.target.value })} placeholder='Status' />
                     </label>
                 </div>
 
-                <button className='bg-blue-600 px-5 py-1 rounded border hover:border-blue-800 text-white hover:text-black hover:bg-white ' id='submit' onClick={handleButton} disabled={false}>Add</button>
+                <button className='bg-blue-600 px-5 py-1 rounded border hover:border-blue-800 text-white hover:text-black hover:bg-white ' id='submit' onClick={handleButton} disabled={btn}>Add</button>
             </div>
 
         </div>
