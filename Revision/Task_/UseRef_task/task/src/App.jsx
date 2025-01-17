@@ -16,7 +16,7 @@ function App() {
 
       {/* <Click_counter /> */}
 
-      <Scroll_image />
+      <Scroll_image />   
     </>
   )
 }
