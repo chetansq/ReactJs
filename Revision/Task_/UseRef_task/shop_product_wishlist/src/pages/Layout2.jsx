@@ -10,6 +10,7 @@ import { AboutUs } from './AboutUs'
 import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Product from './Product'
+import Wishlist from './Wishlist'
 
 const navbarList = createBrowserRouter([
     {
@@ -45,6 +46,10 @@ const navbarList = createBrowserRouter([
                 {
                     path: '/product',
                     element: <Product />
+                },
+                {
+                    path: '/wishlist',
+                    element: <Wishlist />
                 },
             ]
 

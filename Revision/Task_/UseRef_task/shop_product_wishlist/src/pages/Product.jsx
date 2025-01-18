@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import Product_data from '../data/Constant'
 import { FaRegHeart } from "react-icons/fa";
 
+import { FaHeart } from "react-icons/fa";
+import Wish_context from '../context/Context';
+
 const Product = () => {
+
+    const { setWishData, wishData } = useContext(Wish_context)
+    const { setCartData, cartData } = useContext(Wish_context)
     return (
-        <div >
+        <div className='my-10'>
             <div className='flex flex-wrap justify-center  mx-auto'>
                 {
                     Product_data.map((details) => {
@@ -30,8 +36,20 @@ const Product = () => {
                                     </div>
 
                                     <div className='flex items-center  gap-5 justify-between px-2 py-1'>
-                                        <button className='bg-red-600 text-white px-8 py-1 '>Add To Cart</button>
-                                        <FaRegHeart />
+                                        <button className='bg-red-600 text-white px-8 py-1 ' onClick={() => {
+
+                                            setCartData([...cartData, Product_data.filter((item) => item.id === details.id)])
+
+                                        }}>Add To Cart</button>
+
+                                        <button onClick={() => {
+                                            setWishData([...wishData, Product_data.filter((item) => item.id === details.id)])
+                                        }}>
+                                            {
+                                                Product_data.filter((item) => item.id === details.id) ? <FaHeart className='text-red-600' /> : <FaRegHeart className='' />
+                                            }
+
+                                        </button>
 
                                     </div>
                                 </div>
@@ -42,7 +60,9 @@ const Product = () => {
                 }
 
             </div>
-        </div>
+
+
+        </div >
     )
 }
 
