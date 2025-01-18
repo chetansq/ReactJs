@@ -42,11 +42,11 @@
 } */
 
 span {
-  @apply bg-black text-white px-2 py-1
+  @apply bg-black text-white px-2 py-1;
 }
 
 .active {
-  @apply bg-black  text-white
+  @apply bg-black  text-white;
 }
 
 .p {

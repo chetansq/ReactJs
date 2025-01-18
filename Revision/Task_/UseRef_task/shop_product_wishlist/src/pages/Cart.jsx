@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 export function Cart() {
   const { setCartData, cartData } = useContext(Wish_context)
+  const { setWishData, wishData } = useContext(Wish_context)
 
   const navigate = useNavigate()
   console.log("cart data", cartData);
@@ -45,7 +46,9 @@ export function Cart() {
                     >
                       <span>Remove</span>
                     </button>
-                    <button type="button" className="flex items-center space-x-2 px-2 py-1">
+                    <button type="button" className="flex items-center space-x-2 px-2 py-1" onClick={() => {
+                      setWishData([...cartData, cartData.filter((item) => item.id === product.id)])
+                    }} >
                       <span>Add to favorites</span>
                     </button>
                   </div>

@@ -1,24 +1,16 @@
-// import React from 'react'
-// // import RouterHooks from './routerHooks'
-
-// const Shop = () => {
-//   return (
-//     <div>
-
-//       <div className='text-center p-32 bg-slate-300 mt-32'>
-//         <h1>This is <span>Shop</span> Page</h1>
-//       </div>
-//       {/* <RouterHooks /> */}
-//     </div>
-//   )
-// }
-
-// export default Shop
-
-
 import React from 'react'
+import { useContext } from 'react'
+import Wish_context from '../context/Context'
+
 
 export function Shop() {
+
+  const { shopData } = useContext(Wish_context)
+  const { cartData, setCartData } = useContext(Wish_context)
+
+  console.log('shop page', shopData);
+
+
   return (
     <div className="mx-auto max-w-7xl px-4 md:px-8 2xl:px-16">
       <div className="pt-8">
@@ -44,35 +36,46 @@ export function Shop() {
       </div>
       <div className="block grid-cols-9 items-start gap-x-10 pb-10 pt-7 lg:grid lg:pb-14 xl:gap-x-14 2xl:pb-20">
         <div className="col-span-5 grid grid-cols-2 gap-2.5">
-          {Array.from({ length: 4 }, (_, i) => (
-            <div key={i} className="col-span-1 transition duration-150 ease-in hover:opacity-90">
-              <img
-                src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8c2hvZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
-                alt="Nike Air Max 95 By You--0"
-                className="w-full object-cover"
-              />
-            </div>
-          ))}
+          {
+            shopData.flat().map((details) => {
+              return (
+                <div key={details.id} className="col-span-1 transition duration-150 ease-in hover:opacity-90">
+                  <img
+                    src={details.image}
+                    alt="Nike Air Max 95 By You--0"
+                    className="w-full object-cover"
+                  />
+                </div>
+              )
+            })
+          }
+
         </div>
         <div className="col-span-4 pt-8 lg:pt-0">
-          <div className="mb-7 border-b border-gray-300 pb-7">
-            <h2 className="text-heading mb-3.5 text-lg font-bold md:text-xl lg:text-2xl 2xl:text-3xl">
-              Nike Air Max 95 By You
-            </h2>
-            <p className="text-body text-sm leading-6  lg:text-base lg:leading-8">
-              The Nike Air Max 95 By You lets you take inspiration from the human body itself. The
-              midsole represents the spine, graduated panels are the muscles, the lace loops are the
-              shoe&apos;s ribs and the mesh in the upper is the skin.
-            </p>
-            <div className="mt-5 flex items-center ">
-              <div className="text-heading pr-2 text-base font-bold md:pr-0 md:text-xl lg:pr-2 lg:text-2xl 2xl:pr-0 2xl:text-4xl">
-                $40.00
-              </div>
-              <span className="font-segoe pl-2 text-sm text-gray-400 line-through md:text-base lg:text-lg xl:text-xl">
-                $50.00
-              </span>
-            </div>
-          </div>
+          {
+            shopData.flat().map((product) => {
+              return (
+                <div className="mb-7 border-b border-gray-300 pb-7" key={product.id}>
+                  <h2 className="text-heading mb-3.5 text-lg font-bold md:text-xl lg:text-2xl 2xl:text-3xl">
+                    {product.title}
+                  </h2>
+                  <p className="text-body text-sm leading-6  lg:text-base lg:leading-8">
+                    {product.description}
+                  </p>
+                  <div className="mt-5 flex items-center ">
+                    <div className="text-heading pr-2 text-base font-bold md:pr-0 md:text-xl lg:pr-2 lg:text-2xl 2xl:pr-0 2xl:text-4xl">
+                      $ {product.price}
+                    </div>
+                    <span className="font-segoe pl-2 text-sm text-gray-400 line-through md:text-base lg:text-lg xl:text-xl">
+                      $50.00
+                    </span>
+                  </div>
+                </div>
+              )
+            })
+
+          }
+
           <div className="border-b border-gray-300 pb-3  ">
             <div className="mb-4">
               <h3 className="text-heading mb-2.5 text-base font-semibold capitalize md:text-lg">
@@ -123,7 +126,9 @@ export function Shop() {
             <button
               type="button"
               className="h-11 w-full rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-            >
+              onClick={() => {
+                setCartData([...cartData, shopData.flat().filter((item) => item.id === shopData.flat().id)])
+              }}>
               Add to cart
             </button>
           </div>
@@ -136,7 +141,13 @@ export function Shop() {
               <li>
                 <span className="text-heading inline-block pr-2 font-semibold">Category:</span>
                 <a className="hover:text-heading transition hover:underline" href="#">
-                  kids
+                  {
+                    shopData.flat().map((details) => {
+                      return (
+                        <span className='bg-white text-black' key={details.id}> {details.category} </span>
+                      )
+                    })
+                  }
                 </a>
               </li>
               <li className="productTags">
@@ -264,3 +275,21 @@ export function Shop() {
     </div>
   )
 }
+
+
+
+
+
+
+
+{/* <div className="col-span-5 grid grid-cols-2 gap-2.5">
+{Array.from({ length: 4 }, (_, i) => (
+  <div key={i} className="col-span-1 transition duration-150 ease-in hover:opacity-90">
+    <img
+      src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8c2hvZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
+      alt="Nike Air Max 95 By You--0"
+      className="w-full object-cover"
+    />
+  </div>
+))}
+</div> */}
