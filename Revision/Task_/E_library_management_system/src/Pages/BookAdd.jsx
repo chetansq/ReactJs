@@ -28,7 +28,7 @@ const BookAdd = () => {
             setBtn(true)
             e.preventDefault()
 
-            setBook([...booklist, id,]) //add.title, add.author, add.status
+            setBook(() => [...booklist, id,add.author,add.status,add.title]) //add.title, add.author, add.status
 
         }
 
