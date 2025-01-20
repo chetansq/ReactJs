@@ -14,6 +14,22 @@ const Product = () => {
     const { setCartData, cartData } = useContext(Wish_context)
     const { setShopData, shopData } = useContext(Wish_context)
 
+    const heart = (id) => wishData.some((item) => item.id === id)
+
+    const wish_data = (data) => {
+
+        console.log('data', data);
+
+        if (heart(data.id)) {
+            console.log('if condition heart', heart());
+            setWishData(wishData.filter((item) => item.id !== data.id))
+        }
+        else {
+            console.log("else part", heart());
+            setWishData([...wishData, data])
+        }
+    }
+
     const navigate = useNavigate()
     return (
         <div className='my-10'>
@@ -65,33 +81,16 @@ const Product = () => {
 
                                         <button className='bg-orange-600 text-white px-8 py-1 ' onClick={() => {
                                             setShopData([Product_data.filter((item) => item.id === details.id)])
-                                                navigate('/shop')
+                                            navigate('/shop')
                                         }}>Add To Shop</button>
 
 
                                         {/* Add to Wish  */}
 
-                                        <button onClick={() => {
-                                            setWishData([...wishData, Product_data.filter((item) => item.id === details.id)])
-
-                                            // const wishlist_data = Product_data.filter((item) => item.id === details.id)
-                                            // if (wishlist_data) {
-                                            //     toast.warn("Item already exist !");
-                                            //     return wishlist_data
-                                            // } else {
-                                            //     toast.success("item add to cart !");
-                                            //     return setWishData([...wishData, wishlist_data])
-                                            // }
-                                        }}>
-
+                                        <button onClick={() => wish_data(details)}>
                                             {
-                                                Product_data.some((item) => item.id === details.id) ? <FaHeart className='text-red-600' /> : <FaRegHeart className='' />
+                                                heart(details.id) ? (<FaHeart className='text-red-600' />) : (<FaRegHeart className='' />)
                                             }
-
-                                            {
-                                                console.log('wishlist data', Product_data.some((item) => item.id === details.id))
-                                            }
-
                                         </button>
 
                                     </div>

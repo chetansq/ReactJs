@@ -8,6 +8,9 @@ export function Cart() {
 
   const navigate = useNavigate()
   console.log("cart data", cartData);
+
+
+
   return (
     <div>
 
