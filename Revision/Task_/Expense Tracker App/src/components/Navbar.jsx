@@ -8,6 +8,7 @@ const Navbar = () => {
                 <ul className='flex justify-center items-center text-white gap-6 '>
                     <li> <NavLink to='/' className='p-2'>Home</NavLink> </li>
                     <li> <NavLink to='/addexpense' className='p-2'>Add Expense</NavLink> </li>
+                    <li> <NavLink to='/expenselist' className='p-2'>Expense List</NavLink> </li>
                 </ul>
             </nav>
             <Outlet />

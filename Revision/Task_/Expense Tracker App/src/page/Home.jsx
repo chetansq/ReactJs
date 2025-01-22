@@ -9,7 +9,7 @@ const Home = () => {
                 <pre className='text-[#124E66] underline'>Expense Tracker App</pre>
             </div>
             <div className=''>
-                <img src="https://img.freepik.com/free-vector/appointment-booking-with-smartphone-woman_23-2148555981.jpg?t=st=1737526003~exp=1737529603~hmac=8cc9b6f03755d196587d1aa19d277debf413f1186cb6aab990998908584a9b90&w=826" alt="" />
+                <img src="https://img.freepik.com/free-vector/appointment-booking-with-smartphone-woman_23-2148555981.jpg?t=st=1737526003~exp=1737529603~hmac=8cc9b6f03755d196587d1aa19d277debf413f1186cb6aab990998908584a9b90&w=600" alt=""  />
             </div>
         </div>
     )
