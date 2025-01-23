@@ -5,12 +5,17 @@ import Context from '../context/Context'
 const AddExpense = () => {
 
     const [amount, setAmount] = useState('')
-    const [desc, setDesc] = useState('')
+    const [description, setDescription] = useState('')
     const [category, setCategory] = useState('')
 
-    console.log('category', category);
 
-    const { setAdd_Expense } = useContext(Context)
+    const { dispatch } = useContext(Context);
+
+
+    const handleAdd = (e) => {
+        e.preventDefault();
+        dispatch({ type: "ADD",  amount, description, category })
+    }
 
     return (
         <div className='bg-[#D3D9D4] h-[calc(100svh-56px)]'>
@@ -32,7 +37,7 @@ const AddExpense = () => {
                     <div>
                         <label htmlFor="desc" className='flex gap-6 items-center '>
                             <span className='text-xl'>Description</span>
-                            <input type="text" className='py-3 px-6 mx-2' placeholder='as you write' value={desc} onChange={(e) => setDesc(e.target.value)} />
+                            <input type="text" className='py-3 px-6 mx-2' placeholder='as you write' value={description} onChange={(e) => setDescription(e.target.value)} />
                         </label>
                     </div>
 
@@ -58,7 +63,7 @@ const AddExpense = () => {
 
                     {/* Add Button */}
                     <div className='flex  items-center gap-4'>
-                        <button className='bg-[#124E66] px-6 py-2 text-white hover:text-[#124E66] hover:border-[#124E66] hover:bg-[white] border rounded'>Add</button>
+                        <button className='bg-[#124E66] px-6 py-2 text-white hover:text-[#124E66] hover:border-[#124E66] hover:bg-[white] border rounded' onClick={handleAdd}>Add</button>
                         <button className='bg-[#124E66] px-5 py-2 text-white hover:text-[#124E66] hover:border-[#124E66] hover:bg-[white] border rounded'>Cancle</button>
                     </div>
                 </div>

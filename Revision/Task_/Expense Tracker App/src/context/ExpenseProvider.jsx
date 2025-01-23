@@ -8,7 +8,7 @@ const intialstate = {
             id: 1,
             description : "home",
             amount : 5000,
-            category : "rent"
+            category : "bank"
         }
     ]
 }
@@ -16,11 +16,14 @@ const intialstate = {
 const ExpenseProvider = ({ children }) => {
 
     // const [Add_Expense, setAdd_Expense] = useState([])
-    comst [state,dispatch] = useReducer(ExpenseReducer,intialstate)
+    const [state,dispatch] = useReducer(ExpenseReducer,intialstate);
+    
+    console.log(state)
+
     return (
         <div>
 
-            <Context.Provider value={{ Add_Expense, setAdd_Expense }}>
+            <Context.Provider value={{state,dispatch}}>
                 {children}
             </Context.Provider>
         </div>
