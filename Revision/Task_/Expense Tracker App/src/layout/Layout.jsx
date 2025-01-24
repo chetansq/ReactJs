@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar'
 import Home from '../page/Home'
 import AddExpense from '../components/AddExpense'
 import ExpenseList from '../components/ExpenseList'
+import EditExpense from '../components/EditExpense'
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -11,6 +12,7 @@ const router = createBrowserRouter(
             <Route index element={<Home />} />
             <Route path='/addexpense' element={<AddExpense />} />
             <Route path='/expenselist' element={<ExpenseList />} />
+            <Route path='/editexpense' element={<EditExpense />} />
         </Route>
     )
 )

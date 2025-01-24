@@ -14,7 +14,10 @@ const AddExpense = () => {
 
     const handleAdd = (e) => {
         e.preventDefault();
-        dispatch({ type: "ADD",  amount, description, category })
+        dispatch({ type: "ADD", amount, description, category })
+        setAmount('')
+        setDescription('')
+        setCategory('')
     }
 
     return (
