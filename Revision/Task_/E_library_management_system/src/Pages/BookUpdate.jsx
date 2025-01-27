@@ -11,9 +11,9 @@ const BookUpdate = ({ book }) => {
     const navigate = useNavigate()
 
     const [update, setUpdate] = useState({
-        title: edit?.title || " ",
-        author: edit?.author || " ",
-        status: edit?.status || " "
+        title: edit.title || " ",
+        author: edit.author || " ",
+        status: edit.status || " "
     })
 
     console.log('update', update);
