@@ -14,35 +14,42 @@ const BookAdd = () => {
 
     const [btn, setBtn] = useState(false)
 
-    const id = uuidv4();
 
     const { setBook } = useContext(Book_Context)
 
     const { booklist } = useContext(Book_Context)
 
     const handleButton = (e) => {
+        e.preventDefault();
 
         if (add.title, add.author, add.status == "") {
             setBtn(false)
         } else {
             setBtn(true)
-            e.preventDefault()
 
-            setBook(() => [...booklist, {title:add.title, author:add.author, status:add.status}]) //add.title, add.author, add.status
+            const newBook = {
+                id: uuidv4(), // Generate a unique ID
+                title: add.title,
+                author: add.author,
+                status: add.status
+            };
 
+            setBook(() => [...booklist, newBook]) //add.title, add.author, add.status
+
+            setAdd({
+                title: '',
+                author: '',
+                status: ''
+            });
+            setBtn(false)
         }
-
-        add.title = ''
-        add.author = ''
-        add.status = ''
-
 
     }
 
     return (
         <div className='bg-black'>
             {/* <div className=' text-black text-2xl text-center p-6 relative' style={{ backgroundImage: `url(${img})` }}>ADD BOOK</div> */}
-            <div className='container mx-auto flex flex-col justify-center items-start pl-40 gap-6 h-[calc(100svh)]' style={{ backgroundImage: `url('https://cdn.pixabay.com/photo/2014/02/01/17/28/apple-256262_1280.jpg')`, backgroundRepeat: 'no-repeat' }}>
+            <div className='container  mx-auto flex flex-col justify-center items-start pl-40 gap-6 h-[calc(100svh)]' style={{ backgroundImage: `url('https://cdn.pixabay.com/photo/2014/02/01/17/28/apple-256262_1280.jpg')`, backgroundRepeat: 'no-repeat' }}>
                 <div className='flex flex-col justify-center items-start gap-6 '>
                     <label htmlFor="title" className='flex gap-5 items-center'>
                         <p className='text-white mr-5'> Title </p>
@@ -66,6 +73,5 @@ const BookAdd = () => {
         </div>
     )
 }
-
 
 export default BookAdd

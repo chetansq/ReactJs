@@ -6,41 +6,33 @@ const BookUpdate = ({ book }) => {
 
     const { setSingleBook } = useContext(Book_Context)
 
-    const { singleBook, edit } = useContext(Book_Context)
+    const { edit, setBook, booklist } = useContext(Book_Context)
 
     const navigate = useNavigate()
 
     const [update, setUpdate] = useState({
-        title: "",
-        author: "",
-        status: ""
+        title: edit?.title || " ",
+        author: edit?.author || " ",
+        status: edit?.status || " "
     })
 
     console.log('update', update);
 
-    // const [author, setAuthor] = useState('')
-    // const [status, setStatus] = useState('')
-
-    // useEffect(() => {
-    //     if (book) {
-    //         setEdit(book.title)
-    //     }
-    // }, [book])
-
     console.log('book', book);
 
-    // const Update_data = (e) => {
-    //     e.preventDefault()
+    const Update_data = (e) => {
+        e.preventDefault();
 
-    //     setSingleBook(singleBook.filter((e) => e.title === singleBook.title))
+        const updatedBooklist = booklist.map((bookItem) => {
+            if (bookItem.id === edit.id) {
+                return { ...bookItem, ...update };
+            }
+            return bookItem;
+        });
 
-    //     setSingleBook([...singleBook, { title, author, status }])
-    // }
+        setBook(updatedBooklist);
 
-    // const handleChnage= (e) =>{
-    //     // const value = [e.target.value]: [e.target.name]
-    // }
-
+    }
 
     return (
         <div className='bg-blue-100'>
@@ -50,21 +42,21 @@ const BookUpdate = ({ book }) => {
                 <div className='flex flex-col justify-center items-start gap-6 '>
                     <label htmlFor="title" className='flex gap-5 items-center'>
                         <p className='text-black mr-5'> Title </p>
-                        <input type="text" className='p-2' name='title' id='title' value={edit.title} onChange={(e) => setUpdate({ ...edit, title: e.target.value })} placeholder='Book Title' />
+                        <input type="text" className='p-2' name='title' id='title' value={update.title} onChange={(e) => setUpdate({ ...update, title: e.target.value })} placeholder='Book Title' />
                     </label>
                     <label htmlFor="author" className='flex gap-5 items-center'>
                         <p className='text-black '> Author </p>
-                        <input type="text" className='p-2' name='author' id='author' value={edit.author} onChange={(e) => setUpdate({ ...edit, author: e.target.value })} placeholder='Book Author' />
+                        <input type="text" className='p-2' name='author' id='author' value={update.author} onChange={(e) => setUpdate({ ...update, author: e.target.value })} placeholder='Book Author' />
                     </label>
                     <label htmlFor="status" className='flex gap-5 items-center'>
                         <p className='text-black mr-1'> Status </p>
-                        <input type="text" className='p-2' name='status' id='status' value={edit.status} onChange={(e) => setUpdate({ ...edit, status: e.target.value })} placeholder='Status' />
+                        <input type="text" className='p-2' name='status' id='status' value={update.status} onChange={(e) => setUpdate({ ...update, status: e.target.value })} placeholder='Status' />
                     </label>
                 </div>
                 <div>
 
                     <button className='bg-blue-600 px-5 py-1 rounded border hover:border-blue-800 text-white hover:text-black hover:bg-white ' id='submit' onClick={(e) => {
-                        handleUpdate(e)
+                        Update_data(e)
                         navigate('/bookcard')
                     }}>Update</button>
 
