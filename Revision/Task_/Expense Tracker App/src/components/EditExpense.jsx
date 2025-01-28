@@ -3,21 +3,26 @@ import { useContext } from 'react'
 import Context from '../context/Context'
 
 const EditExpense = () => {
-
-  const [amount, setAmount] = useState('')
-  const [description, setDescription] = useState('')
-  const [category, setCategory] = useState('')
-
-
   const { dispatch, state } = useContext(Context);
 
+  const [updateData, setUpdateData] = useState({
+    amount: state.amount || '',
+    description: state.description || '',
+    category: state.category || ''
+  })
+
+  console.log("updateData", updateData);
+  console.log("amount", state.amount);
 
   const handleUpdate = (e) => {
     e.preventDefault();
     dispatch({ type: "UPDATE", amount, description, category })
-    setAmount('')
-    setDescription('')
-    setCategory('')
+
+    setUpdateData({
+      amount: '',
+      description: '',
+      category: ''
+    })
   }
 
   return (
@@ -31,7 +36,7 @@ const EditExpense = () => {
           <div className=''>
             <label htmlFor="amount" className='flex gap-[55px] items-center '>
               <span className='text-xl'>Amount </span>
-              <input type="number" className='py-3 px-6 mx-2' placeholder='Only Number' value={state.amount} onChange={(e) => setAmount(e.target.value)} />
+              <input type="number" name='amount' className='py-3 px-6 mx-2' placeholder='Only Number' value={updateData.amount} onChange={(e) => setUpdateData({ ...updateData, amount: e.target.value })} />
             </label>
           </div>
 
@@ -40,7 +45,7 @@ const EditExpense = () => {
           <div>
             <label htmlFor="desc" className='flex gap-6 items-center '>
               <span className='text-xl'>Description</span>
-              <input type="text" className='py-3 px-6 mx-2' placeholder='as you write' value={state.description} onChange={(e) => setDescription(e.target.value)} />
+              <input type="text" name='description' className='py-3 px-6 mx-2' placeholder='as you write' value={updateData.description} onChange={(e) => setUpdateData({ ...updateData, description: e.target.value })} />
             </label>
           </div>
 
@@ -49,7 +54,7 @@ const EditExpense = () => {
           <div>
             <label htmlFor="category" className='flex gap-11 items-center '>
               <span className='text-xl'>Category</span>
-              <select name="category" id="category" className='py-3 px-[65px]  mx-2' value={state.category} onChange={(e) => setCategory(e.target.value)}>
+              <select name="category" id="category" className='py-3 px-[65px]  mx-2' value={updateData.category} onChange={(e) => setUpdateData({ ...updateData, category: e.target.value })}>
                 <option value=""> Select </option>
                 <option value="home">Home</option>
                 <option value="vegmarket">Veg.Market</option>

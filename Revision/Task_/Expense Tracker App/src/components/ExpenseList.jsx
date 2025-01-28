@@ -6,14 +6,20 @@ const ExpenseList = () => {
 
   const { state, dispatch } = useContext(Context);
 
+  console.log('state', state);
+
+
   const navigate = useNavigate()
 
 
   const update_ = (item) => {
-    const change = [...state, state.filter((data) => data.id === item.id)]
-    dispatch({ type: "UPDATE", change })
-    navigate('/editexpense')
 
+    console.log("function call", item);
+    const change = [...state.expenses, state.expenses.filter(data => data.id === item.id)]
+    console.log('changes', change);
+    dispatch({ type: "UPDATE", change })
+
+    navigate('/editexpense')
   }
 
   console.log(state, "as")
