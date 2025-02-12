@@ -1,11 +1,12 @@
 import './App.css'
-import Shop from './Shop'
+import Layout from './page/Layout'
+import Shop from './page/Shop'
 
 function App() {
 
   return (
     <>
-      <Shop />
+      <Layout />
     </>
   )
 }
