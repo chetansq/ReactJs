@@ -1,5 +1,6 @@
 import { add_item } from "./Action";
 import { ADD_ITEM } from "./Constant";
+import { Data } from "../data/Data";
 
 const initialvalue1 = 30
 const initialvalue2 = 20
