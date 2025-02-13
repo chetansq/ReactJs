@@ -1,23 +1,22 @@
 import React from 'react'
 import { useDispatch, useSelector } from "react-redux"
 import { add_item } from '../redux/Action'
+import { Data } from '../data/Data'
 
 const Shop = () => {
 
-    const initialData = useSelector(state => state.Add_to_cart.initialData)
 
-    console.log("initialData", initialData);
+
 
     const dispatch = useDispatch()
-    
+
     return (
         <div className=' container my-5 mx-auto'>
 
             <div className='grid grid-cols-4 gap-5 '>
 
-
                 {
-                    initialData.map((product) => {
+                    Data.map((product) => {
                         return (
                             <div key={product.id}>
 
