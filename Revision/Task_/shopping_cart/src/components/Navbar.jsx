@@ -10,9 +10,8 @@ const Navbar = () => {
                 <nav className='  w-full  flex justify-center mx-3 lg:mx-0 py-5 items-center  '>
 
                     <ul className='flex gap-4 font-semibold text-lg '>
-                        <li> <NavLink to='/shop'>Shop</NavLink></li>
+                        <li> <NavLink to='/'>Shop</NavLink></li>
                         <li> <NavLink to='/cart'>Cart</NavLink></li>
-                        <li> <NavLink to='/wishlist'>Wishlist</NavLink></li>
                     </ul>
 
                 </nav>

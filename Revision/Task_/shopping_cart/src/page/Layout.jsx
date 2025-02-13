@@ -2,16 +2,14 @@ import { createRoutesFromElements, createBrowserRouter, RouterProvider, Route } 
 import Navbar from '../components/Navbar'
 import Shop from './Shop'
 import Cart from './Cart'
-import Wishlist from './Wishlist'
 
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path='/' element={<Navbar />}>
 
 
-            <Route path='shop' element={<Shop />} />
+            <Route path='/' element={<Shop />} />
             <Route path='cart' element={<Cart />} />
-            <Route path='wishlist' element={<Wishlist />} />
         </Route>
     )
 )

@@ -1,13 +1,15 @@
 import React from 'react'
 import { useDispatch, useSelector } from "react-redux"
-import { Data } from '../data/Data'
+import { add_item } from '../redux/Action'
 
 const Shop = () => {
 
-    const add_1 = useSelector(state => state.addReducer1)
-    const add_2 = useSelector(state => state.addReducer2)
+    const initialData = useSelector(state => state.Add_to_cart.initialData)
+
+    console.log("initialData", initialData);
 
     const dispatch = useDispatch()
+    
     return (
         <div className=' container my-5 mx-auto'>
 
@@ -15,7 +17,7 @@ const Shop = () => {
 
 
                 {
-                    Data.map((product) => {
+                    initialData.map((product) => {
                         return (
                             <div key={product.id}>
 
@@ -37,8 +39,7 @@ const Shop = () => {
                                     </div>
 
                                     <div className='flex gap-4 justify-around ' >
-                                        <button className='bg-red-500 text-white px-2 py-1' onClick={()=>dispatch}>AddToCart</button>
-                                        <button className='bg-red-500 text-white px-2 py-1'>AddToWish</button>
+                                        <button className='bg-red-500 text-white px-2 py-1' onClick={() => dispatch(add_item(product))}>AddToCart</button>
                                     </div>
                                 </div>
 

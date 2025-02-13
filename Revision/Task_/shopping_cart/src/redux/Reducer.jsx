@@ -1,27 +1,28 @@
-import { add_item } from "./Action";
-import { ADD_ITEM } from "./Constant";
+import { ADD_ITEM, DELETE_ITEM } from "./Constant";
+
 import { Data } from "../data/Data";
 
-const initialvalue1 = 30
-const initialvalue2 = 20
+const initialState = {
+    initialData: Data,
+    addedData: [],
+}
 
-export const addReducer1 = (state = initialvalue1, action) => {
+
+export const addToCartReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_ITEM:
-            return state - 1
-            break;
+            console.log("state", state);
+            return {
+                ...state, addedData: [...state.addedData, action.payload]
+            }
+
+        case DELETE_ITEM:
+
+            const newData = state.addedData.filter((state) => state.id !== action.payload.id)
+            state.addedData = newData
+            return [...state.addedData]
 
         default: return state
-            break;
     }
 }
-export const addReducer2 = (state = initialvalue1, action) => {
-    switch (action.type) {
-        case ADD_ITEM:
-            return state - 1
-            break;
 
-        default: return state
-            break;
-    }
-}
