@@ -1,11 +1,11 @@
 import './App.css'
-import Item from './item'
+import Theme from './Theme'
 
 function App() {
 
   return (
     <>
-      <Item />
+      <Theme />
     </>
   )
 }
