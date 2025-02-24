@@ -1,18 +1,7 @@
 import React, { useState } from "react";
+import User_Data from "../CrudData.json"
 
 const Crud = () => {
-    const [users, setUsers] = useState([
-
-        {
-            id: 1,
-            name: "chetan",
-            email: "chetan@gmail.com",
-            contact: "9897954799",
-            address: "Surat",
-        },
-
-    ]);
-
 
     return (
         <div className=" bg-[#FBE9D0] h-screen p-5">
@@ -75,23 +64,24 @@ const Crud = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {users.map((data, index) => (
-                            <tr key={data.id}>
-                                <td className="p-2 border text-center">{index + 1}</td>
-                                <td className="p-2 border">{data.name}</td>
-                                <td className="p-2 border">{data.email}</td>
-                                <td className="p-2 border">{data.contact}</td>
-                                <td className="p-2 border">{data.address}</td>
-                                <td className="p-2 border">
-                                    <button className="bg-[#244855] hover:bg-gray-200 hover:text-[#244855] border hover:border-[#244855] text-white font-bold py-1 px-2 rounded mr-1">
-                                        Edit
-                                    </button>
-                                    <button className="bg-[#874F41] hover:bg-[#fae6e1]  border hover:border-[#874F41] text-white hover:text-[#874F41] font-bold py-1 px-2 rounded">
-                                        Delete
-                                    </button>
-                                </td>
-                            </tr>
-                        ))}
+                        {User_Data.User_Data.
+                            map((data, index) => (
+                                <tr key={data.id}>
+                                    <td className="p-2 border text-center">{index + 1}</td>
+                                    <td className="p-2 border">{data.name}</td>
+                                    <td className="p-2 border">{data.email}</td>
+                                    <td className="p-2 border">{data.contact}</td>
+                                    <td className="p-2 border">{data.address}</td>
+                                    <td className="p-2 border">
+                                        <button className="bg-[#244855] hover:bg-gray-200 hover:text-[#244855] border hover:border-[#244855] text-white font-bold py-1 px-2 rounded mr-1">
+                                            Edit
+                                        </button>
+                                        <button className="bg-[#874F41] hover:bg-[#fae6e1]  border hover:border-[#874F41] text-white hover:text-[#874F41] font-bold py-1 px-2 rounded">
+                                            Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                            ))}
                     </tbody>
                 </table>
 
