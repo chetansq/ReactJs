@@ -1,5 +1,18 @@
 {
-    "User_Data": [
-        
-    ]
+  "User_Data": [
+    {
+      "id": "3ea4",
+      "name": "chetan",
+      "email": "chetan.sq05@gmail.com",
+      "contact": "7788994455",
+      "address": "Skill-qode, Yogi-chowk, surat   "
+    },
+    {
+      "id": "9320",
+      "name": "kashyap",
+      "email": "kashyap@gmail.com",
+      "contact": "8899774455",
+      "address": "Godadara"
+    }
+  ]
 }
