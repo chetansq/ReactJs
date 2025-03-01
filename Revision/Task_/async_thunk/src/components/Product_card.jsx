@@ -19,7 +19,8 @@ const Product_card = ({ products }) => {
                     <p className="line-clamp-3 text-[#254E58] text-justify" > {products.description} </p>
                 </div>
 
-                <button className="text-[#88BDBC] border bg-[#254E58] px-4 py-1 rounded hover:text-[#254E58] hover:bg-[#88BDBC]" onClick={() => dispatch(add_To_Cart(products))}>AddTOCart</button>
+                <button className="text-[#88BDBC] border bg-[#254E58] px-4 py-1 rounded hover:text-[#254E58] hover:bg-[#88BDBC]" onClick={() => dispatch(add_To_Cart(products))}>AddToCart</button>
+                <button className="text-[#88BDBC] border bg-[#254E58] px-4 py-1 rounded hover:text-[#254E58] hover:bg-[#88BDBC]" >AddToWishlist</button>
             </div>
         </div>
     )
