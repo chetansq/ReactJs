@@ -7,3 +7,6 @@
   color: #FFCB9A;
 }
 
+.toast-number {
+  display: none; /* Hide any unexpected number */
+}

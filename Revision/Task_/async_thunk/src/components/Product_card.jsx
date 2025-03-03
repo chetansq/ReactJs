@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from 'react-redux';
 import { add_To_Cart } from "../reduxSlice/Cart_Slice";
+import { add_To_Wishlist } from "../reduxSlice/Wishlist_Slice";
 
 const Product_card = ({ products }) => {
 
@@ -20,7 +21,7 @@ const Product_card = ({ products }) => {
                 </div>
 
                 <button className="text-[#88BDBC] border bg-[#254E58] px-4 py-1 rounded hover:text-[#254E58] hover:bg-[#88BDBC]" onClick={() => dispatch(add_To_Cart(products))}>AddToCart</button>
-                <button className="text-[#88BDBC] border bg-[#254E58] px-4 py-1 rounded hover:text-[#254E58] hover:bg-[#88BDBC]" >AddToWishlist</button>
+                <button className="text-[#88BDBC] border bg-[#254E58] px-4 py-1 rounded hover:text-[#254E58] hover:bg-[#88BDBC]" onClick={() => dispatch(add_To_Wishlist(products))}>AddToWishlist</button>
             </div>
         </div>
     )
